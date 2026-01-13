@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { GrFavorite } from "react-icons/gr";
 
-function Beddingproducts({pro}) {
+function Bedroomproducts({pro}) {
     const [selectedColor, setSelectedColor] = useState(0)
     
     return (
- <>
         <div className="col-lg-3 p-[4px] mb-[100px] ">
             <img src={pro.variants[selectedColor].image} />
             <div className='flex justify-between mt-[8px]'>
@@ -23,8 +22,7 @@ function Beddingproducts({pro}) {
                 ))}
             </div>
         </div>
- </>
     )
 }
 
-export default Beddingproducts
+export default Bedroomproducts

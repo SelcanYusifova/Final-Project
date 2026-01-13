@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Beddingproducts from '../../components/beddingproducts'
+import Beddingproducts from '../../components/beddingProducts'
 import FullScreenLoader from '../../components/fullScreenLoader'
 
 function Bedding() {
@@ -13,7 +13,7 @@ function Bedding() {
         setTimeout(() => {
           setData(pro)
           setLoading(false)
-        }, 2000)
+        }, 1000)
       })
   }, [])
 

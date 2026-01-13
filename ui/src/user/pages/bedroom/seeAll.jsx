@@ -1,15 +1,31 @@
-import React from "react";
-import Products from "../../components/products";
+import React, { useEffect, useState } from "react";
+import Beddingproducts from "../../components/beddingProducts";
+import FullScreenLoader from "../../components/fullScreenLoader";
 
 function SeeAll() {
-    return (
-        <>
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-            <div className="h-[104px]"></div>
-            <Products />
+  useEffect(() => {
+    fetch("http://localhost:3000/bedroombedspreads")
+      .then((res) => res.json())
+      .then((pro) => {
+        setTimeout(() => {
+          setData(pro);
+          setLoading(false);
+        }, 1000);
+      });
+  }, []);
 
-        </>
-    )
+  if (loading) return <FullScreenLoader />;
+
+  return (
+    <div className="row flex px-4 mt-[240px]">
+      {data.map((e) => (
+        <Beddingproducts pro={e} key={e.id} />
+      ))}
+    </div>
+  );
 }
 
 export default SeeAll;

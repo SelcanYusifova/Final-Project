@@ -1,108 +1,479 @@
 {
- "bedroombedding": [
+  "bedroombedding": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Sateen Pillowcase",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/8fd9/2b85/b1dd4c48a4f2/3922df93aaa0/41100088733-a7/41100088733-a7.jpg?ts=1764581961256&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/8825/7c92/b0c2477a9974/d2742fdee447/41100088802-a7/41100088802-a7.jpg?ts=1767614583935&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/8fd9/2b85/b1dd4c48a4f2/3922df93aaa0/41100088733-a7/41100088733-a7.jpg?ts=1764581961256&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/8825/7c92/b0c2477a9974/d2742fdee447/41100088802-a7/41100088802-a7.jpg?ts=1767614583935&f=auto&w=480"
+        }
       ]
     },
-    { 
-      "id": 2,
+    {
+      "id": "2",
       "name": "Cotton Pillowcase",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480" },
-        { "color": "beige", "hex": "#975D44", "image": "https://static.zarahome.net/assets/public/7991/16c1/5a154d5c94a4/4ed77b8e4153/46173091737-p1/46173091737-p1.jpg?ts=1767600178358&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#975D44",
+          "image": "https://static.zarahome.net/assets/public/7991/16c1/5a154d5c94a4/4ed77b8e4153/46173091737-p1/46173091737-p1.jpg?ts=1767600178358&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Luxury Bedsheet",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/ae86/9610/e8e240f0b436/86319b506407/41100089250-p1/41100089250-p1.jpg?ts=1754898327830&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/d727/4238/9df441ba9880/4fde3091c889/41100089733-p1/41100089733-p1.jpg?ts=1754898328283&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/4fa2/c82f/ae4b428e8435/482fd198985c/41100089802-p1/41100089802-p1.jpg?ts=1765468915928&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/ae86/9610/e8e240f0b436/86319b506407/41100089250-p1/41100089250-p1.jpg?ts=1754898327830&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/d727/4238/9df441ba9880/4fde3091c889/41100089733-p1/41100089733-p1.jpg?ts=1754898328283&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/4fa2/c82f/ae4b428e8435/482fd198985c/41100089802-p1/41100089802-p1.jpg?ts=1765468915928&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Percale Duvet Cover",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/9682/628f/e2ce4eb8bad8/9a36908a46fe/41100095250-p1/41100095250-p1.jpg?ts=1754897099536&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/bd99/1baa/2be649c3bc21/3b99f4a1bfdd/41100095733-p1/41100095733-p1.jpg?ts=1754897102531&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/d9af/bc55/aed54f66a18c/06d2feae018b/41100095802-p1/41100095802-p1.jpg?ts=1765468903330&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9682/628f/e2ce4eb8bad8/9a36908a46fe/41100095250-p1/41100095250-p1.jpg?ts=1754897099536&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/bd99/1baa/2be649c3bc21/3b99f4a1bfdd/41100095733-p1/41100095733-p1.jpg?ts=1754897102531&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/d9af/bc55/aed54f66a18c/06d2feae018b/41100095802-p1/41100095802-p1.jpg?ts=1765468903330&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Linen Pillowcase",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/8d31/dcbf/369c46e689e2/0eb8c86451ee/40035089712-p1/40035089712-p1.jpg?ts=1754898331757&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/7628/33d1/da2f47dd99ea/64a85745bf2a/47190089710-p1/47190089710-p1.jpg?ts=1754993379967&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/0fce/0ed9/28cb4c6780e3/b90511af7000/40038089676-p1/40038089676-p1.jpg?ts=1755701028046&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/8d31/dcbf/369c46e689e2/0eb8c86451ee/40035089712-p1/40035089712-p1.jpg?ts=1754898331757&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/7628/33d1/da2f47dd99ea/64a85745bf2a/47190089710-p1/47190089710-p1.jpg?ts=1754993379967&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/0fce/0ed9/28cb4c6780e3/b90511af7000/40038089676-p1/40038089676-p1.jpg?ts=1755701028046&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Silk Pillowcase",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/c647/17b5/93ce414dbe3d/cc2d84a39eca/40056091250-p1/40056091250-p1.jpg?ts=1756125990192&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/0ebb/b2ef/d04a40569500/858307ec711a/40055091721-p1/40055091721-p1.jpg?ts=1754897203812&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/aff9/ae95/9c7e495e8c15/bc59c0fa9672/40057091832-p1/40057091832-p1.jpg?ts=1754897204313&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/c647/17b5/93ce414dbe3d/cc2d84a39eca/40056091250-p1/40056091250-p1.jpg?ts=1756125990192&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/0ebb/b2ef/d04a40569500/858307ec711a/40055091721-p1/40055091721-p1.jpg?ts=1754897203812&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/aff9/ae95/9c7e495e8c15/bc59c0fa9672/40057091832-p1/40057091832-p1.jpg?ts=1754897204313&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Classic Bedsheet Set",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Hotel Duvet Cover",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/381a/3a71/3d784eb0b40f/331f7a6cfdb8/40131091710-p1/40131091710-p1.jpg?ts=1765957447267&f=auto&w=480" },
-        { "color": "beige", "hex": "#975D44", "image": "https://static.zarahome.net/assets/public/d50e/07fd/71fd40dc9b64/e6a42bb35111/40034091701-p1/40034091701-p1.jpg?ts=1762341289862&f=auto&w=480" } 
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/381a/3a71/3d784eb0b40f/331f7a6cfdb8/40131091710-p1/40131091710-p1.jpg?ts=1765957447267&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#975D44",
+          "image": "https://static.zarahome.net/assets/public/d50e/07fd/71fd40dc9b64/e6a42bb35111/40034091701-p1/40034091701-p1.jpg?ts=1762341289862&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Classic Bedsheet Set",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/f3ab/e1c0/fd44459ea6b6/abbab6afe991/43150008250-a7/43150008250-a7.jpg?ts=1749809865742&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/b386/a28d/05ba4837a6b4/51e13d63472c/43150008052-a7/43150008052-a7.jpg?ts=1749562799537&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/f3ab/e1c0/fd44459ea6b6/abbab6afe991/43150008250-a7/43150008250-a7.jpg?ts=1749809865742&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b386/a28d/05ba4837a6b4/51e13d63472c/43150008052-a7/43150008052-a7.jpg?ts=1749562799537&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Classic Bedsheet Set",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/44dc/5f03/958a490a897c/ec6617be76e1/46110088811-a2/46110088811-a2.jpg?ts=1765468915555&f=auto&w=614" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/6805/274c/0b7f40ab8359/17c936993629/46110088811-p1/46110088811-p1.jpg?ts=1765468891098&f=auto&w=614" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/5897/6f1c/7a354db4a1f6/0382ebc39589/46110088811-a7/46110088811-a7.jpg?ts=1765471721561&f=auto&w=614" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/44dc/5f03/958a490a897c/ec6617be76e1/46110088811-a2/46110088811-a2.jpg?ts=1765468915555&f=auto&w=614"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/6805/274c/0b7f40ab8359/17c936993629/46110088811-p1/46110088811-p1.jpg?ts=1765468891098&f=auto&w=614"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/5897/6f1c/7a354db4a1f6/0382ebc39589/46110088811-a7/46110088811-a7.jpg?ts=1765471721561&f=auto&w=614"
+        }
       ]
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Classic Bedsheet Set",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/f5c8/6732/e6c24431844e/9e505fc651df/45137089800-p1/45137089800-p1.jpg?ts=1754898351997&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/8128/30eb/642d43d89979/6a06d97b8032/45137089811-p1/45137089811-p1.jpg?ts=1765812633010&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/f5c8/6732/e6c24431844e/9e505fc651df/45137089800-p1/45137089800-p1.jpg?ts=1754898351997&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/8128/30eb/642d43d89979/6a06d97b8032/45137089811-p1/45137089811-p1.jpg?ts=1765812633010&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Classic Bedsheet Set",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480" }
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
+      ]
+    }
+  ],
+   "bedroombedspreads": [
+    {
+      "id": "1",
+      "name": "Sateen Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/8fd9/2b85/b1dd4c48a4f2/3922df93aaa0/41100088733-a7/41100088733-a7.jpg?ts=1764581961256&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/8825/7c92/b0c2477a9974/d2742fdee447/41100088802-a7/41100088802-a7.jpg?ts=1767614583935&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Cotton Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#975D44",
+          "image": "https://static.zarahome.net/assets/public/7991/16c1/5a154d5c94a4/4ed77b8e4153/46173091737-p1/46173091737-p1.jpg?ts=1767600178358&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Luxury Bedsheet",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/ae86/9610/e8e240f0b436/86319b506407/41100089250-p1/41100089250-p1.jpg?ts=1754898327830&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/d727/4238/9df441ba9880/4fde3091c889/41100089733-p1/41100089733-p1.jpg?ts=1754898328283&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/4fa2/c82f/ae4b428e8435/482fd198985c/41100089802-p1/41100089802-p1.jpg?ts=1765468915928&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Percale Duvet Cover",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9682/628f/e2ce4eb8bad8/9a36908a46fe/41100095250-p1/41100095250-p1.jpg?ts=1754897099536&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/bd99/1baa/2be649c3bc21/3b99f4a1bfdd/41100095733-p1/41100095733-p1.jpg?ts=1754897102531&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/d9af/bc55/aed54f66a18c/06d2feae018b/41100095802-p1/41100095802-p1.jpg?ts=1765468903330&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Linen Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/8d31/dcbf/369c46e689e2/0eb8c86451ee/40035089712-p1/40035089712-p1.jpg?ts=1754898331757&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/7628/33d1/da2f47dd99ea/64a85745bf2a/47190089710-p1/47190089710-p1.jpg?ts=1754993379967&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/0fce/0ed9/28cb4c6780e3/b90511af7000/40038089676-p1/40038089676-p1.jpg?ts=1755701028046&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Silk Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/c647/17b5/93ce414dbe3d/cc2d84a39eca/40056091250-p1/40056091250-p1.jpg?ts=1756125990192&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/0ebb/b2ef/d04a40569500/858307ec711a/40055091721-p1/40055091721-p1.jpg?ts=1754897203812&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/aff9/ae95/9c7e495e8c15/bc59c0fa9672/40057091832-p1/40057091832-p1.jpg?ts=1754897204313&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Hotel Duvet Cover",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/381a/3a71/3d784eb0b40f/331f7a6cfdb8/40131091710-p1/40131091710-p1.jpg?ts=1765957447267&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#975D44",
+          "image": "https://static.zarahome.net/assets/public/d50e/07fd/71fd40dc9b64/e6a42bb35111/40034091701-p1/40034091701-p1.jpg?ts=1762341289862&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/f3ab/e1c0/fd44459ea6b6/abbab6afe991/43150008250-a7/43150008250-a7.jpg?ts=1749809865742&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b386/a28d/05ba4837a6b4/51e13d63472c/43150008052-a7/43150008052-a7.jpg?ts=1749562799537&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/44dc/5f03/958a490a897c/ec6617be76e1/46110088811-a2/46110088811-a2.jpg?ts=1765468915555&f=auto&w=614"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/6805/274c/0b7f40ab8359/17c936993629/46110088811-p1/46110088811-p1.jpg?ts=1765468891098&f=auto&w=614"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/5897/6f1c/7a354db4a1f6/0382ebc39589/46110088811-a7/46110088811-a7.jpg?ts=1765471721561&f=auto&w=614"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/f5c8/6732/e6c24431844e/9e505fc651df/45137089800-p1/45137089800-p1.jpg?ts=1754898351997&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/8128/30eb/642d43d89979/6a06d97b8032/45137089811-p1/45137089811-p1.jpg?ts=1765812633010&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
       ]
     }
   ],
@@ -126,6 +497,13 @@
       "firstname": "Selcan",
       "lastname": "Yusifova",
       "email": "selcanww@gmail.com",
+      "pass": "123"
+    },
+    {
+      "id": "4a0b",
+      "firstname": "Selcan",
+      "lastname": "Yusifova",
+      "email": "selcanxcv@gmail.com",
       "pass": "123"
     }
   ],
@@ -160,7 +538,6 @@
           "slug": "bedspreads",
           "title": "BEDSPREADS"
         },
-   
         {
           "id": "s7",
           "slug": "cushions-and-throws",
@@ -277,7 +654,6 @@
           "slug": "bath-mats",
           "title": "BATH MATS"
         },
-     
         {
           "id": "s27",
           "slug": "shower-curtains",
@@ -320,7 +696,6 @@
           "slug": "bedding",
           "title": "BEDDING"
         },
-     
         {
           "id": "s35",
           "slug": "decoration",
