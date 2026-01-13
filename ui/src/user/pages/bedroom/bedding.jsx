@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import SecondaryNavbar from '../../components/secondaryNavbar'
 import Beddingproducts from '../../components/beddingproducts'
+import FullScreenLoader from '../../components/fullScreenLoader'
 
 function Bedding() {
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     fetch("http://localhost:3000/bedroombedding")
       .then(res => res.json())
       .then((pro) => {
-        setData(pro)
+        setTimeout(() => {
+          setData(pro)
+          setLoading(false)
+        }, 2000)
       })
   }, [])
-  console.log(data);
 
+  if (loading) {
+    return <FullScreenLoader />
+  }
 
   return (
-    <>
-      <SecondaryNavbar />
-      <div className='row flex px-4 mt-[240px] '>
-        {
-          data.map(e => (
-            <Beddingproducts pro={e} key={e.id} />
-          ))
-        }
-      </div>
-    </>
+    <div className='row flex px-4 mt-[240px] '>
+      {data.map(e => (
+        <Beddingproducts pro={e} key={e.id} />
+      ))}
+    </div>
   )
 }
 

@@ -13,9 +13,8 @@
       "id": 2,
       "name": "Cotton Pillowcase",
       "variants": [
-        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/f426/67c1/968749e08268/af5940576651/41100091250-p1/41100091250-p1.jpg?ts=1754897204424&f=auto&w=480" },
-        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/b7ff/5bd5/ace54ddbb7e9/b7bf438f76d4/41100091733-p1/41100091733-p1.jpg?ts=1754897205119&f=auto&w=480" },
-        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/802d/6deb/5ee94aafb506/69934822847c/41100091802-p1/41100091802-p1.jpg?ts=1765468900074&f=auto&w=480" }
+        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480" },
+        { "color": "beige", "hex": "#975D44", "image": "https://static.zarahome.net/assets/public/7991/16c1/5a154d5c94a4/4ed77b8e4153/46173091737-p1/46173091737-p1.jpg?ts=1767600178358&f=auto&w=480" }
       ]
     },
     {
@@ -69,6 +68,41 @@
       "variants": [
         { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/381a/3a71/3d784eb0b40f/331f7a6cfdb8/40131091710-p1/40131091710-p1.jpg?ts=1765957447267&f=auto&w=480" },
         { "color": "beige", "hex": "#975D44", "image": "https://static.zarahome.net/assets/public/d50e/07fd/71fd40dc9b64/e6a42bb35111/40034091701-p1/40034091701-p1.jpg?ts=1762341289862&f=auto&w=480" } 
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/f3ab/e1c0/fd44459ea6b6/abbab6afe991/43150008250-a7/43150008250-a7.jpg?ts=1749809865742&f=auto&w=480" },
+        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/b386/a28d/05ba4837a6b4/51e13d63472c/43150008052-a7/43150008052-a7.jpg?ts=1749562799537&f=auto&w=480" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/44dc/5f03/958a490a897c/ec6617be76e1/46110088811-a2/46110088811-a2.jpg?ts=1765468915555&f=auto&w=614" },
+        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/6805/274c/0b7f40ab8359/17c936993629/46110088811-p1/46110088811-p1.jpg?ts=1765468891098&f=auto&w=614" },
+        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/5897/6f1c/7a354db4a1f6/0382ebc39589/46110088811-a7/46110088811-a7.jpg?ts=1765471721561&f=auto&w=614" }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/f5c8/6732/e6c24431844e/9e505fc651df/45137089800-p1/45137089800-p1.jpg?ts=1754898351997&f=auto&w=480" },
+        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/8128/30eb/642d43d89979/6a06d97b8032/45137089811-p1/45137089811-p1.jpg?ts=1765812633010&f=auto&w=480" },
+        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        { "color": "white", "hex": "#F0F0F0", "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480" },
+        { "color": "beige", "hex": "#E6DCCF", "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480" },
+        { "color": "stone", "hex": "#CFC7BD", "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480" }
       ]
     }
   ],

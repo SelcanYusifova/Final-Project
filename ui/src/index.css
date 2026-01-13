@@ -13,3 +13,28 @@ body {
   font-weight: bold;
   font-size: 48px;
 }
+.logo-wipe {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  animation: wipeDown 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes wipeDown {
+  0% {
+    top: -100%;
+  }
+  40% {
+    top: 0%;
+  }
+  60% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}

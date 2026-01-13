@@ -1,14 +1,20 @@
-import React from 'react'
-import Navbar from './navbar'
-import {Outlet} from "react-router"
+import Navbar from "./navbar";
+import SecondaryNavbar from "../components/secondaryNavbar";
+import { Outlet, useLocation } from "react-router-dom";
 
 function Layout() {
-    return (
-        <>
-            <Navbar />
-            <Outlet />
-        </>
-    )
+  const location = useLocation();
+
+  const showSecondaryNavbar =
+    location.pathname.split("/").length >= 3;
+
+  return (
+    <>
+      <Navbar />
+      {showSecondaryNavbar && <SecondaryNavbar />}
+      <Outlet />
+    </>
+  );
 }
 
-export default Layout
+export default Layout;

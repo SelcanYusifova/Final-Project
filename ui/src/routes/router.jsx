@@ -20,7 +20,6 @@ export const route = createBrowserRouter([
                 path: "/about",
             },
             {
-                // Bu route hər alt kateqoriya üçün işləyəcək
                 element: <SubcategoryPage />,
                 path: "/:categorySlug/:subcategorySlug",
             },
