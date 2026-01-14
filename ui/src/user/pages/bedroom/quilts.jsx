@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import FullScreenLoader from '../../components/fullScreenLoader'
+import SecondaryNavbar from '../../components/secondaryNavbar'
+import Bedroomquilts from '../../components/bedroomquilts'
 
 function Quilts() {
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+   const [colSize, setColSize] = useState(3);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/bedroomquilts")
+      .then(res => res.json())
+      .then((pro) => {
+        setTimeout(() => {
+          setData(pro)
+          setLoading(false)
+        }, 1000)
+      })
+  }, [])
+
+  if (loading) {
+    return <FullScreenLoader />
+  }
+
   return (
-      <>
-      <div>
-        Bedroom
-      </div>
-      </>
+    <>
+      <SecondaryNavbar colSize={colSize} setColSize={setColSize} />
+      <div className='row flex px-4 mt-[240px] '>
+  {data.map(e => (
+    <Bedroomquilts pro={e} key={e.id} colSize={colSize} />
+  ))}
+</div>
+
+    </>
   )
 }
 

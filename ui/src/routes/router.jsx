@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "../user/layout/Layout";
-import Home from "../user/pages/Home";
 import About from "../user/pages/About";
-import Login from "../user/pages/Login";
 import Register from "../user/pages/Register";
 import SubcategoryPage from "../user/pages/SubcategoryPage";
+import Login from "../user/pages/login";
+import Home from "../user/pages/home";
+import Help from "../user/pages/help";
 
 export const route = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ export const route = createBrowserRouter([
             {
                 element: <About />,
                 path: "/about",
+            }, 
+            {
+                element: <Help />,
+                path: "/help",
             },
             {
                 element: <SubcategoryPage />,

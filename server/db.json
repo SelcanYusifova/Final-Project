@@ -236,9 +236,368 @@
           "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
         }
       ]
+    },
+    {
+      "id": "13",
+      "name": "Sateen Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/8fd9/2b85/b1dd4c48a4f2/3922df93aaa0/41100088733-a7/41100088733-a7.jpg?ts=1764581961256&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/8825/7c92/b0c2477a9974/d2742fdee447/41100088802-a7/41100088802-a7.jpg?ts=1767614583935&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Cotton Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#975D44",
+          "image": "https://static.zarahome.net/assets/public/7991/16c1/5a154d5c94a4/4ed77b8e4153/46173091737-p1/46173091737-p1.jpg?ts=1767600178358&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Luxury Bedsheet",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/ae86/9610/e8e240f0b436/86319b506407/41100089250-p1/41100089250-p1.jpg?ts=1754898327830&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/d727/4238/9df441ba9880/4fde3091c889/41100089733-p1/41100089733-p1.jpg?ts=1754898328283&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/4fa2/c82f/ae4b428e8435/482fd198985c/41100089802-p1/41100089802-p1.jpg?ts=1765468915928&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Percale Duvet Cover",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9682/628f/e2ce4eb8bad8/9a36908a46fe/41100095250-p1/41100095250-p1.jpg?ts=1754897099536&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/bd99/1baa/2be649c3bc21/3b99f4a1bfdd/41100095733-p1/41100095733-p1.jpg?ts=1754897102531&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/d9af/bc55/aed54f66a18c/06d2feae018b/41100095802-p1/41100095802-p1.jpg?ts=1765468903330&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Linen Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/8d31/dcbf/369c46e689e2/0eb8c86451ee/40035089712-p1/40035089712-p1.jpg?ts=1754898331757&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/7628/33d1/da2f47dd99ea/64a85745bf2a/47190089710-p1/47190089710-p1.jpg?ts=1754993379967&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/0fce/0ed9/28cb4c6780e3/b90511af7000/40038089676-p1/40038089676-p1.jpg?ts=1755701028046&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Silk Pillowcase",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/c647/17b5/93ce414dbe3d/cc2d84a39eca/40056091250-p1/40056091250-p1.jpg?ts=1756125990192&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/0ebb/b2ef/d04a40569500/858307ec711a/40055091721-p1/40055091721-p1.jpg?ts=1754897203812&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/aff9/ae95/9c7e495e8c15/bc59c0fa9672/40057091832-p1/40057091832-p1.jpg?ts=1754897204313&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Hotel Duvet Cover",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/381a/3a71/3d784eb0b40f/331f7a6cfdb8/40131091710-p1/40131091710-p1.jpg?ts=1765957447267&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#975D44",
+          "image": "https://static.zarahome.net/assets/public/d50e/07fd/71fd40dc9b64/e6a42bb35111/40034091701-p1/40034091701-p1.jpg?ts=1762341289862&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/f3ab/e1c0/fd44459ea6b6/abbab6afe991/43150008250-a7/43150008250-a7.jpg?ts=1749809865742&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b386/a28d/05ba4837a6b4/51e13d63472c/43150008052-a7/43150008052-a7.jpg?ts=1749562799537&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/44dc/5f03/958a490a897c/ec6617be76e1/46110088811-a2/46110088811-a2.jpg?ts=1765468915555&f=auto&w=614"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/6805/274c/0b7f40ab8359/17c936993629/46110088811-p1/46110088811-p1.jpg?ts=1765468891098&f=auto&w=614"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/5897/6f1c/7a354db4a1f6/0382ebc39589/46110088811-a7/46110088811-a7.jpg?ts=1765471721561&f=auto&w=614"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/f5c8/6732/e6c24431844e/9e505fc651df/45137089800-p1/45137089800-p1.jpg?ts=1754898351997&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/8128/30eb/642d43d89979/6a06d97b8032/45137089811-p1/45137089811-p1.jpg?ts=1765812633010&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Classic Bedsheet Set",
+      "variants": [
+        {
+          "color": "white",
+          "hex": "#F0F0F0",
+          "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
+        },
+        {
+          "color": "beige",
+          "hex": "#E6DCCF",
+          "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
+        },
+        {
+          "color": "stone",
+          "hex": "#CFC7BD",
+          "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+        }
+      ]
     }
   ],
-   "bedroombedspreads": [
+  "bedroombedspreads": [
+    {
+      "id": "1",
+      "name": "Classic Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/b772/9800/770245d0a4c4/84d45b1f3596/46134088712-p1/46134088712-p1.jpg?ts=1761215044641&f=auto&w=960"
+    },
+    {
+      "id": "2",
+      "name": "Luxury Sateen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/d74e/8336/a9c145dd8720/1fa3512ff5cd/47190088802-p1/47190088802-p1.jpg?ts=1754993402874&f=auto&w=960"
+    },
+    {
+      "id": "3",
+      "name": "Soft Linen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/d74e/8336/a9c145dd8720/1fa3512ff5cd/47190088802-p1/47190088802-p1.jpg?ts=1754993402874&f=auto&w=960"
+    },
+    {
+      "id": "4",
+      "name": "Premium Hotel Bedspread",
+      "image": "https://static.zarahome.net/assets/public/1714/35c1/24654b21a552/3d784d358a5a/45131088712-p1/45131088712-p1.jpg?ts=1742919334777&f=auto&w=480"
+    },
+    {
+      "id": "5",
+      "name": "Minimal White Bedspread",
+      "image": "https://static.zarahome.net/assets/public/ea1f/c4ac/d1cb4b2e8bd2/14e5f41c84d1/46190088700-p1/46190088700-p1.jpg?ts=1764172535473&f=auto&w=480"
+    },
+    {
+      "id": "6",
+      "name": "Stonewashed Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/380b/5b68/e78144c1bff7/091c379b027a/46111088250-p1/46111088250-p1.jpg?ts=1755073453180&f=auto&w=480"
+    },
+    {
+      "id": "7",
+      "name": "Elegant Neutral Bedspread",
+      "image": "https://static.zarahome.net/assets/public/abe5/7411/c63443fdb1a7/aeeca9953693/46105088712-p1/46105088712-p1.jpg?ts=1755531619804&f=auto&w=960"
+    },
+    {
+      "id": "8",
+      "name": "Modern Beige Bedspread",
+      "image": "https://static.zarahome.net/assets/public/dc4f/71a3/6c544e629d42/927ada8987a6/42187088251-p1/42187088251-p1.jpg?ts=1754895592713&f=auto&w=960"
+    },
+    {
+      "id": "9",
+      "name": "Natural Stone Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a567/12b5/49ce415ca54f/0053a7d42862/41132005500-p1/41132005500-p1.jpg?ts=1762252503287&f=auto&w=480"
+    },
+    {
+      "id": "10",
+      "name": "Organic Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/4cfc/151f/63284e2fb129/be50a44f8740/49159088712-p1/49159088712-p1.jpg?ts=1750061981964&f=auto&w=960"
+    },
+    {
+      "id": "11",
+      "name": "Soft Touch Bedspread",
+      "image": "https://static.zarahome.net/assets/public/fde1/27f8/2e4a49108d09/84edb6672985/45399004500-a7/45399004500-a7.jpg?ts=1761122437406&f=auto&w=480"
+    },
+    {
+      "id": "12",
+      "name": "Timeless White Bedspread",
+      "image": "https://static.zarahome.net/assets/public/f976/d919/c06948f2bb41/e21585bb0b46/45386008600-p1/45386008600-p1.jpg?ts=1761830597632&f=auto&w=480"
+    },
+    {
+      "id": "13",
+      "name": "Cozy Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/054a/5606/cf1349048a17/f72e3ec378ec/46319008700-p1/46319008700-p1.jpg?ts=1761838933768&f=auto&w=480"
+    },
+    {
+      "id": "14",
+      "name": "Urban Style Bedspread",
+      "image": "https://static.zarahome.net/assets/public/1872/1c73/9628464192d2/8433ab989be6/41132007710-p1/41132007710-p1.jpg?ts=1762252510509&f=auto&w=480"
+    },
+    {
+      "id": "15",
+      "name": "Calm Beige Bedspread",
+      "image": "https://static.zarahome.net/assets/public/5afc/4f2c/b7cd48f5a4a2/60680f0dbb5e/45376008500-p1/45376008500-p1.jpg?ts=1759840013396&f=auto&w=480"
+    },
+    {
+      "id": "16",
+      "name": "Warm Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/6be0/1727/613a4dfb9bf0/c213bd11c647/45372008052-p1/45372008052-p1.jpg?ts=1760002166141&f=auto&w=480"
+    },
+    {
+      "id": "17",
+      "name": "Hotel Comfort Bedspread",
+      "image": "https://static.zarahome.net/assets/public/875d/ab46/07054ac194e1/dfaf97d816ee/45365008620-p1/45365008620-p1.jpg?ts=1756190021096&f=auto&w=480"
+    },
+    {
+      "id": "18",
+      "name": "Pure Linen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/acdd/0de3/100442958d02/a5de9e543993/43148004067-p1/43148004067-p1.jpg?ts=1761571286187&f=auto&w=480"
+    },
+    {
+      "id": "19",
+      "name": "Soft Neutral Bedspread",
+      "image": "https://static.zarahome.net/assets/public/ae20/759d/a3fd4858b5e0/ebc9e7f44e50/45357008052-p1/45357008052-p1.jpg?ts=1753890830068&f=auto&w=480"
+    },
+    {
+      "id": "20",
+      "name": "Modern Classic Bedspread",
+      "image": "https://static.zarahome.net/assets/public/94d9/c6de/5d254704be47/111051e048cf/45351008700-p1/45351008700-p1.jpg?ts=1760007249103&f=auto&w=480"
+    },
+    {
+      "id": "21",
+      "name": "Premium Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/3ba6/d1b4/45f04f71b409/df755c703f54/42342008406-p1/42342008406-p1.jpg?ts=1759310397862&f=auto&w=480"
+    },
+    {
+      "id": "22",
+      "name": "Luxury Comfort Bedspread",
+      "image": "https://static.zarahome.net/assets/public/ee43/4751/f6c145ac9a28/dbc3762e0a76/45345008712-p1/45345008712-p1.jpg?ts=1755701072702&f=auto&w=480"
+    },
+    {
+      "id": "23",
+      "name": "Elegant Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/79e2/6d52/92d94bbcade3/4c246c016f2d/45331008526-p1/45331008526-p1.jpg?ts=1751540943874&f=auto&w=480"
+    },
+    {
+      "id": "24",
+      "name": "Soft Living Bedspread",
+      "image": "https://static.zarahome.net/assets/public/79e2/6d52/92d94bbcade3/4c246c016f2d/45331008526-p1/45331008526-p1.jpg?ts=1751540943874&f=auto&w=480"
+    }
+  ],
+  "bedroomcushionandthrows": [
     {
       "id": "1",
       "name": "Sateen Pillowcase",
@@ -475,6 +834,250 @@
           "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
         }
       ]
+    }
+  ],
+  "bedroomduvetcovers": [
+    {
+      "id": "1",
+      "name": "Classic Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a17b/0294/067b49a9bb49/3e564913039c/45125088512-a7/45125088512-a7.jpg?ts=1752680213244&f=auto&w=614"
+    },
+    {
+      "id": "2",
+      "name": "Luxury Sateen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/929c/99b5/c9be4d9782f2/d98d85d680ef/46115088250-a7/46115088250-a7.jpg?ts=1761123824662&f=auto&w=614"
+    },
+    {
+      "id": "3",
+      "name": "Soft Linen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/9e85/b2d9/c36d4f858825/dcc705710d4b/47172088250-a7/47172088250-a7.jpg?ts=1747729413606&f=auto&w=614"
+    },
+    {
+      "id": "4",
+      "name": "Premium Hotel Bedspread",
+      "image": "https://static.zarahome.net/assets/public/8f49/b4d9/d6c9497a9dd3/4d400d63898c/46111088250-a7/46111088250-a7.jpg?ts=1754906366383&f=auto&w=614"
+    },
+    {
+      "id": "5",
+      "name": "Minimal White Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a7ff/3a77/45c747edb1dd/ebcb68e3a214/40030088731-a7/40030088731-a7.jpg?ts=1753344120391&f=auto&w=614"
+    },
+    {
+      "id": "6",
+      "name": "Stonewashed Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/668e/72d3/73174c01b4e1/6a116bbc4491/49152088251-a7/49152088251-a7.jpg?ts=1746437028886&f=auto&w=614"
+    },
+    {
+      "id": "7",
+      "name": "Elegant Neutral Bedspread",
+      "image": "https://static.zarahome.net/assets/public/00a9/3298/ef71404ca9e1/3dec75a8078c/45131088712-a1/45131088712-a1.jpg?ts=1742919332710&f=auto&w=614"
+    },
+    {
+      "id": "8",
+      "name": "Modern Beige Bedspread",
+      "image": "https://static.zarahome.net/assets/public/30d2/08ff/78b94ba1b976/2d309786bb79/45131088712-a3/45131088712-a3.jpg?ts=1742919334461&f=auto&w=614"
+    },
+    {
+      "id": "9",
+      "name": "Natural Stone Bedspread",
+      "image": "https://static.zarahome.net/assets/public/c5a5/51b8/1b5d4ae68818/2da34f989435/47199088814-a7/47199088814-a7.jpg?ts=1758786615467&f=auto&w=614"
+    },
+    {
+      "id": "10",
+      "name": "Organic Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/452d/cf62/9ded453f9c36/2ea2f7302312/46105088712-a7/46105088712-a7.jpg?ts=1755598973523&f=auto&w=614"
+    },
+    {
+      "id": "11",
+      "name": "Soft Touch Bedspread",
+      "image": "https://static.zarahome.net/assets/public/20c0/49d2/61c84f96895e/e0892aac9f8b/46123088712-a2/46123088712-a2.jpg?ts=1760517146529&f=auto&w=614"
+    },
+    {
+      "id": "12",
+      "name": "Timeless White Bedspread",
+      "image": "https://static.zarahome.net/assets/public/391f/1737/cf1a4c11b710/739257428e1b/46123088712-a3/46123088712-a3.jpg?ts=1760517146578&f=auto&w=614"
+    },
+    {
+      "id": "13",
+      "name": "Cozy Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/84df/44a8/bfc24657a364/b5ffdd252057/46123088712-a4/46123088712-a4.jpg?ts=1760517146839&f=auto&w=614"
+    },
+    {
+      "id": "14",
+      "name": "Urban Style Bedspread",
+      "image": "https://static.zarahome.net/assets/public/84df/44a8/bfc24657a364/b5ffdd252057/46123088712-a4/46123088712-a4.jpg?ts=1760517146839&f=auto&w=614"
+    },
+    {
+      "id": "15",
+      "name": "Calm Beige Bedspread",
+      "image": "https://static.zarahome.net/assets/public/540c/a652/21a14b6c9f4b/552db65cb3d6/46112088250-a2/46112088250-a2.jpg?ts=1755169781450&f=auto&w=614"
+    },
+    {
+      "id": "16",
+      "name": "Warm Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/99d7/e0f7/73464c429659/f2f290c149b3/49143088251-a7/49143088251-a7.jpg?ts=1747836162011&f=auto&w=614"
+    },
+    {
+      "id": "17",
+      "name": "Hotel Comfort Bedspread",
+      "image": "https://static.zarahome.net/assets/public/40ac/4140/8f8c40958c0e/2e95779f7ae5/49143088251-a1/49143088251-a1.jpg?ts=1749046175311&f=auto&w=614"
+    },
+    {
+      "id": "18",
+      "name": "Pure Linen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/46f9/36ce/e60444d58143/bdcaed9818a9/49159091712-a1/49159091712-a1.jpg?ts=1750061986858&f=auto&w=440"
+    },
+    {
+      "id": "19",
+      "name": "Soft Neutral Bedspread",
+      "image": "https://static.zarahome.net/assets/public/663f/73fc/af4e4ad3a7b5/dfb6033299aa/40032088731-a2/40032088731-a2.jpg?ts=1756308952667&f=auto&w=614"
+    },
+    {
+      "id": "20",
+      "name": "Modern Classic Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a3fa/e274/46504ffa98b7/d7acd2677b48/45125088512-a2/45125088512-a2.jpg?ts=1753108360676&f=auto&w=614"
+    },
+    {
+      "id": "21",
+      "name": "Premium Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/7b71/ef25/e18d4e3a8400/59667196a82d/46190088700-a7/46190088700-a7.jpg?ts=1764060689497&f=auto&w=614"
+    },
+    {
+      "id": "22",
+      "name": "Luxury Comfort Bedspread",
+      "image": "https://static.zarahome.net/assets/public/cf4c/49ab/b9744011aeda/1a33be01e1e6/46190088700-a2/46190088700-a2.jpg?ts=1764172537169&f=auto&w=614"
+    },
+    {
+      "id": "23",
+      "name": "Elegant Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/c162/7840/99ac450d9a27/df6634568344/46134088712-a2/46134088712-a2.jpg?ts=1761215043937&f=auto&w=614"
+    },
+    {
+      "id": "24",
+      "name": "Soft Living Bedspread",
+      "image": "https://static.zarahome.net/assets/public/dd27/fd4e/10c6425c823a/305caa100e59/47190088802-a2/47190088802-a2.jpg?ts=1754993375655&f=auto&w=614"
+    }
+  ],
+  "bedroomquilts": [
+    {
+      "id": "1",
+      "name": "Classic Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/6d78/8f2e/b3d64d69b29e/3336d5dab26b/41122005251-a7/41122005251-a7.jpg?ts=1754927327840&f=auto&w=320"
+    },
+    {
+      "id": "2",
+      "name": "Luxury Sateen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/550a/11bf/0a5f4903af74/770ce0dcc777/47631006600-a7/47631006600-a7.jpg?ts=1755070119282&f=auto&w=320"
+    },
+    {
+      "id": "3",
+      "name": "Soft Linen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/e7ce/9dba/d703460884d0/7ab394e96a5c/40611006712-a7/40611006712-a7.jpg?ts=1766496286330&f=auto&w=320"
+    },
+    {
+      "id": "4",
+      "name": "Premium Hotel Bedspread",
+      "image": "https://static.zarahome.net/assets/public/3c60/fae6/2f444bef96bf/873e19084fc8/44692006727-a7/44692006727-a7.jpg?ts=1745585252722&f=auto&w=320"
+    },
+    {
+      "id": "5",
+      "name": "Minimal White Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a6b9/6f4b/f33849c4a96c/8aaa5e54328c/40611005670-a7/40611005670-a7.jpg?ts=1766397281573&f=auto&w=320"
+    },
+    {
+      "id": "6",
+      "name": "Stonewashed Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/eadc/5d8e/04514bde9230/b11317ce477a/46113007251-a7/46113007251-a7.jpg?ts=1767088608020&f=auto&w=320"
+    },
+    {
+      "id": "7",
+      "name": "Elegant Neutral Bedspread",
+      "image": "https://static.zarahome.net/assets/public/216c/3408/73bb490bb8dd/da3c55802d8e/41197007710-a7/41197007710-a7.jpg?ts=1762354960287&f=auto&w=320"
+    },
+    {
+      "id": "8",
+      "name": "Modern Beige Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a69d/956d/e7204a3b98cb/b94d3e42f459/40612007670-a7/40612007670-a7.jpg?ts=1766146293312&f=auto&w=320"
+    },
+    {
+      "id": "9",
+      "name": "Natural Stone Bedspread",
+      "image": "https://static.zarahome.net/assets/public/bff1/2642/015645a7aa82/97e05247a06d/45110005721-a7/45110005721-a7.jpg?ts=1764323233429&f=auto&w=320"
+    },
+    {
+      "id": "10",
+      "name": "Organic Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/6386/34c6/60e643999d45/d034349bf539/44680005400-a7/44680005400-a7.jpg?ts=1749745085185&f=auto&w=320"
+    },
+    {
+      "id": "11",
+      "name": "Soft Touch Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a726/051b/a61246bcaf3f/1ecb195d7b76/44680007400-a7/44680007400-a7.jpg?ts=1749803657449&f=auto&w=320"
+    },
+    {
+      "id": "12",
+      "name": "Timeless White Bedspread",
+      "image": "https://static.zarahome.net/assets/public/6484/021c/42ff4b97848d/21ad07d8d393/41604005401-a7/41604005401-a7.jpg?ts=1765984081887&f=auto&w=320"
+    },
+    {
+      "id": "13",
+      "name": "Cozy Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/59c1/dbe2/f0d040d6a000/f554175dc7a0/41604007401-a7/41604007401-a7.jpg?ts=1765882468662&f=auto&w=320"
+    },
+    {
+      "id": "14",
+      "name": "Urban Style Bedspread",
+      "image": "https://static.zarahome.net/assets/public/fbc1/6412/52f24e5ab90e/52912dfb2ea7/41603005500-a7/41603005500-a7.jpg?ts=1763560961472&f=auto&w=320"
+    },
+    {
+      "id": "15",
+      "name": "Calm Beige Bedspread",
+      "image": "https://static.zarahome.net/assets/public/e287/9fb6/fbd0461ab70c/39ccdcee18b3/47103007526-a7/47103007526-a7.jpg?ts=1765900427153&f=auto&w=320"
+    },
+    {
+      "id": "16",
+      "name": "Warm Cotton Bedspread",
+      "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
+    },
+    {
+      "id": "17",
+      "name": "Hotel Comfort Bedspread",
+      "image": "https://static.zarahome.net/assets/public/5eb7/c48c/df404030bdc5/9dadb921cd62/40124005307-a7/40124005307-a7.jpg?ts=1744640641571&f=auto&w=320"
+    },
+    {
+      "id": "18",
+      "name": "Pure Linen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/8cb3/fd51/69fe417b9852/223da62c2021/41128005811-a7/41128005811-a7.jpg?ts=1759329084149&f=auto&w=320"
+    },
+    {
+      "id": "19",
+      "name": "Soft Neutral Bedspread",
+      "image": "https://static.zarahome.net/assets/public/c2fa/68ae/72ce4fc583d3/57f687fbdf30/44645007104-a7/44645007104-a7.jpg?ts=1754924827110&f=auto&w=320"
+    },
+    {
+      "id": "20",
+      "name": "Modern Classic Bedspread",
+      "image": "https://static.zarahome.net/assets/public/7d88/3316/f8c64a428fa9/2fd303820eb4/44640005300-a7/44640005300-a7.jpg?ts=1752572923652&f=auto&w=320"
+    },
+    {
+      "id": "21",
+      "name": "Premium Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/e8f2/626e/19ec4913b1ae/ed5b5e34ed76/44694005712-a7/44694005712-a7.jpg?ts=1755791417756&f=auto&w=320"
+    },
+    {
+      "id": "22",
+      "name": "Luxury Comfort Bedspread",
+      "image": "https://static.zarahome.net/assets/public/d59a/8154/00824fc2bdd2/4b4e83eea0fc/41170006052-a7/41170006052-a7.jpg?ts=1767948971271&f=auto&w=320"
+    },
+    {
+      "id": "23",
+      "name": "Elegant Home Bedspread",
+      "image": "https://static.zarahome.net/assets/public/a956/06a4/a9a248199d26/9bee5ee8f028/41128005922-a7/41128005922-a7.jpg?ts=1759851849746&f=auto&w=320"
+    },
+    {
+      "id": "24",
+      "name": "Soft Living Bedspread",
+      "image": "https://static.zarahome.net/assets/public/daa7/2e49/3e304a37a8d6/9424b5de25d2/47631007600-a7/47631007600-a7.jpg?ts=1758199539649&f=auto&w=320"
     }
   ],
   "users": [

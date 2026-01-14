@@ -45,6 +45,7 @@ function Login() {
                             theme: "light",
                             transition: Bounce,
                         });
+                        localStorage.setItem("id", founded.id)
                         navigate("/")
                         setBool(false)
                     } else {

@@ -7,6 +7,60 @@
   </head>
   <body>
     <div id="root"></div>
+<script>
+/*
+Want to customize your button? visit our documentation page:
+https://login.equalweb.com/custom-button
+*/
+window.interdeal = {
+    get sitekey (){ return "fcf22d7ec8e3961722d660204a7af5d8"} ,
+    get domains(){
+        return {
+            "js": "https://cdn.equalweb.com/",
+            "acc": "https://access.equalweb.com/"
+        }
+    },
+    "Position": "right",
+    "Menulang": "EN",
+    "draggable": true,
+    "btnStyle": {
+        "vPosition": [
+            "80%",
+            "80%"
+        ],
+        "margin": [
+            "0",
+            "0"
+        ],
+        "scale": [
+            "0.5",
+            "0.5"
+        ],
+        "color": {
+            "main": "#1c4bb6",
+            "second": "#ffffff"
+        },
+        "icon": {
+            "outline": true,
+            "outlineColor": "#ffffff",
+            "type":  2 ,
+            "shape": "circle"
+        }
+    },
+                            "showTooltip": true,
+      
+};
+
+(function(doc, head, body){
+    var coreCall             = doc.createElement('script');
+    coreCall.src             = interdeal.domains.js + 'core/5.2.4/accessibility.js';
+    coreCall.defer           = true;
+    coreCall.integrity       = 'sha512-EuBSvNEVtJiE0GAEIBk3f5CXEIRBX+My0TWG431iOl5KmATPwveYaUX8NftlPwBjDRsItN8g295hkfhsZoeJHQ==';
+    coreCall.crossOrigin     = 'anonymous';
+    coreCall.setAttribute('data-cfasync', true );
+    body? body.appendChild(coreCall) : head.appendChild(coreCall);
+})(document, document.head, document.body);
+</script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Beddingproducts from '../../components/beddingProducts'
 import FullScreenLoader from '../../components/fullScreenLoader'
+import SecondaryNavbar from '../../components/secondaryNavbar'
+import Bedspreadsproducts from '../../components/bedspreadsProducts'
 
 function Bedspreads() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
+   const [colSize, setColSize] = useState(3);
 
   useEffect(() => {
     fetch("http://localhost:3000/bedroombedspreads")
@@ -22,11 +24,15 @@ function Bedspreads() {
   }
 
   return (
-    <div className='row flex px-4 mt-[240px] '>
-      {data.map(e => (
-        <Beddingproducts pro={e} key={e.id} />
-      ))}
-    </div>
+    <>
+      <SecondaryNavbar colSize={colSize} setColSize={setColSize} />
+      <div className='row flex px-4 mt-[240px] '>
+  {data.map(e => (
+    <Bedspreadsproducts pro={e} key={e.id} colSize={colSize} />
+  ))}
+</div>
+
+    </>
   )
 }
 

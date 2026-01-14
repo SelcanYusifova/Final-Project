@@ -3,9 +3,19 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegUser } from "react-icons/fa6";
 import { FiHelpCircle } from "react-icons/fi";
 import { BsBasket3 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const [bool, setbool] = useState(false)
+  useEffect(() => {
+    let id = localStorage.getItem("id");
+    if (id) {
+      setbool(true);
+    }
+  }, []);
+  const logOut = () => {
+    localStorage.removeItem("id");
+  }
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
 
@@ -72,7 +82,7 @@ function Navbar() {
                 "
               />
 
-              <span
+              <Link to={"/"}
                 className="
                   logo cursor-pointer
                   transition-transform duration-[0.4s]
@@ -81,7 +91,7 @@ function Navbar() {
                 "
               >
                 LUMERA
-              </span>
+              </Link>
             </div>
           </div>
 
@@ -95,11 +105,13 @@ function Navbar() {
           <div className="col-lg-5 flex justify-end items-center gap-[16px] cursor-pointer">
             <div className="flex items-center gap-[6px] leading-none">
               <FaRegUser className="text-[18px]" />
-              <Link to="/login" className="text-[12px] font-[600]">LOG IN</Link>
+              {
+                bool ? <NavLink to={"login"} onClick={logOut} className="text-[12px] font-[600]">LOG OUT</NavLink> : <NavLink to={"login"} className="text-[12px] font-[600]">LOG IN</NavLink>
+              }
             </div>
             <div className="flex items-center gap-[6px] leading-none">
               <FiHelpCircle className="text-[18px]" />
-              <span className="text-[12px] font-[600]">HELP</span>
+              <Link to={"/help"} className="text-[12px] font-[600]">HELP</Link>
             </div>
             <div className="flex items-center gap-[6px] leading-none">
               <BsBasket3 className="text-[18px]" />

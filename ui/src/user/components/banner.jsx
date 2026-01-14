@@ -15,6 +15,7 @@ function Banner() {
           objectFit: "cover",
         }}
       />
+      <img src="https://static.zarahome.net/assets/public/2999/6c9d/61324e788958/7e5d9e406521/noventa_ww/noventa_ww.jpg?ts=1740560261257&update=202503201755&w=1920" alt="" />
     </div>
   );
 }
