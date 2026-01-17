@@ -171,7 +171,7 @@ function Login() {
                     </div>
 
                     <button
-                        className="
+                        className="w-full
                   bg-black text-white
                   px-[48px] py-[12px]
                   text-[12px] font-[600]
@@ -183,7 +183,8 @@ function Login() {
                         GO
                     </button>
 
-                    <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
+                 <div className="flex justify-between">
+                       <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
                         Don't you have account?{" "}
                         <Link
                             to="/register"
@@ -193,6 +194,16 @@ function Login() {
                         </Link>
 
                     </p>
+                       <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
+                        <Link
+                            to="/"
+                            className="underline font-[500] hover:opacity-70"
+                        >
+                            Guest
+                        </Link>
+
+                    </p>
+                 </div>
                     <p className="mt-[24px] text-[14px] font-[500] font-[500]">
                         <Link
                             to="/forgotpassword"

@@ -9,6 +9,7 @@ import ProductDetail from "../user/pages/productDetail";
 import About from "../user/pages/about";
 import Forgotpassword from "../user/pages/forgotpassword";
 import ResetPassword from "../user/pages/resetpassword";
+import Basket from "../user/components/basket";
 
 export const route = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ export const route = createBrowserRouter([
             {
                 element: <Help />,
                 path: "/help",
+            },
+            
+            {
+                element: <Basket />,
+                path: "/basket",
             },
 
             {

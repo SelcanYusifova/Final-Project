@@ -4176,7 +4176,7 @@
       "firstname": "Selcan",
       "lastname": "Yusifova",
       "email": "syusifova181@gmail.com",
-      "pass": "salam"
+      "pass": "123"
     }
   ],
   "categories": [
@@ -4417,6 +4417,20 @@
       "slug": "pets-collection",
       "title": "PETS COLLECTION",
       "subcategories": []
+    }
+  ],
+  "basket": [
+    {
+      "id": "c321",
+      "productId": "2r",
+      "name": "Luxury Sateen Bedspread",
+      "image": "https://static.zarahome.net/assets/public/d74e/8336/a9c145dd8720/1fa3512ff5cd/47190088802-p1/47190088802-p1.jpg?ts=1754993402874&f=auto&w=960",
+      "color": null,
+      "colorHex": null,
+      "size": "Double",
+      "price": 249,
+      "oldPrice": 399,
+      "quantity": 7
     }
   ]
 }

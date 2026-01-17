@@ -113,10 +113,12 @@ function Navbar() {
               <FiHelpCircle className="text-[18px]" />
               <Link to={"/help"} className="text-[12px] font-[600]">HELP</Link>
             </div>
-            <div className="flex items-center gap-[6px] leading-none">
+            <NavLink to={"basket"}>
+              <div className="flex items-center gap-[6px] leading-none">
               <BsBasket3 className="text-[18px]" />
               <span className="text-[12px] font-[600]">BASKET</span>
             </div>
+            </NavLink>
           </div>
 
         </div>

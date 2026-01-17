@@ -8,10 +8,10 @@ function Help() {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_3prylp8",      // Sənin Service ID
-      "template_3jca0tp",     // Sənin Template ID
+      "service_3prylp8",      
+      "template_3jca0tp",     
       e.target,
-      "qn5HIhBnGTdL6gST0"     // Sənin Public Key
+      "qn5HIhBnGTdL6gST0"     
     )
     .then((result) => {
       toast.success("Mesaj göndərildi! Tezliklə sizinlə əlaqə saxlanacaq.", {
@@ -19,7 +19,7 @@ function Help() {
         autoClose: 5000,
         transition: Bounce
       });
-      e.target.reset(); // Formu sıfırlayır
+      e.target.reset(); 
     }, (error) => {
       toast.error("Xəta baş verdi: " + error.text, {
         position: "top-center",
@@ -32,7 +32,7 @@ function Help() {
   return (
     <div className="max-w-[1200px] mx-auto px-[24px] py-[80px] mt-[100px]">
 
-      {/* Başlıq */}
+      
       <h1 className="text-[32px] md:text-[40px] font-semibold mb-[24px]">
         Help & Customer Service
       </h1>
@@ -40,7 +40,6 @@ function Help() {
         Find answers to our most frequently asked questions or contact our support team.
       </p>
 
-      {/* Help info bölmələri */}
       <div className="flex flex-col gap-[32px]">
 
         <div className="border-b border-gray-200 pb-[24px]">
@@ -73,7 +72,7 @@ function Help() {
 
       </div>
 
-      {/* Contact Form */}
+\
       <div className="mt-[64px] border-t border-gray-200 pt-[32px]">
         <h2 className="text-[24px] font-semibold mb-[16px]">Contact Us</h2>
         <p className="text-gray-600 mb-[24px]">
@@ -82,7 +81,6 @@ function Help() {
 
         <form onSubmit={sendEmail} className="flex flex-col gap-[32px] max-w-[420px]">
           
-          {/* Name */}
           <div className="relative">
             <input
               type="text"
@@ -99,7 +97,7 @@ function Help() {
             </label>
           </div>
 
-          {/* Email */}
+       
           <div className="relative">
             <input
               type="email"
@@ -116,7 +114,7 @@ function Help() {
             </label>
           </div>
 
-          {/* Message */}
+       
           <div className="relative">
             <textarea
               name="message"
@@ -132,7 +130,7 @@ function Help() {
             </label>
           </div>
 
-          {/* Submit Button */}
+     
           <button
             type="submit"
             className="w-full bg-black text-white px-[48px] py-[12px] text-[12px] font-[600] tracking-widest transition hover:bg-[#1E1E1E] cursor-pointer"

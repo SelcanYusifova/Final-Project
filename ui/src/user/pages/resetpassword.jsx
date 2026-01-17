@@ -9,7 +9,7 @@ function ResetPassword() {
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
 
-  const [submitted, setSubmitted] = useState(false); // inline validation
+  const [submitted, setSubmitted] = useState(false); 
   const [userNotFound, setUserNotFound] = useState(false);
   const [passwordMismatch, setPasswordMismatch] = useState(false);
 
@@ -60,20 +60,19 @@ function ResetPassword() {
   return (
     <div className="min-h-screen flex bg-white">
 
-      {/* LEFT IMAGE */}
+   
       <div
         className="hidden lg:block w-1/2 bg-cover bg-center"
         style={{ backgroundImage: "url('https://static.zarahome.net/assets/public/7d07/fdf6/683344e29e9a/44aa83265c4b/index/index.jpg?ts=1726667724254&d=20260106')" }}
       />
 
-      {/* RIGHT FORM */}
+     
       <div className="w-full lg:w-1/2 flex items-center">
         <form className="w-full max-w-[420px] mx-auto px-6" onSubmit={handleReset}>
           <h2 className="text-[20px] font-[600] tracking-wide mb-[48px] text-center">
             Reset Password
           </h2>
 
-          {/* New Password */}
           <div className="relative mb-[32px]">
             <input
               type={showPass ? "text" : "password"}
@@ -110,7 +109,6 @@ function ResetPassword() {
             </button>
           </div>
 
-          {/* Confirm Password */}
           <div className="relative mb-[48px]">
             <input
               type={showConfirmPass ? "text" : "password"}

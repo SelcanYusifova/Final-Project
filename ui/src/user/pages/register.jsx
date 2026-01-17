@@ -258,7 +258,7 @@ function Register() {
                     </div>
 
                     <button
-                        className="
+                        className="w-full
               bg-black text-white
               px-[48px] py-[12px]
               text-[12px] font-[600]
@@ -269,16 +269,27 @@ function Register() {
                     >
                         GO
                     </button>
+                    <div className="flex justify-between">
 
-                    <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
-                        Have you already account?{" "}
-                        <Link
-                            to="/login"
-                            className="underline font-[500] hover:opacity-70"
-                        >
-                            Sign In
-                        </Link>
-                    </p>
+                        <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
+                            Have you already account?{" "}
+                            <Link
+                                to="/login"
+                                className="underline font-[500] hover:opacity-70"
+                            >
+                                Sign In
+                            </Link>
+                        </p>
+                        <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
+                            <Link
+                                to="/"
+                                className="underline font-[500] hover:opacity-70"
+                            >
+                                Guest
+                            </Link>
+
+                        </p>
+                    </div>
 
                 </form>
             </div >

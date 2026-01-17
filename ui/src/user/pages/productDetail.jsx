@@ -155,7 +155,7 @@ function ProductDetail() {
           </div>
         )}
 
-        <button className="w-full bg-[#e5e5e5] py-3 hover:bg-black hover:text-white transition">
+        <button className="w-full cursor-pointer bg-[#e5e5e5] py-3 hover:bg-black hover:text-white transition">
           Add to cart
         </button>
       </div>

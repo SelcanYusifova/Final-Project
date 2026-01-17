@@ -4,16 +4,15 @@ import emailjs from "@emailjs/browser";
 
 function ForgotPassword() {
     const [email, setEmail] = useState("");
-    const [submitted, setSubmitted] = useState(false); // inline validation
+    const [submitted, setSubmitted] = useState(false); 
 
     const handleForgotPassword = async (e) => {
         e.preventDefault();
         setSubmitted(true);
 
-        if (!email.trim()) return; // boşdursa yalnız inline mesaj çıxacaq
+        if (!email.trim()) return; 
 
         try {
-            // Fake API ilə istifadəçi yoxlaması
             const res = await fetch("http://localhost:3000/users");
             const data = await res.json();
             const user = data.find(u => u.email === email);
@@ -27,14 +26,13 @@ function ForgotPassword() {
                 return;
             }
 
-            // EmailJS üçün data
             const emailData = {
-                email: email,               // ⬅️ BUNU ƏLAVƏ ET
+                email: email,               
                 user_name: user.name || "User",
                 link: `http://localhost:5173/resetpassword?email=${email}`
             };
 
-            // Email göndər
+           
             await emailjs.send(
                 "service_3prylp8",
                 "template_lr2t76g",
@@ -66,13 +64,11 @@ function ForgotPassword() {
     return (
         <div className="min-h-screen flex bg-white">
 
-            {/* LEFT IMAGE */}
             <div
                 className="hidden lg:block w-1/2 bg-cover bg-center"
                 style={{ backgroundImage: "url('https://static.zarahome.net/assets/public/7d07/fdf6/683344e29e9a/44aa83265c4b/index/index.jpg?ts=1726667724254&d=20260106')" }}
             />
 
-            {/* RIGHT FORM */}
             <div className="w-full lg:w-1/2 flex items-center">
                 <form
                     className="w-full max-w-[420px] mx-auto px-6"
@@ -91,7 +87,6 @@ function ForgotPassword() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        {/* INLINE VALIDATION */}
                         {submitted && !email.trim() && (
                             <p className="text-[12px] text-red-500 font-[500] mt-[6px]">
                                 Zəhmət olmasa emailinizi daxil edin!
