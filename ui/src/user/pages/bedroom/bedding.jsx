@@ -1,37 +1,47 @@
 import React, { useEffect, useState } from "react";
-import Beddingproducts from "../../components/beddingProducts";
+import { useOutletContext } from "react-router-dom";
 import FullScreenLoader from "../../components/fullScreenLoader";
-import SecondaryNavbar from "../../components/secondaryNavbar";
+import Products from "../../components/products";
 
 function Bedding() {
+  const { colSize, setColSize } = useOutletContext(); 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [colSize, setColSize] = useState(3); // default 4 məhsul
-
   useEffect(() => {
-    fetch("http://localhost:3000/bedroombedding")
+    fetch("http://localhost:3000/allProducts")
       .then((res) => res.json())
-      .then((pro) => {
-        setTimeout(() => {
-          setData(pro);
+      .then((allProducts) => {
+        const bedroomCategory = allProducts.find(
+          (cat) => cat.categoryId === "bedroom"
+        );
+
+        if (
+          bedroomCategory &&
+          bedroomCategory.products.bedroombedding
+        ) {
+          setTimeout(() => {
+            setData(bedroomCategory.products.bedroombedding);
+            setLoading(false);
+          }, 1000);
+        } else {
           setLoading(false);
-        }, 1000);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
       });
   }, []);
 
   if (loading) return <FullScreenLoader />;
 
   return (
-    <>
-      <SecondaryNavbar colSize={colSize} setColSize={setColSize} />
-
-      <div className="row px-4 mt-[240px]">
-        {data.map((e) => (
-          <Beddingproducts key={e.id} pro={e} colSize={colSize} />
-        ))}
-      </div>
-    </>
+    <div className="row px-4 mt-[240px]">
+      {data.map((e) => (
+        <Products key={e.id} pro={e} colSize={colSize} />
+      ))}
+    </div>
   );
 }
 

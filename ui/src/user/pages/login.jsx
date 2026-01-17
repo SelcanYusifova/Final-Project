@@ -140,6 +140,7 @@ function Login() {
                         />
                         {bool && user.pass.trim() == "" && <p className="text-[12px] text-[red] font-[500] mt-[6px]">Zəhmət olmasa şifrənizi daxil edin!</p>
                         }
+
                         <label
                             htmlFor="password"
                             className="
@@ -189,6 +190,15 @@ function Login() {
                             className="underline font-[500] hover:opacity-70"
                         >
                             Sign Up
+                        </Link>
+
+                    </p>
+                    <p className="mt-[24px] text-[14px] font-[500] font-[500]">
+                        <Link
+                            to="/forgotpassword"
+                            className="hover:opacity-70"
+                        >
+                            Forgot password?
                         </Link>
                     </p>
 

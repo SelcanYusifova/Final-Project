@@ -1,39 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import FullScreenLoader from '../../components/fullScreenLoader'
-import SecondaryNavbar from '../../components/secondaryNavbar'
-import Bedspreadsproducts from '../../components/bedspreadsProducts'
+import React, { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import FullScreenLoader from "../../components/fullScreenLoader";
+import Products from "../../components/products";
 
 function Bedspreads() {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-   const [colSize, setColSize] = useState(3);
+  const { colSize, setColSize } = useOutletContext(); 
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bedroombedspreads")
-      .then(res => res.json())
-      .then((pro) => {
-        setTimeout(() => {
-          setData(pro)
-          setLoading(false)
-        }, 1000)
-      })
-  }, [])
+    fetch("http://localhost:3000/allProducts")
+      .then((res) => res.json())
+      .then((allProducts) => {
+        const bedroomCategory = allProducts.find(
+          (cat) => cat.categoryId === "bedroom"
+        );
 
-  if (loading) {
-    return <FullScreenLoader />
-  }
+        if (
+          bedroomCategory &&
+          bedroomCategory.products.bedroombedspreads
+        ) {
+          setTimeout(() => {
+            setData(bedroomCategory.products.bedroombedspreads);
+            setLoading(false);
+          }, 1000);
+        } else {
+          setLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <FullScreenLoader />;
 
   return (
-    <>
-      <SecondaryNavbar colSize={colSize} setColSize={setColSize} />
-      <div className='row flex px-4 mt-[240px] '>
-  {data.map(e => (
-    <Bedspreadsproducts pro={e} key={e.id} colSize={colSize} />
-  ))}
-</div>
-
-    </>
-  )
+    <div className="row px-4 mt-[240px]">
+      {data.map((e) => (
+        <Products key={e.id} pro={e} colSize={colSize} />
+      ))}
+    </div>
+  );
 }
 
-export default Bedspreads
+export default Bedspreads;

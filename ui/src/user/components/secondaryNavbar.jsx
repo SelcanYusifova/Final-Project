@@ -57,7 +57,6 @@ function SecondaryNavbar({ colSize, setColSize }) {
 
         <div className="flex items-center gap-6 text-xs uppercase text-gray-700 w-1/4 justify-end">
           <ViewController colSize={colSize} setColSize={setColSize} />
-         
         </div>
       </div>
     </nav>

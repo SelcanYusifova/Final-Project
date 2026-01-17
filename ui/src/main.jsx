@@ -4,8 +4,8 @@ import './layout.css'
 import 'react-toastify/dist/ReactToastify.css'
 
 import { RouterProvider } from 'react-router'
-import { route } from './routes/router'
 import App from './App'
+import { route } from './routes/router'
 
 createRoot(document.getElementById('root')).render(
 <>

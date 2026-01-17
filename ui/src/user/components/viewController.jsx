@@ -46,11 +46,10 @@ function ViewController({ colSize, setColSize }) {
   const handleTouchStart = (e) => handleMove(e.touches[0].clientX);
   const handleTouchMove = (e) => handleMove(e.touches[0].clientX);
 
-  // dairənin left positionunu track eni ilə hesabla
   const getCircleLeft = () => {
     if (!trackWidth) return 0;
 
-    // xət üzərində % yerleşim
+  
     let percent = 0;
     if (colSize === 1) percent = 0;
     else if (colSize === 2) percent = 0.25;

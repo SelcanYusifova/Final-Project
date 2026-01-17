@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import Layout from "../user/layout/Layout";
-import About from "../user/pages/About";
 import Register from "../user/pages/Register";
 import SubcategoryPage from "../user/pages/SubcategoryPage";
 import Login from "../user/pages/login";
 import Home from "../user/pages/home";
 import Help from "../user/pages/help";
+import ProductDetail from "../user/pages/productDetail";
+import About from "../user/pages/about";
+import Forgotpassword from "../user/pages/forgotpassword";
+import ResetPassword from "../user/pages/resetpassword";
 
 export const route = createBrowserRouter([
     {
@@ -24,9 +27,14 @@ export const route = createBrowserRouter([
                 element: <Help />,
                 path: "/help",
             },
+
             {
                 element: <SubcategoryPage />,
                 path: "/:categorySlug/:subcategorySlug",
+            },
+              {
+                element: <ProductDetail />,
+                path: "/allproducts/:id",  
             },
         ],
     },
@@ -37,5 +45,13 @@ export const route = createBrowserRouter([
     {
         path: "/register",
         element: <Register />,
+    },
+    {
+        path: "/forgotpassword",
+        element: <Forgotpassword />,
+    },
+    {
+        path: "/resetpassword",
+        element: <ResetPassword />,
     }
 ]);
