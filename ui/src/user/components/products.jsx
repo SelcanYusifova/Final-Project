@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GrFavorite } from "react-icons/gr";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
 
 function Products({ pro, colSize }) {
@@ -99,19 +99,20 @@ function Products({ pro, colSize }) {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <img
-            src={productImage}
-            className="w-full block"
-            alt={pro.name}
-            onClick={goDetail}
-          />
+          <Link to={`/allproducts/${pro.id}`}>
+            <img
+              src={productImage}
+              className="w-full block"
+              alt={pro.name}
+            />
+          </Link>
 
           {isHovered && (
             <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 flex items-end pointer-events-none">
               <button
                 className="cursor-pointer w-full bg-[#e5e5e5] text-black py-3 text-[14px] hover:bg-black hover:text-white transition pointer-events-auto"
                 onClick={(e) => {
-                  e.stopPropagation(); 
+                  e.stopPropagation();
                   handleAddToCart(e);
                 }}
               >
@@ -125,7 +126,7 @@ function Products({ pro, colSize }) {
           <>
             <div className="flex justify-between mt-[8px]">
               <p className="text-[14px]">{pro.name}</p>
-              <GrFavorite className="text-[16px] mt-[3px] cursor-pointer" />
+              <p>{pro.sizes[0].price} $</p>
             </div>
 
             {hasVariants && (
@@ -212,8 +213,8 @@ function Products({ pro, colSize }) {
                         key={i}
                         onClick={() => setSelectedSize(i)}
                         className={`p-3 border rounded cursor-pointer transition ${selectedSize === i
-                            ? 'border-black bg-gray-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                          ? 'border-black bg-gray-50'
+                          : 'border-gray-200 hover:border-gray-400'
                           }`}
                       >
                         <div className="flex justify-between">

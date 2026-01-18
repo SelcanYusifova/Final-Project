@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import FullScreenLoader from "../../components/fullScreenLoader";
 import Products from "../../components/products";
 
-function Baby() {
+function Flatwareanddinnerware() {
   const { colSize, setColSize } = useOutletContext(); 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,16 +12,16 @@ function Baby() {
     fetch("http://localhost:3000/allProducts")
       .then((res) => res.json())
       .then((allProducts) => {
-        const kidsandbabyCategory = allProducts.find(
-          (cat) => cat.categoryId === "kidsandbaby"
+        const kitchenCategory = allProducts.find(
+          (cat) => cat.categoryId === "kitchen"
         );
 
         if (
-          kidsandbabyCategory &&
-          kidsandbabyCategory.products.baby
+          kitchenCategory &&
+          kitchenCategory.products.flatwareanddinnerware
         ) {
           setTimeout(() => {
-            setData(kidsandbabyCategory.products.baby);
+            setData(kitchenCategory.products.flatwareanddinnerware);
             setLoading(false);
           }, 1000);
         } else {
@@ -45,4 +45,4 @@ function Baby() {
   );
 }
 
-export default Baby;
+export default Flatwareanddinnerware;

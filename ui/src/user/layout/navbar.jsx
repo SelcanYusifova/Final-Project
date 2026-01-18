@@ -4,8 +4,11 @@ import { FaRegUser } from "react-icons/fa6";
 import { FiHelpCircle } from "react-icons/fi";
 import { BsBasket3 } from "react-icons/bs";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import SearchOverlay from "../components/searchOverlay";
 
 function Navbar() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   const [bool, setbool] = useState(false)
   useEffect(() => {
     let id = localStorage.getItem("id");
@@ -96,7 +99,10 @@ function Navbar() {
           </div>
 
           <div className="col-lg-2 text-center">
-            <span className="relative inline-block text-[14px] font-medium cursor-pointer">
+            <span
+              onClick={() => setIsSearchOpen(true)}
+              className="relative inline-block text-[14px] font-medium cursor-pointer"
+            >
               SEARCH
               <span className="absolute left-0 -bottom-1 w-30 h-[1px] bg-black"></span>
             </span>
@@ -115,14 +121,18 @@ function Navbar() {
             </div>
             <NavLink to={"basket"}>
               <div className="flex items-center gap-[6px] leading-none">
-              <BsBasket3 className="text-[18px]" />
-              <span className="text-[12px] font-[600]">BASKET</span>
-            </div>
+                <BsBasket3 className="text-[18px]" />
+                <span className="text-[12px] font-[600]">BASKET</span>
+              </div>
             </NavLink>
           </div>
 
         </div>
       </div>
+      {/* SEARCH OVERLAY */}
+      {isSearchOpen && (
+        <SearchOverlay onClose={() => setIsSearchOpen(false)} />
+      )}
     </nav>
   );
 }
