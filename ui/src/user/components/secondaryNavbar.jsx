@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ViewController from "./ViewController";
 
-function SecondaryNavbar({ colSize, setColSize }) {
+function SecondaryNavbar({ colSize, setColSize, onFilterClick }) {
   const { categorySlug, subcategorySlug } = useParams();
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
@@ -43,11 +43,10 @@ function SecondaryNavbar({ colSize, setColSize }) {
             {category.subcategories.map((sub) => (
               <li
                 key={sub.id}
-                className={`cursor-pointer ${
-                  sub.slug === subcategorySlug
-                    ? "text-black border-b border-black pb-1"
-                    : "text-gray-500 hover:text-black"
-                }`}
+                className={`cursor-pointer ${sub.slug === subcategorySlug
+                  ? "text-black border-b border-black pb-1"
+                  : "text-gray-500 hover:text-black"
+                  }`}
               >
                 <Link to={`/${category.slug}/${sub.slug}`}>{sub.title}</Link>
               </li>
@@ -56,6 +55,8 @@ function SecondaryNavbar({ colSize, setColSize }) {
         </div>
 
         <div className="flex items-center gap-6 text-xs uppercase text-gray-700 w-1/4 justify-end">
+          <p className="text-xs text-gray-500 whitespace-nowrap cursor-pointer hover:text-black duration-150" onClick={onFilterClick}>FILTER</p>
+          <p className="text-xs text-gray-500 font-[600] whitespace-nowrap ">|</p>
           <ViewController colSize={colSize} setColSize={setColSize} />
         </div>
       </div>

@@ -1,9 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { subcategoryComponentsMap } from "../../map/subcategoryMap";
+import { useOutletContext } from "react-router-dom";
 
 const SubcategoryPage = () => {
   const { categorySlug, subcategorySlug } = useParams();
+
+  const { priceRange } = useOutletContext();
 
   const categoryMap = subcategoryComponentsMap[categorySlug];
 
@@ -17,7 +20,7 @@ const SubcategoryPage = () => {
     return <div>Subcategory tapılmadı</div>;
   }
 
-  return <SubcategoryComponent />;
+  return <SubcategoryComponent priceRange={priceRange} />;
 };
 
 export default SubcategoryPage;

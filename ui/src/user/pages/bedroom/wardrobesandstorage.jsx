@@ -3,11 +3,14 @@ import { useOutletContext } from "react-router-dom";
 import FullScreenLoader from "../../components/fullScreenLoader";
 import Products from "../../components/products";
 
-function Wardrobeandstorage() {
-  const { colSize, setColSize } = useOutletContext(); 
+function Wardrobeandstorage({ priceRange }) {
+  const { colSize, setColSize } = useOutletContext();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const filteredData = data.filter((item) => {
+    const price = item.price ?? item.sizes?.[0]?.price;
+    return price >= priceRange[0] && price <= priceRange[1];
+  });
   useEffect(() => {
     fetch("http://localhost:3000/allProducts")
       .then((res) => res.json())
@@ -38,7 +41,7 @@ function Wardrobeandstorage() {
 
   return (
     <div className="row px-4 mt-[240px]">
-      {data.map((e) => (
+      {filteredData.map((e) => (
         <Products key={e.id} pro={e} colSize={colSize} />
       ))}
     </div>

@@ -20,13 +20,12 @@ function ViewController({ colSize, setColSize }) {
     const rect = trackRef.current.getBoundingClientRect();
     let x = clientX - rect.left;
 
-    // dairənin track içində tam hərəkətini təmin et
     if (x < 0) x = 0;
     if (x > rect.width) x = rect.width;
 
     const percent = x / rect.width;
 
-    let newCol = 3; // default
+    let newCol = 3;
     if (percent < 0.2) newCol = 1;
     else if (percent < 0.4) newCol = 2;
     else if (percent < 0.6) newCol = 3;

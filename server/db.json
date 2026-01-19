@@ -10446,6 +10446,13 @@
       "lastname": "Yusifova",
       "email": "syusifova181@gmail.com",
       "pass": "123"
+    },
+    {
+      "id": "d5d0",
+      "firstname": "sebish",
+      "lastname": "eeskerova",
+      "email": "sebn@gmail.com",
+      "pass": "1238"
     }
   ],
   "categories": [
@@ -10602,75 +10609,15 @@
   ],
   "basket": [
     {
-      "id": "c321",
-      "productId": "10a",
-      "name": "Classic Bedsheet Set",
-      "image": "https://static.zarahome.net/assets/public/44dc/5f03/958a490a897c/ec6617be76e1/46110088811-a2/46110088811-a2.jpg?ts=1765468915555&f=auto&w=614",
-      "color": "white",
-      "colorHex": "#F0F0F0",
-      "size": "Double",
-      "price": 249,
-      "oldPrice": 399,
-      "quantity": 1
-    },
-    {
-      "id": "c321",
-      "productId": "9a",
-      "name": "Classic Bedsheet Set",
-      "image": "https://static.zarahome.net/assets/public/f3ab/e1c0/fd44459ea6b6/abbab6afe991/43150008250-a7/43150008250-a7.jpg?ts=1749809865742&f=auto&w=480",
-      "color": "white",
-      "colorHex": "#F0F0F0",
-      "size": "Double",
-      "price": 249,
-      "oldPrice": 399,
-      "quantity": 1
-    },
-    {
-      "id": "c321",
-      "productId": "23a",
-      "name": "Classic Bedsheet Set",
-      "image": "https://static.zarahome.net/assets/public/f5c8/6732/e6c24431844e/9e505fc651df/45137089800-p1/45137089800-p1.jpg?ts=1754898351997&f=auto&w=480",
-      "color": "white",
-      "colorHex": "#F0F0F0",
-      "size": "King",
-      "price": 319,
-      "oldPrice": 499,
-      "quantity": 1
-    },
-    {
-      "id": "c321",
-      "productId": "13r",
-      "name": "Cozy Home Bedspread",
-      "image": "https://static.zarahome.net/assets/public/054a/5606/cf1349048a17/f72e3ec378ec/46319008700-p1/46319008700-p1.jpg?ts=1761838933768&f=auto&w=480",
-      "color": null,
-      "colorHex": null,
-      "size": "Queen",
-      "price": 119,
-      "oldPrice": 159,
-      "quantity": 1
-    },
-    {
-      "id": "c321",
-      "productId": "2wvss",
+      "id": "8caf",
+      "productId": "2wsc",
       "name": "Cashmere Blend Blanket",
-      "image": "https://static.zarahome.net/assets/public/e909/623e/5665415ebf60/f7f44912ff1f/44352009710-a7/44352009710-a7.jpg?ts=1759911543049&f=auto&w=320",
+      "image": "https://static.zarahome.net/assets/public/e867/1a36/46ee48c399bf/3a8f096d2945/45398004600-a7/45398004600-a7.jpg?ts=1759845246829&f=auto&w=320",
       "color": null,
       "colorHex": null,
       "size": "Throw",
       "price": 49,
       "oldPrice": 79,
-      "quantity": 1
-    },
-    {
-      "id": "c321",
-      "productId": "4a",
-      "name": "Percale Duvet Cover",
-      "image": "https://static.zarahome.net/assets/public/9682/628f/e2ce4eb8bad8/9a36908a46fe/41100095250-p1/41100095250-p1.jpg?ts=1754897099536&f=auto&w=480",
-      "color": "white",
-      "colorHex": "#F0F0F0",
-      "size": "King",
-      "price": 129,
-      "oldPrice": 179,
       "quantity": 1
     }
   ]

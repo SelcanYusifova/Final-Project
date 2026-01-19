@@ -4,7 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
 
-function Products({ pro, colSize }) {
+function Products({ pro, colSize, onClose }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -44,7 +44,7 @@ function Products({ pro, colSize }) {
 
   const confirmAddToCart = async () => {
     const cartItem = {
-      id, // user id
+      userId: id,  
       productId: pro.id,
       name: pro.name,
       image: productImage,
@@ -59,12 +59,12 @@ function Products({ pro, colSize }) {
     const res = await fetch("http://localhost:3000/basket");
     const data = await res.json();
 
-    const existingItem = data.find(item =>
-      item.id === id &&
-      item.productId === cartItem.productId &&
-      item.color === cartItem.color &&
-      item.size === cartItem.size
-    );
+  const existingItem = data.find(item =>
+  item.userId === id && 
+  item.productId === cartItem.productId &&
+  item.color === cartItem.color &&
+  item.size === cartItem.size
+);
 
     if (existingItem) {
       await fetch(`http://localhost:3000/basket/${existingItem.id}`, {
@@ -104,6 +104,7 @@ function Products({ pro, colSize }) {
               src={productImage}
               className="w-full block"
               alt={pro.name}
+              onClick={onClose}
             />
           </Link>
 
@@ -134,7 +135,7 @@ function Products({ pro, colSize }) {
                 {pro.variants.map((variant, index) => (
                   <div
                     key={index}
-                    className={`w-6 h-6 rounded-full cursor-pointer ${selectedColor === index ? 'border-2 border-black' : 'border border-gray-300'
+                    className={`w-6 h-6 rounded-full cursor-pointer ${selectedColor === index ? 'border-1 border-black' : 'border border-gray-300'
                       }`}
                     style={{ backgroundColor: variant.hex }}
                     onClick={(e) => {
