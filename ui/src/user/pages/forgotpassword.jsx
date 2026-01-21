@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast, Bounce } from "react-toastify";
 import emailjs from "@emailjs/browser";
 
 function ForgotPassword() {
     const [email, setEmail] = useState("");
     const [submitted, setSubmitted] = useState(false); 
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
+
+    useEffect(() => {
+        const handleStorageChange = () => {
+            setTheme(localStorage.getItem("theme") || "light");
+        };
+        window.addEventListener("storage", handleStorageChange);
+        return () => window.removeEventListener("storage", handleStorageChange);
+    }, []);
 
     const handleForgotPassword = async (e) => {
         e.preventDefault();
@@ -21,7 +32,8 @@ function ForgotPassword() {
                 toast.error("Bu email ilə hesab tapılmadı!", {
                     position: "top-center",
                     autoClose: 5000,
-                    transition: Bounce
+                    transition: Bounce,
+                    theme: theme === "dark" ? "dark" : "light"
                 });
                 return;
             }
@@ -32,7 +44,6 @@ function ForgotPassword() {
                 link: `http://localhost:5173/resetpassword?email=${email}`
             };
 
-           
             await emailjs.send(
                 "service_3prylp8",
                 "template_lr2t76g",
@@ -43,10 +54,9 @@ function ForgotPassword() {
             toast.success("Şifrə yeniləmə maili göndərildi!", {
                 position: "top-center",
                 autoClose: 5000,
-                transition: Bounce
+                transition: Bounce,
+                theme: theme === "dark" ? "dark" : "light"
             });
-
-        
 
             setEmail("");
             setSubmitted(false);
@@ -56,13 +66,15 @@ function ForgotPassword() {
             toast.error("Mail göndərilərkən xəta baş verdi!", {
                 position: "top-center",
                 autoClose: 5000,
-                transition: Bounce
+                transition: Bounce,
+                theme: theme === "dark" ? "dark" : "light"
             });
         }
     };
 
     return (
-        <div className="min-h-screen flex bg-white">
+        <div className={`min-h-screen flex transition-colors duration-300
+            ${theme === "light" ? "bg-white" : "bg-black"}`}>
 
             <div
                 className="hidden lg:block w-1/2 bg-cover bg-center"
@@ -74,7 +86,8 @@ function ForgotPassword() {
                     className="w-full max-w-[420px] mx-auto px-6"
                     onSubmit={handleForgotPassword}
                 >
-                    <h2 className="text-[20px] font-[600] tracking-wide mb-[48px] text-center">
+                    <h2 className={`text-[20px] font-[600] tracking-wide mb-[48px] text-center
+                        ${theme === "light" ? "text-black" : "text-white"}`}>
                         Forgot Password
                     </h2>
 
@@ -83,7 +96,11 @@ function ForgotPassword() {
                             type="email"
                             id="email"
                             placeholder=" "
-                            className="peer w-full bg-transparent border-b border-black outline-none py-[6px] text-[14px] focus:border-b-2"
+                            className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
+                                border-b focus:border-b-2 transition-colors
+                                ${theme === "light" 
+                                    ? "border-black text-black" 
+                                    : "border-white text-white"}`}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -94,20 +111,23 @@ function ForgotPassword() {
                         )}
                         <label
                             htmlFor="email"
-                            className="absolute left-0 top-[6px] text-[14px] font-[500] transition-all duration-200
-                peer-placeholder-shown:top-[6px] peer-placeholder-shown:text-[12px]
-                peer-focus:-top-[14px] peer-focus:text-[10px]
-                peer-[:not(:placeholder-shown)]:-top-[14px]
-                peer-[:not(:placeholder-shown)]:text-[10px]"
-                        >
+                            className={`absolute left-0 top-[6px] text-[14px] font-[500] transition-all duration-200
+                                peer-placeholder-shown:top-[6px] peer-placeholder-shown:text-[12px]
+                                peer-focus:-top-[14px] peer-focus:text-[10px]
+                                peer-[:not(:placeholder-shown)]:-top-[14px]
+                                peer-[:not(:placeholder-shown)]:text-[10px]
+                                ${theme === "light" ? "text-black" : "text-white"}`}>
                             Email*
                         </label>
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full bg-black text-white px-[48px] py-[12px] text-[12px] font-[600] tracking-widest transition hover:bg-[#1E1E1E] cursor-pointer"
-                    >
+                        className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
+                            tracking-widest transition cursor-pointer
+                            ${theme === "light" 
+                                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                                : "bg-white text-black hover:bg-gray-200"}`}>
                         Go
                     </button>
                 </form>

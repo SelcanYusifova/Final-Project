@@ -4,7 +4,7 @@ import FullScreenLoader from "../../components/fullScreenLoader";
 import Products from "../../components/products";
 
 function Bedspreads({ priceRange }) {
-  const { colSize } = useOutletContext(); 
+  const { colSize, theme } = useOutletContext();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -39,9 +39,9 @@ function Bedspreads({ priceRange }) {
   if (loading) return <FullScreenLoader />;
 
   return (
-    <div className="row px-4 mt-[240px]">
+    <div className="row px-4 mt-[240px] content">
       {filteredData.map((e) => (
-        <Products key={e.id} pro={e} colSize={colSize} />
+        <Products key={e.id} pro={e} colSize={colSize} theme={theme}  />
       ))}
     </div>
   );

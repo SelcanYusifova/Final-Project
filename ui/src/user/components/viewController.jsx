@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
-function ViewController({ colSize, setColSize }) {
+function ViewController({ colSize, setColSize, theme }) {
   const trackRef = useRef(null);
   const [dragging, setDragging] = useState(false);
   const [trackWidth, setTrackWidth] = useState(0);
@@ -48,7 +48,6 @@ function ViewController({ colSize, setColSize }) {
   const getCircleLeft = () => {
     if (!trackWidth) return 0;
 
-  
     let percent = 0;
     if (colSize === 1) percent = 0;
     else if (colSize === 2) percent = 0.25;
@@ -61,7 +60,9 @@ function ViewController({ colSize, setColSize }) {
 
   return (
     <div
-      className="flex items-center gap-2 select-none"
+      className={`flex items-center gap-2 select-none
+        ${theme === "light" ? "text-gray-700" : "text-gray-300"}
+      `}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
@@ -71,12 +72,16 @@ function ViewController({ colSize, setColSize }) {
 
       <div
         ref={trackRef}
-        className="w-24 h-px bg-gray-400 relative cursor-pointer"
+        className={`w-24 h-px relative cursor-pointer
+          ${theme === "light" ? "bg-gray-400" : "bg-gray-600"}
+        `}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
       >
         <span
-          className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-black rounded-full transition-all"
+          className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full transition-all
+            ${theme === "light" ? "bg-black" : "bg-white"}
+          `}
           style={{ left: getCircleLeft() }}
         />
       </div>

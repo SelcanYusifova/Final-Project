@@ -3,6 +3,7 @@ import React from "react";
 function Banner() {
   return (
     <div className="banner">
+      
       <video
         src="/videos/video.mp4"
         autoPlay

@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router";
-import Layout from "../user/layout/Layout";
 import Register from "../user/pages/Register";
 import SubcategoryPage from "../user/pages/SubcategoryPage";
 import Login from "../user/pages/login";
@@ -10,6 +9,7 @@ import About from "../user/pages/about";
 import Forgotpassword from "../user/pages/forgotpassword";
 import ResetPassword from "../user/pages/resetpassword";
 import Basket from "../user/components/basket";
+import Layout from "../user/layout/layout";
 
 export const route = createBrowserRouter([
     {

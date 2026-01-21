@@ -1,54 +1,60 @@
 import { IoMdClose } from "react-icons/io";
+import PriceRangeSlider from "./priceRangeSlider";
 
-function FilterPanel({ priceRange, setPriceRange, onClose }) {
-    return (
-        <>
-            {/* Overlay */}
-            <div
-                className="fixed inset-0 bg-black/50 z-40"
-                onClick={onClose}
-            />
+function FilterPanel({ priceRange, setPriceRange, onClose, theme }) {
+  return (
+    <>
+      {/* Overlay */}
+      <div
+        className="fixed inset-0 z-40"
+        style={{ backgroundColor: theme === "light" ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.1)" }}
+        onClick={onClose}
+      />
 
-            {/* Panel */}
-            <div className="fixed right-0 top-0 h-full w-[400px] bg-white z-50 flex flex-col">
-                <div className="flex justify-between items-center p-5 border-b">
-                    <h2 className="text-sm font-semibold">FILTERS</h2>
-                    <IoMdClose
-                        onClick={onClose}
-                        className="cursor-pointer text-xl"
-                    />
-                </div>
+      {/* Panel */}
+      <div
+        className={`fixed right-0 top-0 h-full w-[400px] flex flex-col z-50
+          ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}
+        `}
+      >
+        {/* Header */}
+        <div
+          className={`flex justify-between items-center p-5 border-b
+            ${theme === "light" ? "border-gray-300" : "border-gray-700"}
+          `}
+        >
+          <h2 className="text-sm font-semibold">FILTERS</h2>
+          <IoMdClose onClick={onClose} className="cursor-pointer text-xl" />
+        </div>
 
-                <div className="p-5 flex-1">
-                    <p className="text-xs font-semibold mb-4">PRICE RANGE</p>
+        {/* Body */}
+        <div className="p-5">
+          <p className="text-xs font-semibold mb-6">PRICE RANGE</p>
 
-                    <input
-                        type="range"
-                        min="0"
-                        max="500"
-                        value={priceRange[0]}
-                        onChange={(e) =>
-                            setPriceRange([+e.target.value, priceRange[1]])
-                        }
-                        className="w-full"
-                    />
+          <PriceRangeSlider
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+            min={0}
+            max={1000}
+            theme={theme}  // theme ötürülür
+          />
+        </div>
 
-                    <div className="flex justify-between text-xs mt-2">
-                        <span>${priceRange[0]}</span>
-                        <span>${priceRange[1]}</span>
-                    </div>
-                </div>
-
-       
-                <button
-                    onClick={() => setPriceRange([0, 1000])}
-                     className="w-full cursor-pointer bg-[#e5e5e5] py-3 text-[14px] hover:bg-black hover:text-white transition font-medium"
-                >
-                    DELETE
-                </button>
-            </div>
-        </>
-    );
+        {/* Delete Button */}
+        <button
+          onClick={() => setPriceRange([0, 1000])}
+          className={`mt-auto w-full py-3 text-sm transition cursor-pointer
+            ${theme === "light"
+              ? "bg-gray-200 hover:bg-black hover:text-white"
+              : "bg-gray-800 hover:bg-white hover:text-black"
+            }
+          `}
+        >
+          DELETE
+        </button>
+      </div>
+    </>
+  );
 }
 
 export default FilterPanel;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Products from "./products";
 
-function SearchOverlay({ onClose }) {
+function SearchOverlay({ onClose, theme }) {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
 
@@ -23,15 +23,21 @@ function SearchOverlay({ onClose }) {
   );
 
   return (
-    <div className="fixed inset-0 bg-white z-[9999] px-10 pt-[120px] overflow-y-auto">
+    <div className={`fixed inset-0 z-[9999] px-10 pt-[120px] overflow-y-auto
+      ${theme === "light" ? "bg-white" : "bg-black"}
+    `}>
       <button
         onClick={onClose}
-        className="absolute cursor-pointer top-10 right-10 text-[28px]  hover:text-gray-500 duration-150"
+        className={`absolute cursor-pointer top-10 right-10 text-[28px] hover:text-gray-500 duration-150
+          ${theme === "light" ? "text-black" : "text-white"}
+        `}
       >
         <IoMdClose />
       </button>
 
-      <h1 className="text-[42px] text-gray-700 mb-8">
+      <h1 className={`text-[42px] mb-8 search
+        ${theme === "light" ? "text-gray-700" : "text-gray-300"}
+      `}>
         WHAT ARE YOU SEARCHING FOR?
       </h1>
 
@@ -40,7 +46,12 @@ function SearchOverlay({ onClose }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search products..."
-        className="w-full border-b border-black text-[24px] py-4 outline-none mb-16"
+        className={`w-full border-b text-[24px] py-4 outline-none mb-16 placeholder
+          ${theme === "light" 
+            ? "border-black bg-white text-black placeholder-gray-400" 
+            : "border-white bg-black text-white placeholder-gray-500"
+          }
+        `}
       />
 
       {search && (
@@ -52,10 +63,13 @@ function SearchOverlay({ onClose }) {
                 pro={p}
                 colSize={3}
                 onClose={onClose}
+                theme={theme}
               />
             ))
           ) : (
-            <p className="mt-10 text-gray-500">No results found</p>
+            <p className={`mt-10 ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
+              No results found
+            </p>
           )}
         </div>
       )}

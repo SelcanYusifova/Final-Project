@@ -1,15 +1,17 @@
-import Navbar from "./navbar";
-import SecondaryNavbar from "../components/secondaryNavbar";
+import { useState, useContext } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import Navbar from "./navbar";
 import Footer from "./footer";
-import { useState } from "react";
+import SecondaryNavbar from "../components/secondaryNavbar";
 import FilterPanel from "../components/filterContext";
 import ScrollTop from "../../providers/scrollTop";
+import MainContext from "../../context/context";
 
 function Layout() {
   const location = useLocation();
-  const [colSize, setColSize] = useState(3);
+  const { theme, toggleTheme } = useContext(MainContext);
 
+  const [colSize, setColSize] = useState(3);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [priceRange, setPriceRange] = useState([0, 1000]);
 
@@ -17,33 +19,43 @@ function Layout() {
 
   return (
     <ScrollTop>
-      <Navbar />
+      <div
+        className={`min-h-screen transition-colors duration-300
+          ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}
+      >
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      {showSecondaryNavbar && (
-        <SecondaryNavbar
-          colSize={colSize}
-          setColSize={setColSize}
-          onFilterClick={() => setIsFilterOpen(true)}
-        />
-      )}
+        {showSecondaryNavbar && (
+          <SecondaryNavbar
+            colSize={colSize}
+            setColSize={setColSize}
+            onFilterClick={() => setIsFilterOpen(true)}
+            theme={theme} 
+          />
+        )}
 
-      <Outlet
-        context={{
-          colSize,
-          setColSize,
-          priceRange,
-        }}
-      />
+        <main>
+          <Outlet
+            context={{
+              colSize,
+              setColSize,
+              priceRange,
+              theme,
+            }}
+          />
+        </main>
 
-      {isFilterOpen && (
-        <FilterPanel
-          priceRange={priceRange}
-          setPriceRange={setPriceRange}
-          onClose={() => setIsFilterOpen(false)}
-        />
-      )}
+        {isFilterOpen && (
+          <FilterPanel
+            priceRange={priceRange}
+            setPriceRange={setPriceRange}
+            onClose={() => setIsFilterOpen(false)}
+            theme={theme}
+          />
+        )}
 
-      <Footer />
+        <Footer theme={theme} />
+      </div>
     </ScrollTop>
   );
 }

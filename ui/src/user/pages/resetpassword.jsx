@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { toast, Bounce } from "react-toastify";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -12,6 +12,18 @@ function ResetPassword() {
   const [submitted, setSubmitted] = useState(false); 
   const [userNotFound, setUserNotFound] = useState(false);
   const [passwordMismatch, setPasswordMismatch] = useState(false);
+
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setTheme(localStorage.getItem("theme") || "light");
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   const [searchParams] = useSearchParams();
   const email = searchParams.get("email");
@@ -37,7 +49,12 @@ function ResetPassword() {
 
       if (!user) {
         setUserNotFound(true);
-        toast.error("Hesab tapılmadı!", { position: "top-center", autoClose: 5000, transition: Bounce });
+        toast.error("Hesab tapılmadı!", { 
+          position: "top-center", 
+          autoClose: 5000, 
+          transition: Bounce,
+          theme: theme === "dark" ? "dark" : "light"
+        });
         return;
       }
 
@@ -48,28 +65,38 @@ function ResetPassword() {
         body: JSON.stringify(updatedUser)
       });
 
-      toast.success("Şifrəniz yeniləndi!", { position: "top-center", autoClose: 5000, transition: Bounce });
+      toast.success("Şifrəniz yeniləndi!", { 
+        position: "top-center", 
+        autoClose: 5000, 
+        transition: Bounce,
+        theme: theme === "dark" ? "dark" : "light"
+      });
       navigate("/login");
 
     } catch (err) {
       console.error(err);
-      toast.error("Şifrə yenilənərkən xəta baş verdi!", { position: "top-center", autoClose: 5000, transition: Bounce });
+      toast.error("Şifrə yenilənərkən xəta baş verdi!", { 
+        position: "top-center", 
+        autoClose: 5000, 
+        transition: Bounce,
+        theme: theme === "dark" ? "dark" : "light"
+      });
     }
   };
 
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className={`min-h-screen flex transition-colors duration-300
+      ${theme === "light" ? "bg-white" : "bg-black"}`}>
 
-   
       <div
         className="hidden lg:block w-1/2 bg-cover bg-center"
         style={{ backgroundImage: "url('https://static.zarahome.net/assets/public/7d07/fdf6/683344e29e9a/44aa83265c4b/index/index.jpg?ts=1726667724254&d=20260106')" }}
       />
 
-     
       <div className="w-full lg:w-1/2 flex items-center">
         <form className="w-full max-w-[420px] mx-auto px-6" onSubmit={handleReset}>
-          <h2 className="text-[20px] font-[600] tracking-wide mb-[48px] text-center">
+          <h2 className={`text-[20px] font-[600] tracking-wide mb-[48px] text-center
+            ${theme === "light" ? "text-black" : "text-white"}`}>
             Reset Password
           </h2>
 
@@ -77,13 +104,11 @@ function ResetPassword() {
             <input
               type={showPass ? "text" : "password"}
               placeholder=" "
-              className="
-                peer w-full bg-transparent
-                border-b border-black
-                outline-none
-                py-[6px] pr-[32px] text-[14px]
-                focus:border-b-2
-              "
+              className={`peer w-full bg-transparent outline-none py-[6px] pr-[32px] text-[14px]
+                border-b focus:border-b-2 transition-colors
+                ${theme === "light" 
+                  ? "border-black text-black" 
+                  : "border-white text-white"}`}
               value={pass}
               onChange={(e) => setPass(e.target.value)}
             />
@@ -92,20 +117,21 @@ function ResetPassword() {
                 Zəhmət olmasa yeni şifrənizi daxil edin!
               </p>
             )}
-            <label className="
-                absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
-                peer-focus:-top-[14px] peer-focus:text-[10px]
-                peer-[:not(:placeholder-shown)]:-top-[14px]
-                peer-[:not(:placeholder-shown)]:text-[10px]
-              ">
+            <label className={`absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
+              peer-focus:-top-[14px] peer-focus:text-[10px]
+              peer-[:not(:placeholder-shown)]:-top-[14px]
+              peer-[:not(:placeholder-shown)]:text-[10px]
+              ${theme === "light" ? "text-black" : "text-white"}`}>
               New Password*
             </label>
             <button
               type="button"
               onClick={() => setShowPass(!showPass)}
-              className="absolute right-0 top-[6px] text-black"
-            >
-              {showPass ? <FiEyeOff className="text-[18px] cursor-pointer" /> : <FiEye className="text-[18px] cursor-pointer" />}
+              className={`absolute right-0 top-[6px]
+                ${theme === "light" ? "text-black" : "text-white"}`}>
+              {showPass ? 
+                <FiEyeOff className="text-[18px] cursor-pointer" /> : 
+                <FiEye className="text-[18px] cursor-pointer" />}
             </button>
           </div>
 
@@ -113,13 +139,11 @@ function ResetPassword() {
             <input
               type={showConfirmPass ? "text" : "password"}
               placeholder=" "
-              className="
-                peer w-full bg-transparent
-                border-b border-black
-                outline-none
-                py-[6px] pr-[32px] text-[14px]
-                focus:border-b-2
-              "
+              className={`peer w-full bg-transparent outline-none py-[6px] pr-[32px] text-[14px]
+                border-b focus:border-b-2 transition-colors
+                ${theme === "light" 
+                  ? "border-black text-black" 
+                  : "border-white text-white"}`}
               value={confirmPass}
               onChange={(e) => setConfirmPass(e.target.value)}
             />
@@ -138,34 +162,31 @@ function ResetPassword() {
                 Bu email ilə hesab tapılmadı!
               </p>
             )}
-            <label className="
-                absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
-                peer-focus:-top-[14px] peer-focus:text-[10px]
-                peer-[:not(:placeholder-shown)]:-top-[14px]
-                peer-[:not(:placeholder-shown)]:text-[10px]
-              ">
+            <label className={`absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
+              peer-focus:-top-[14px] peer-focus:text-[10px]
+              peer-[:not(:placeholder-shown)]:-top-[14px]
+              peer-[:not(:placeholder-shown)]:text-[10px]
+              ${theme === "light" ? "text-black" : "text-white"}`}>
               Confirm Password*
             </label>
             <button
               type="button"
               onClick={() => setShowConfirmPass(!showConfirmPass)}
-              className="absolute right-0 top-[6px] text-black"
-            >
-              {showConfirmPass ? <FiEyeOff className="text-[18px] cursor-pointer" /> : <FiEye className="text-[18px] cursor-pointer" />}
+              className={`absolute right-0 top-[6px]
+                ${theme === "light" ? "text-black" : "text-white"}`}>
+              {showConfirmPass ? 
+                <FiEyeOff className="text-[18px] cursor-pointer" /> : 
+                <FiEye className="text-[18px] cursor-pointer" />}
             </button>
           </div>
 
           <button
             type="submit"
-            className="
-              w-full bg-black text-white
-              px-[48px] py-[12px]
-              text-[12px] font-[600]
-              tracking-widest
-              transition hover:bg-[#1E1E1E]
-              cursor-pointer
-            "
-          >
+            className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
+              tracking-widest transition cursor-pointer
+              ${theme === "light" 
+                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                : "bg-white text-black hover:bg-gray-200"}`}>
             Reset Password
           </button>
         </form>

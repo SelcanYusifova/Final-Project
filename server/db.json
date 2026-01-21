@@ -10619,6 +10619,45 @@
       "price": 49,
       "oldPrice": 79,
       "quantity": 1
+    },
+    {
+      "id": "b9ed",
+      "userId": "c321",
+      "productId": "13wsl",
+      "name": "Quilted Blanket",
+      "image": "https://static.zarahome.net/assets/public/ea62/7c5e/f711449e9edf/fc57c2881356/45288021500-a7/45288021500-a7.jpg?ts=1760513498586&f=auto&w=320",
+      "color": null,
+      "colorHex": null,
+      "size": "Throw",
+      "price": 65,
+      "oldPrice": 89,
+      "quantity": 1
+    },
+    {
+      "id": "9d59",
+      "userId": "c321",
+      "productId": "2wsg",
+      "name": "Blackout Curtains",
+      "image": "https://static.zarahome.net/assets/public/3b4a/9a01/c4394349b171/12031816cf07/46227026600-a7/46227026600-a7.jpg?ts=1759758077779&f=auto&w=480",
+      "color": null,
+      "colorHex": null,
+      "size": "Pair",
+      "price": 119,
+      "oldPrice": 149,
+      "quantity": 1
+    },
+    {
+      "id": "7b96",
+      "userId": "c321",
+      "productId": "3wsg",
+      "name": "Linen Curtains",
+      "image": "https://static.zarahome.net/assets/public/36f4/a59b/ca464d988993/3c9cf120ab91/43297026400-a7/43297026400-a7.jpg?ts=1748597380144&f=auto&w=480",
+      "color": null,
+      "colorHex": null,
+      "size": "Single Panel",
+      "price": 69,
+      "oldPrice": 89,
+      "quantity": 1
     }
   ]
 }

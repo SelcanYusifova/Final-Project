@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { Bounce, toast } from "react-toastify";
 import FullScreenLoader from "../components/fullScreenLoader";
 
 function ProductDetail() {
   const { id } = useParams();
+  const { theme } = useOutletContext();
 
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(0);
@@ -39,7 +40,7 @@ function ProductDetail() {
       toast.error('Sign in to add products to cart!', {
         position: "top-center",
         autoClose: 3000,
-        theme: "light",
+        theme: theme === "dark" ? "dark" : "light",
         transition: Bounce,
       });
       return;
@@ -91,13 +92,13 @@ function ProductDetail() {
     toast.success("Product successfully added to cart", {
       position: "top-center",
       autoClose: 2000,
+      theme: theme === "dark" ? "dark" : "light",
       transition: Bounce,
     });
 
     setShowPanel(false);
   };
 
-  
   if (!product) {
     return <FullScreenLoader />;
   }
@@ -113,7 +114,8 @@ function ProductDetail() {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-6 py-10 flex lg:flex-row gap-10 mt-[150px]">
+      <div className={`max-w-7xl mx-auto px-6 py-10 flex lg:flex-row gap-10 mt-[150px] detail
+        ${theme === "light" ? "text-black" : "text-white"}`}>
 
         <div className="flex gap-4">
           {hasVariants && (
@@ -122,8 +124,14 @@ function ProductDetail() {
                 <button
                   key={i}
                   onClick={() => setSelectedColor(i)}
-                  className={`w-16 h-16 border-1 cursor-pointer  ${
-                    selectedColor === i ? "border-black p-[4px]" : "border-gray-300"
+                  className={`w-16 h-16 border-1 cursor-pointer transition-colors ${
+                    selectedColor === i 
+                      ? theme === "light" 
+                        ? "border-black p-[4px]" 
+                        : "border-white p-[4px]"
+                      : theme === "light"
+                        ? "border-gray-300"
+                        : "border-gray-600"
                   }`}
                 >
                   <img
@@ -136,7 +144,7 @@ function ProductDetail() {
             </div>
           )}
 
-          <div className="w-[400px] lg:w-[600px] h-[400px] lg:h-[600px]">
+          <div className="w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] img">
             <img
               src={imageSrc}
               alt={product.name}
@@ -146,7 +154,8 @@ function ProductDetail() {
         </div>
 
         <div className="flex-1 flex flex-col gap-6">
-          <nav className="text-gray-500 text-[14px]">
+          <nav className={`text-[14px]
+            ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
             {product.categoryName?.toUpperCase()}
           </nav>
 
@@ -155,7 +164,8 @@ function ProductDetail() {
           {currentSize && (
             <div className="flex gap-3 items-center">
               {currentSize.oldPrice && (
-                <span className="line-through text-gray-400">
+                <span className={`line-through
+                  ${theme === "light" ? "text-gray-400" : "text-gray-500"}`}>
                   {currentSize.oldPrice} €
                 </span>
               )}
@@ -169,15 +179,19 @@ function ProductDetail() {
                 {product.variants[selectedColor]?.color?.toUpperCase()} | {product.code}
               </p>
 
-              <div className="flex gap-3 ">
+              <div className="flex gap-3">
                 {product.variants.map((v, i) => (
                   <button
                     key={i}
                     onClick={() => setSelectedColor(i)}
-                    className={`w-6 h-6 rounded-full border-1 cursor-pointer ${
+                    className={`w-6 h-6 rounded-full border-1 cursor-pointer transition ${
                       selectedColor === i
-                        ? "border-black scale-110"
-                        : "border-gray-300"
+                        ? theme === "light"
+                          ? "border-black scale-110"
+                          : "border-white scale-110"
+                        : theme === "light"
+                          ? "border-gray-300"
+                          : "border-gray-600"
                     }`}
                     style={{ backgroundColor: v.hex }}
                   />
@@ -186,7 +200,8 @@ function ProductDetail() {
             </>
           )}
 
-          <p className="text-[14px] text-gray-700 max-w-lg">
+          <p className={`text-[14px] max-w-lg
+            ${theme === "light" ? "text-gray-700" : "text-gray-300"}`}>
             {product.description || "No description available."}
           </p>
 
@@ -198,21 +213,27 @@ function ProductDetail() {
                   <li
                     key={i}
                     onClick={() => setSelectedSize(i)}
-                    className={`p-3 border rounded flex justify-between cursor-pointer ${
+                    className={`p-3 border rounded flex justify-between cursor-pointer transition ${
                       selectedSize === i
-                        ? "border-black bg-gray-50"
-                        : "border-gray-200"
+                        ? theme === "light"
+                          ? "border-black bg-gray-50"
+                          : "border-white bg-black"
+                        : theme === "light"
+                          ? "border-gray-200"
+                          : "border-gray-700"
                     }`}
                   >
                     <div>
                       <strong>{s.type}</strong>
-                      <span className="ml-2 text-gray-500 text-[12px]">
+                      <span className={`ml-2 text-[12px]
+                        ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
                         {s.dimensions}
                       </span>
                     </div>
                     <div>
                       {s.oldPrice && (
-                        <span className="line-through text-gray-400 mr-2">
+                        <span className={`line-through mr-2
+                          ${theme === "light" ? "text-gray-400" : "text-gray-500"}`}>
                           {s.oldPrice} €
                         </span>
                       )}
@@ -226,7 +247,10 @@ function ProductDetail() {
 
           <button 
             onClick={handleAddToCart}
-            className="w-full cursor-pointer bg-[#e5e5e5] py-3 hover:bg-black hover:text-white transition"
+            className={`w-full cursor-pointer py-3 transition
+              ${theme === "light"
+                ? "bg-[#e5e5e5] hover:bg-black hover:text-white"
+                : "bg-gray-700 hover:bg-white hover:text-black"}`}
           >
             Add to cart
           </button>
@@ -240,12 +264,15 @@ function ProductDetail() {
             onClick={() => setShowPanel(false)}
           />
 
-          <div className="fixed right-0 top-0 h-full w-[450px] bg-white z-50 shadow-2xl overflow-y-auto">
+          <div className={`fixed right-0 top-0 h-full w-[450px] z-50 shadow-2xl overflow-y-auto panel transition-colors
+            ${theme === "light" ? "bg-white" : "bg-black"}`}>
 
-            <div className="flex justify-between items-center p-6 border-b border-[#DDDDDD]">
+            <div className={`flex justify-between items-center p-6 border-b
+              ${theme === "light" ? "border-[#DDDDDD]" : "border-gray-700"}`}>
               <h2 className="text-[18px] font-semibold">Add to cart</h2>
               <button onClick={() => setShowPanel(false)}>
-                <IoMdClose className="text-[24px] text-[#9f9c9c]" />
+                <IoMdClose className={`text-[24px] cursor-pointer hover:text-gray-700 duration-150
+                  ${theme === "light" ? "text-[#9f9c9c]" : "text-gray-400"}`} />
               </button>
             </div>
 
@@ -261,7 +288,8 @@ function ProductDetail() {
               {currentSize && (
                 <div className="flex gap-3 items-center mb-4">
                   {currentSize.oldPrice && (
-                    <span className="line-through text-gray-400 text-[14px]">
+                    <span className={`line-through text-[14px]
+                      ${theme === "light" ? "text-gray-400" : "text-gray-500"}`}>
                       {currentSize.oldPrice} €
                     </span>
                   )}
@@ -279,8 +307,14 @@ function ProductDetail() {
                       <div
                         key={i}
                         onClick={() => setSelectedColor(i)}
-                        className={`w-8 h-8 rounded-full cursor-pointer border-1 ${
-                          selectedColor === i ? 'border-black scale-110' : 'border-gray-300'
+                        className={`w-8 h-8 rounded-full cursor-pointer border-1 transition ${
+                          selectedColor === i 
+                            ? theme === "light"
+                              ? 'border-black scale-110' 
+                              : 'border-white scale-110'
+                            : theme === "light"
+                              ? 'border-gray-300'
+                              : 'border-gray-600'
                         }`}
                         style={{ backgroundColor: v.hex }}
                       />
@@ -299,20 +333,26 @@ function ProductDetail() {
                         onClick={() => setSelectedSize(i)}
                         className={`p-3 border rounded cursor-pointer transition ${
                           selectedSize === i
-                            ? 'border-black bg-gray-50'
-                            : 'border-gray-200 hover:border-gray-400'
+                            ? theme === "light"
+                              ? 'border-black bg-gray-50'
+                              : 'border-white bg-black'
+                            : theme === "light"
+                              ? 'border-gray-200 hover:border-gray-400'
+                              : 'border-gray-700 hover:border-gray-500'
                         }`}
                       >
                         <div className="flex justify-between">
                           <div>
                             <strong className="text-[14px]">{s.type}</strong>
-                            <span className="ml-2 text-gray-500 text-[12px]">
+                            <span className={`ml-2 text-[12px]
+                              ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
                               {s.dimensions}
                             </span>
                           </div>
                           <div className="text-[14px]">
                             {s.oldPrice && (
-                              <span className="line-through text-gray-400 mr-2">
+                              <span className={`line-through mr-2
+                                ${theme === "light" ? "text-gray-400" : "text-gray-500"}`}>
                                 {s.oldPrice} €
                               </span>
                             )}
@@ -327,7 +367,10 @@ function ProductDetail() {
 
               <button
                 onClick={confirmAddToCart}
-                className="w-full cursor-pointer bg-[#e5e5e5] py-3 text-[14px] hover:bg-black hover:text-white transition font-medium"
+                className={`w-full cursor-pointer py-3 text-[14px] font-medium transition
+                  ${theme === "light"
+                    ? "bg-[#e5e5e5] hover:bg-black hover:text-white"
+                    : "bg-gray-700 hover:bg-white hover:text-black"}`}
               >
                 Add to cart
               </button>

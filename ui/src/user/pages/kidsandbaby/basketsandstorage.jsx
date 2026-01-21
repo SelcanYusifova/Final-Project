@@ -4,7 +4,7 @@ import FullScreenLoader from "../../components/fullScreenLoader";
 import Products from "../../components/products";
 
 function Basketsandstorage({ priceRange }) {
-  const { colSize, setColSize } = useOutletContext(); 
+  const { colSize, setColSize, theme  } = useOutletContext(); 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
     const filteredData = data.filter((item) => {
@@ -41,9 +41,9 @@ function Basketsandstorage({ priceRange }) {
   if (loading) return <FullScreenLoader />;
 
   return (
-   <div className="row px-4 mt-[240px]">
+ <div className="row px-4 mt-[240px] content">
       {filteredData.map((e) => (
-        <Products key={e.id} pro={e} colSize={colSize} />
+        <Products key={e.id} pro={e} colSize={colSize} theme={theme}  />
       ))}
     </div>
   );

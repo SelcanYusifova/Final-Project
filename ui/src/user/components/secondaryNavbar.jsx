@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ViewController from "./ViewController";
 
-function SecondaryNavbar({ colSize, setColSize, onFilterClick }) {
+function SecondaryNavbar({ colSize, setColSize, onFilterClick, theme }) {
   const { categorySlug, subcategorySlug } = useParams();
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
@@ -20,45 +20,74 @@ function SecondaryNavbar({ colSize, setColSize, onFilterClick }) {
   if (!category) return null;
 
   return (
-    <nav className="w-full bg-white fixed top-26 left-0 z-40">
-      <div className="px-6 pt-3 pb-1 text-xs text-gray-500 whitespace-nowrap">
+    <nav
+      className={`w-full fixed top-26 left-0 z-40 secondarynav
+        ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}
+      `}
+    >
+      <div
+        className={`px-6 pt-3 pb-1 text-xs whitespace-nowrap
+          ${theme === "light" ? "text-gray-500" : "text-gray-400"}
+        `}
+      >
         {category.title}
-        {subcategorySlug ? ` > ${subcategorySlug.replace("-", " ").toUpperCase()}` : ""}
+        {subcategorySlug
+          ? ` > ${subcategorySlug.replace("-", " ").toUpperCase()}`
+          : ""}
       </div>
 
-      <div className="flex items-center justify-between px-6 py-4">
-        <div className="w-1/4"></div>
+      {/* Subcategory linkləri */}
+      <div
+        className="px-6 py-4 overflow-x-auto"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        <style>
+          {`
+            div::-webkit-scrollbar { display: none; }
+          `}
+        </style>
 
-        <div
-          className="relative w-2/4 flex items-center overflow-x-auto"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          <style>
-            {`
-              div::-webkit-scrollbar { display: none; }
-            `}
-          </style>
-
-          <ul className="flex gap-8 text-sm uppercase tracking-wide whitespace-nowrap">
-            {category.subcategories.map((sub) => (
-              <li
-                key={sub.id}
-                className={`cursor-pointer ${sub.slug === subcategorySlug
-                  ? "text-black border-b border-black pb-1"
-                  : "text-gray-500 hover:text-black"
-                  }`}
+        <ul className="flex gap-8 text-sm uppercase tracking-wide whitespace-nowrap">
+          {category.subcategories.map((sub) => (
+            <li key={sub.id} className="cursor-pointer pb-1">
+              <Link
+                to={`/${category.slug}/${sub.slug}`}
+                className={`
+                  block transition-colors
+                  ${
+                    sub.slug === subcategorySlug
+                      ? theme === "light"
+                        ? "text-black border-b border-black"
+                        : "text-white border-b border-white"
+                      : theme === "light"
+                      ? "text-gray-500 hover:text-black"
+                      : "text-gray-400 hover:text-white"
+                  }
+                `}
               >
-                <Link to={`/${category.slug}/${sub.slug}`}>{sub.title}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+                {sub.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <div className="flex items-center gap-6 text-xs uppercase text-gray-700 w-1/4 justify-end">
-          <p className="text-xs text-gray-500 whitespace-nowrap cursor-pointer hover:text-black duration-150" onClick={onFilterClick}>FILTER</p>
-          <p className="text-xs text-gray-500 font-[600] whitespace-nowrap ">|</p>
-          <ViewController colSize={colSize} setColSize={setColSize} />
-        </div>
+      {/* Filter və View Controller */}
+      <div
+        className={`px-6 pb-4 flex items-center gap-6 text-xs uppercase justify-end
+          ${theme === "light" ? "text-gray-700" : "text-gray-300"}
+        `}
+      >
+        <p
+          className={`text-xs whitespace-nowrap cursor-pointer duration-150
+            ${theme === "light" ? "text-gray-500 hover:text-black" : "text-gray-400 hover:text-white"}
+          `}
+          onClick={onFilterClick}
+        >
+          FILTER
+        </p>
+        <p className="text-xs font-[600] whitespace-nowrap hidden lg:inline">|</p>
+        <ViewController colSize={colSize} setColSize={setColSize} theme={theme} />
       </div>
     </nav>
   );

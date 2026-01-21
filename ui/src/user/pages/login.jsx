@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { Bounce, toast } from "react-toastify";
@@ -9,12 +9,24 @@ function Login() {
         email: "",
         pass: "",
     });
-    const [bool, setBool] = useState(false)
+    const [bool, setBool] = useState(false);
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
 
-    let navigate = useNavigate()
+    useEffect(() => {
+        const handleStorageChange = () => {
+            setTheme(localStorage.getItem("theme") || "light");
+        };
+        window.addEventListener("storage", handleStorageChange);
+        return () => window.removeEventListener("storage", handleStorageChange);
+    }, []);
+
+    let navigate = useNavigate();
+    
     const welcome = (e) => {
         e.preventDefault();
-        setBool(true)
+        setBool(true);
         if (!user.email.trim() && !user.pass.trim()) {
             toast.error('Məlumatları tam daxil edin!', {
                 position: "top-center",
@@ -24,10 +36,9 @@ function Login() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light",
+                theme: theme === "dark" ? "dark" : "light",
                 transition: Bounce,
             });
-
         } else {
             fetch("http://localhost:3000/users")
                 .then(res => res.json())
@@ -42,12 +53,12 @@ function Login() {
                             pauseOnHover: true,
                             draggable: true,
                             progress: undefined,
-                            theme: "light",
+                            theme: theme === "dark" ? "dark" : "light",
                             transition: Bounce,
                         });
-                        localStorage.setItem("id", founded.id)
-                        navigate("/")
-                        setBool(false)
+                        localStorage.setItem("id", founded.id);
+                        navigate("/");
+                        setBool(false);
                     } else {
                         toast.error('Mail və ya şifrə yanlışdır!', {
                             position: "top-center",
@@ -57,17 +68,17 @@ function Login() {
                             pauseOnHover: true,
                             draggable: true,
                             progress: undefined,
-                            theme: "light",
+                            theme: theme === "dark" ? "dark" : "light",
                             transition: Bounce,
                         });
                     }
-                })
+                });
         }
-
     };
 
     return (
-        <div className="min-h-screen flex bg-white">
+        <div className={`min-h-screen flex transition-colors duration-300
+            ${theme === "light" ? "bg-white" : "bg-black"}`}>
 
             <div
                 className="hidden lg:block w-1/2 bg-cover bg-center"
@@ -80,45 +91,38 @@ function Login() {
             <div className="w-full lg:w-1/2 flex items-center">
                 <form className="w-full max-w-[420px] mx-auto px-6" onSubmit={welcome}>
 
-                    <h2 className="text-[20px] font-[600] tracking-wide mb-[48px]">
+                    <h2 className={`text-[20px] font-[600] tracking-wide mb-[48px]
+                        ${theme === "light" ? "text-black" : "text-white"}`}>
                         SIGN IN
                     </h2>
-
 
                     <div className="relative mb-[32px]">
                         <input
                             type="email"
                             id="email"
                             placeholder=" "
-                            className="
-                    peer w-full bg-transparent
-                    border-b border-black
-                    outline-none
-                    py-[6px] text-[14px]
-                    focus:border-b-2
-                  "onChange={(e) => setUser({ ...user, email: e.target.value })}
+                            className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
+                                border-b focus:border-b-2 transition-colors
+                                ${theme === "light" 
+                                    ? "border-black text-black" 
+                                    : "border-white text-white"}`}
+                            onChange={(e) => setUser({ ...user, email: e.target.value })}
                             value={user.email}
-
                         />
-                        {bool && user.email.trim() == "" && <p className="text-[12px] text-[red] font-[500] mt-[6px]">Zəhmət olmasa emailinizi daxil edin!</p>
+                        {bool && user.email.trim() === "" && 
+                            <p className="text-[12px] text-[red] font-[500] mt-[6px]">
+                                Zəhmət olmasa emailinizi daxil edin!
+                            </p>
                         }
                         <label
                             htmlFor="email"
-                            className="
-                    absolute left-0 top-[6px]
-                    text-[14px] font-[500]
-                    transition-all duration-200
-    
-                    peer-placeholder-shown:top-[6px]
-                    peer-placeholder-shown:text-[12px]
-    
-                    peer-focus:-top-[14px]
-                    peer-focus:text-[10px]
-    
-                    peer-[:not(:placeholder-shown)]:-top-[14px]
-                    peer-[:not(:placeholder-shown)]:text-[10px]
-                  "
-                        >
+                            className={`absolute left-0 top-[6px] text-[14px] font-[500]
+                                transition-all duration-200
+                                peer-placeholder-shown:top-[6px] peer-placeholder-shown:text-[12px]
+                                peer-focus:-top-[14px] peer-focus:text-[10px]
+                                peer-[:not(:placeholder-shown)]:-top-[14px]
+                                peer-[:not(:placeholder-shown)]:text-[10px]
+                                ${theme === "light" ? "text-black" : "text-white"}`}>
                             Email*
                         </label>
                     </div>
@@ -128,94 +132,83 @@ function Login() {
                             type={showPassword ? "text" : "password"}
                             id="password"
                             placeholder=" "
-                            className="
-                    peer w-full bg-transparent
-                    border-b border-black
-                    outline-none
-                    py-[6px] pr-[32px] text-[14px]
-                    focus:border-b-2
-                  "onChange={(e) => setUser({ ...user, pass: e.target.value })}
+                            className={`peer w-full bg-transparent outline-none py-[6px] pr-[32px] text-[14px]
+                                border-b focus:border-b-2 transition-colors
+                                ${theme === "light" 
+                                    ? "border-black text-black" 
+                                    : "border-white text-white"}`}
+                            onChange={(e) => setUser({ ...user, pass: e.target.value })}
                             value={user.pass}
-
                         />
-                        {bool && user.pass.trim() == "" && <p className="text-[12px] text-[red] font-[500] mt-[6px]">Zəhmət olmasa şifrənizi daxil edin!</p>
+                        {bool && user.pass.trim() === "" && 
+                            <p className="text-[12px] text-[red] font-[500] mt-[6px]">
+                                Zəhmət olmasa şifrənizi daxil edin!
+                            </p>
                         }
 
                         <label
                             htmlFor="password"
-                            className="
-                    absolute left-0 top-[6px]
-                    text-[14px] font-[500]
-                    transition-all duration-200
-    
-                    peer-placeholder-shown:top-[6px]
-                    peer-placeholder-shown:text-[12px]
-    
-                    peer-focus:-top-[14px]
-                    peer-focus:text-[10px]
-    
-                    peer-[:not(:placeholder-shown)]:-top-[14px]
-                    peer-[:not(:placeholder-shown)]:text-[10px]
-                  "
-                        >
+                            className={`absolute left-0 top-[6px] text-[14px] font-[500]
+                                transition-all duration-200
+                                peer-placeholder-shown:top-[6px] peer-placeholder-shown:text-[12px]
+                                peer-focus:-top-[14px] peer-focus:text-[10px]
+                                peer-[:not(:placeholder-shown)]:-top-[14px]
+                                peer-[:not(:placeholder-shown)]:text-[10px]
+                                ${theme === "light" ? "text-black" : "text-white"}`}>
                             Password*
                         </label>
 
                         <button
                             type="button"
                             onClick={() => setShowPassword(!showPassword)}
-                            className="absolute right-0 top-[6px] text-black"
-                        >
-                            {showPassword ? <FiEyeOff className="text-[18px] cursor-pointer" /> : <FiEye className="text-[18px] cursor-pointer" />}
+                            className={`absolute right-0 top-[6px]
+                                ${theme === "light" ? "text-black" : "text-white"}`}>
+                            {showPassword ? 
+                                <FiEyeOff className="text-[18px] cursor-pointer" /> : 
+                                <FiEye className="text-[18px] cursor-pointer" />}
                         </button>
                     </div>
 
                     <button
-                        className="w-full
-                  bg-black text-white
-                  px-[48px] py-[12px]
-                  text-[12px] font-[600]
-                  tracking-widest
-                  transition hover:bg-[#1E1E1E]
-                  cursor-pointer
-                "
-                    >
+                        className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
+                            tracking-widest transition cursor-pointer
+                            ${theme === "light" 
+                                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                                : "bg-white text-black hover:bg-gray-200"}`}>
                         GO
                     </button>
 
-                 <div className="flex justify-between">
-                       <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
-                        Don't you have account?{" "}
-                        <Link
-                            to="/register"
-                            className="underline font-[500] hover:opacity-70"
-                        >
-                            Sign Up
-                        </Link>
-
-                    </p>
-                       <p className="mt-[24px] text-[14px] font-[500] tracking-wide">
-                        <Link
-                            to="/"
-                            className="underline font-[500] hover:opacity-70"
-                        >
-                            Guest
-                        </Link>
-
-                    </p>
-                 </div>
-                    <p className="mt-[24px] text-[14px] font-[500] font-[500]">
+                    <div className="flex justify-between">
+                        <p className={`mt-[24px] text-[14px] font-[500] tracking-wide
+                            ${theme === "light" ? "text-black" : "text-white"}`}>
+                            Don't you have account?{" "}
+                            <Link
+                                to="/register"
+                                className="underline font-[500] hover:opacity-70">
+                                Sign Up
+                            </Link>
+                        </p>
+                        <p className={`mt-[24px] text-[14px] font-[500] tracking-wide
+                            ${theme === "light" ? "text-black" : "text-white"}`}>
+                            <Link
+                                to="/"
+                                className="underline font-[500] hover:opacity-70">
+                                Guest
+                            </Link>
+                        </p>
+                    </div>
+                    
+                    <p className={`mt-[24px] text-[14px] font-[500]
+                        ${theme === "light" ? "text-black" : "text-white"}`}>
                         <Link
                             to="/forgotpassword"
-                            className="hover:opacity-70"
-                        >
+                            className="hover:opacity-70">
                             Forgot password?
                         </Link>
                     </p>
 
                 </form>
             </div>
-
         </div>
     );
 }

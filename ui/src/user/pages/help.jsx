@@ -30,10 +30,10 @@ function Help() {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-[24px] py-[80px] mt-[100px]">
+    <div className="max-w-[1200px] mx-auto px-[24px] py-[80px] mt-[100px] help">
 
       
-      <h1 className="text-[32px] md:text-[40px] font-semibold mb-[24px]">
+      <h1 className="text-[32px] md:text-[40px] font-semibold mb-[24px] helptext">
         Help & Customer Service
       </h1>
       <p className="text-[16px] text-gray-600 mb-[48px]">
@@ -72,7 +72,7 @@ function Help() {
 
       </div>
 
-\
+
       <div className="mt-[64px] border-t border-gray-200 pt-[32px]">
         <h2 className="text-[24px] font-semibold mb-[16px]">Contact Us</h2>
         <p className="text-gray-600 mb-[24px]">

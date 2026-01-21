@@ -2,7 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import "tailwindcss";
 
+body {
+  background-color: white;
+  transition: background-color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
 
+body.dark-mode {
+  background-color: black;
+}
+
+/* İlk yüklənmə zamanı transition olmasın */
+body.preload * {
+  transition: none !important;
+}
 
 body {
   font-family: "Manrope", sans-serif;
@@ -13,6 +27,7 @@ body {
   font-weight: bold;
   font-size: 48px;
 }
+
 .logo-wipe {
   position: absolute;
   top: -100%;
@@ -24,17 +39,209 @@ body {
   z-index: 2;
 }
 
+/* Dark mode üçün qara wipe */
+.logo-wipe-dark {
+  background: #000;
+}
+
 @keyframes wipeDown {
   0% {
     top: -100%;
   }
+
   40% {
     top: 0%;
   }
+
   60% {
     top: 0%;
   }
+
   100% {
     top: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  ;
+}
+
+;
+@media (max-width:768px) {
+  .secondarynav {
+    top: 64px;
+  }
+
+  ;
+}
+
+;
+
+@media (max-width: 768px) {
+  .product {
+    margin-bottom: 32px;
+  }
+
+  ;
+}
+
+;
+@media (max-width: 768px) {
+  .search {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .basket {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .price {
+    width: 100%;
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .help {
+    margin-top: 12px;
+  }
+
+  ;
+}
+
+;
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .img {
+    height: 224px;
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: 204px;
+  }
+
+  ;
+}
+
+@media (max-width: 768px) {
+  .helptext {
+    font-size: 24px
+  }
+
+  ;
+}
+
+;
+@media (max-width: 768px) {
+  .placeholder {
+    font-size: 16px;
+  }
+
+  ;
+}
+
+;
+@media (max-width: 768px) {
+  .start {
+    width: 360px;
+  }
+
+  ;
+}
+
+;
+
+
+.range-input {
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+}
+
+/* Track */
+.range-input::-webkit-slider-runnable-track {
+  height: 2px;
+  background: transparent;
+}
+
+.range-input {
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+}
+
+.range-input {
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+}
+
+/* Track */
+.range-input::-webkit-slider-runnable-track {
+  height: 2px;
+  background: transparent;
+}
+
+/* Thumb */
+.range-input::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: var(--thumb-color, black);
+  margin-top: -6px;
+}
+
+.range-input::-moz-range-track {
+  height: 2px;
+  background: transparent;
+}
+
+.range-input::-moz-range-thumb {
+  pointer-events: auto;
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: var(--thumb-color, black);
 }
