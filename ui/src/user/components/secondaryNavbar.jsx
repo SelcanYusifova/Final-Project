@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ViewController from "./ViewController";
+import { useTranslation } from "react-i18next";
+
+
+
 
 function SecondaryNavbar({ colSize, setColSize, onFilterClick, theme }) {
   const { categorySlug, subcategorySlug } = useParams();
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
+  const { t, i18n } = useTranslation();
+
 
   useEffect(() => {
     fetch("http://localhost:3000/categories")
@@ -30,13 +36,16 @@ function SecondaryNavbar({ colSize, setColSize, onFilterClick, theme }) {
           ${theme === "light" ? "text-gray-500" : "text-gray-400"}
         `}
       >
-        {category.title}
-        {subcategorySlug
-          ? ` > ${subcategorySlug.replace("-", " ").toUpperCase()}`
-          : ""}
+        {category.title[i18n.language]}
+        {subcategorySlug && category.subcategories && (
+          <>
+            {" > "}
+            {category.subcategories.find(sub => sub.slug === subcategorySlug)?.title[i18n.language]}
+          </>
+        )}
       </div>
 
-      {/* Subcategory linkləri */}
+
       <div
         className="px-6 py-4 overflow-x-auto"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -54,18 +63,17 @@ function SecondaryNavbar({ colSize, setColSize, onFilterClick, theme }) {
                 to={`/${category.slug}/${sub.slug}`}
                 className={`
                   block transition-colors
-                  ${
-                    sub.slug === subcategorySlug
-                      ? theme === "light"
-                        ? "text-black border-b border-black"
-                        : "text-white border-b border-white"
-                      : theme === "light"
+                  ${sub.slug === subcategorySlug
+                    ? theme === "light"
+                      ? "text-black border-b border-black"
+                      : "text-white border-b border-white"
+                    : theme === "light"
                       ? "text-gray-500 hover:text-black"
                       : "text-gray-400 hover:text-white"
                   }
                 `}
               >
-                {sub.title}
+                {sub.title[i18n.language]}
               </Link>
             </li>
           ))}
@@ -84,7 +92,7 @@ function SecondaryNavbar({ colSize, setColSize, onFilterClick, theme }) {
           `}
           onClick={onFilterClick}
         >
-          FILTER
+          {t("filter")}
         </p>
         <p className="text-xs font-[600] whitespace-nowrap hidden lg:inline">|</p>
         <ViewController colSize={colSize} setColSize={setColSize} theme={theme} />

@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { Bounce, toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+
+
 
 function Register() {
+    const { t, i18n } = useTranslation();
     let navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [user, setUser] = useState({
@@ -34,7 +38,7 @@ function Register() {
                 .then(data => {
                     const email = data.find(e => e.email === user.email);
                     if (email) {
-                        toast.error('Bu email artıq mövcuddur!', {
+                        toast.error(t("emailExists"), {
                             position: "top-center",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -58,7 +62,7 @@ function Register() {
                             email: "",
                             pass: ""
                         });
-                        toast.success('Qeydiyyat uğurla tamamlandı!', {
+                        toast.success(t("registrationSuccess"), {
                             position: "top-center",
                             autoClose: 1000,
                             hideProgressBar: false,
@@ -76,7 +80,7 @@ function Register() {
                     }
                 });
         } else {
-            toast.error('Məlumatları tam daxil edin!', {
+            toast.error(t("fillAllFields"), {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -107,7 +111,7 @@ function Register() {
 
                     <h2 className={`text-[20px] font-[600] tracking-wide mb-[48px]
                         ${theme === "light" ? "text-black" : "text-white"}`}>
-                        SIGN UP
+                        {t("signUp")}
                     </h2>
 
                     <div className="relative mb-[32px]">
@@ -125,7 +129,7 @@ function Register() {
                         />
                         {bool && user.firstname.trim() === "" && 
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                                Zəhmət olmasa adınızı daxil edin!
+                                {t("enterFirstName")}
                             </p>
                         }
                         <label
@@ -137,7 +141,7 @@ function Register() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            First name*
+                            {t("firstname")}
                         </label>
                     </div>
 
@@ -156,7 +160,7 @@ function Register() {
                         />
                         {bool && user.lastname.trim() === "" && 
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                                Zəhmət olmasa soyadınızı daxil edin!
+                                {t("enterLastName")}
                             </p>
                         }
                         <label
@@ -168,7 +172,7 @@ function Register() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Last name*
+                            {t("lastname")}
                         </label>
                     </div>
 
@@ -187,7 +191,7 @@ function Register() {
                         />
                         {bool && user.email.trim() === "" && 
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                                Zəhmət olmasa emailinizi daxil edin!
+                                {t("enterEmail")}
                             </p>
                         }
                         <label
@@ -199,7 +203,7 @@ function Register() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Email*
+                            {t("email")}
                         </label>
                     </div>
 
@@ -218,7 +222,7 @@ function Register() {
                         />
                         {bool && user.pass.trim() === "" && 
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                                Zəhmət olmasa şifrənizi daxil edin!
+                                {t("enterPassword")}
                             </p>
                         }
                         <label
@@ -230,7 +234,7 @@ function Register() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Password*
+                            {t("password")}
                         </label>
 
                         <button
@@ -250,17 +254,17 @@ function Register() {
                             ${theme === "light" 
                                 ? "bg-black text-white hover:bg-[#1E1E1E]" 
                                 : "bg-white text-black hover:bg-gray-200"}`}>
-                        GO
+                        {t("go")}
                     </button>
 
                     <div className="flex justify-between">
                         <p className={`mt-[24px] text-[14px] font-[500] tracking-wide
                             ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Have you already account?{" "}
+                            {t("haveAccount")}{" "}
                             <Link
                                 to="/login"
                                 className="underline font-[500] hover:opacity-70">
-                                Sign In
+                                {t("signIn")}
                             </Link>
                         </p>
                         <p className={`mt-[24px] text-[14px] font-[500] tracking-wide
@@ -268,7 +272,7 @@ function Register() {
                             <Link
                                 to="/"
                                 className="underline font-[500] hover:opacity-70">
-                                Guest
+                                {t("guest")}
                             </Link>
                         </p>
                     </div>

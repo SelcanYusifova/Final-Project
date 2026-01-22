@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { Bounce, toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
+    const { t, i18n } = useTranslation();
     const [user, setUser] = useState({
         email: "",
         pass: "",
@@ -23,12 +26,12 @@ function Login() {
     }, []);
 
     let navigate = useNavigate();
-    
+
     const welcome = (e) => {
         e.preventDefault();
         setBool(true);
         if (!user.email.trim() && !user.pass.trim()) {
-            toast.error('Məlumatları tam daxil edin!', {
+            toast.error(t("fillAllFields"), {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -45,7 +48,7 @@ function Login() {
                 .then(data => {
                     let founded = data.find(e => e.email === user.email);
                     if (founded && founded.pass == user.pass) {
-                        toast.success('Hesabınıza xoş gəldiniz!', {
+                        toast.success(t("welcome"), {
                             position: "top-center",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -60,7 +63,7 @@ function Login() {
                         navigate("/");
                         setBool(false);
                     } else {
-                        toast.error('Mail və ya şifrə yanlışdır!', {
+                        toast.error(t("loginError"), {
                             position: "top-center",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -93,7 +96,7 @@ function Login() {
 
                     <h2 className={`text-[20px] font-[600] tracking-wide mb-[48px]
                         ${theme === "light" ? "text-black" : "text-white"}`}>
-                        SIGN IN
+                        {t("signIn")}
                     </h2>
 
                     <div className="relative mb-[32px]">
@@ -103,15 +106,15 @@ function Login() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             onChange={(e) => setUser({ ...user, email: e.target.value })}
                             value={user.email}
                         />
-                        {bool && user.email.trim() === "" && 
+                        {bool && user.email.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                                Zəhmət olmasa emailinizi daxil edin!
+                                {t("enterEmail")}
                             </p>
                         }
                         <label
@@ -123,7 +126,7 @@ function Login() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Email*
+                            {t("email")}
                         </label>
                     </div>
 
@@ -134,15 +137,15 @@ function Login() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] pr-[32px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             onChange={(e) => setUser({ ...user, pass: e.target.value })}
                             value={user.pass}
                         />
-                        {bool && user.pass.trim() === "" && 
+                        {bool && user.pass.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                                Zəhmət olmasa şifrənizi daxil edin!
+                               {t("enterPassword")}
                             </p>
                         }
 
@@ -155,7 +158,7 @@ function Login() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Password*
+                            {t("password")}
                         </label>
 
                         <button
@@ -163,8 +166,8 @@ function Login() {
                             onClick={() => setShowPassword(!showPassword)}
                             className={`absolute right-0 top-[6px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            {showPassword ? 
-                                <FiEyeOff className="text-[18px] cursor-pointer" /> : 
+                            {showPassword ?
+                                <FiEyeOff className="text-[18px] cursor-pointer" /> :
                                 <FiEye className="text-[18px] cursor-pointer" />}
                         </button>
                     </div>
@@ -172,20 +175,20 @@ function Login() {
                     <button
                         className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
                             tracking-widest transition cursor-pointer
-                            ${theme === "light" 
-                                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                            ${theme === "light"
+                                ? "bg-black text-white hover:bg-[#1E1E1E]"
                                 : "bg-white text-black hover:bg-gray-200"}`}>
-                        GO
+                        {t("go")}
                     </button>
 
                     <div className="flex justify-between">
                         <p className={`mt-[24px] text-[14px] font-[500] tracking-wide
                             ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Don't you have account?{" "}
+                            {t("donthaveAccount")}{" "}
                             <Link
                                 to="/register"
                                 className="underline font-[500] hover:opacity-70">
-                                Sign Up
+                                {t("signUp")}
                             </Link>
                         </p>
                         <p className={`mt-[24px] text-[14px] font-[500] tracking-wide
@@ -193,17 +196,17 @@ function Login() {
                             <Link
                                 to="/"
                                 className="underline font-[500] hover:opacity-70">
-                                Guest
+                                {t("guest")}
                             </Link>
                         </p>
                     </div>
-                    
+
                     <p className={`mt-[24px] text-[14px] font-[500]
                         ${theme === "light" ? "text-black" : "text-white"}`}>
                         <Link
                             to="/forgotpassword"
                             className="hover:opacity-70">
-                            Forgot password?
+                            {t("forgot")}
                         </Link>
                     </p>
 

@@ -1,141 +1,172 @@
 import React from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Bounce } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import { useOutletContext } from "react-router-dom";
 
 function Help() {
+  const { t, i18n } = useTranslation();
+  const { theme } = useOutletContext();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_3prylp8",      
-      "template_3jca0tp",     
+      "service_3prylp8",
+      "template_3jca0tp",
       e.target,
-      "qn5HIhBnGTdL6gST0"     
+      "qn5HIhBnGTdL6gST0"
     )
-    .then((result) => {
-      toast.success("Mesaj göndərildi! Tezliklə sizinlə əlaqə saxlanacaq.", {
-        position: "top-center",
-        autoClose: 5000,
-        transition: Bounce
+      .then((result) => {
+        toast.success("Mesaj göndərildi! Tezliklə sizinlə əlaqə saxlanacaq.", {
+          position: "top-center",
+          autoClose: 5000,
+          transition: Bounce,
+          theme: theme === "dark" ? "dark" : "light"
+        });
+        e.target.reset();
+      }, (error) => {
+        toast.error("Xəta baş verdi: " + error.text, {
+          position: "top-center",
+          autoClose: 5000,
+          transition: Bounce,
+          theme: theme === "dark" ? "dark" : "light"
+        });
       });
-      e.target.reset(); 
-    }, (error) => {
-      toast.error("Xəta baş verdi: " + error.text, {
-        position: "top-center",
-        autoClose: 5000,
-        transition: Bounce
-      });
-    });
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-[24px] py-[80px] mt-[100px] help">
+    <div className={`max-w-[1200px] mx-auto px-[24px] py-[80px] mt-[100px] help transition-colors
+      ${theme === "light" ? "text-black" : "text-white"}`}>
 
-      
       <h1 className="text-[32px] md:text-[40px] font-semibold mb-[24px] helptext">
-        Help & Customer Service
+        {t("helpCustomerService")}
       </h1>
-      <p className="text-[16px] text-gray-600 mb-[48px]">
-        Find answers to our most frequently asked questions or contact our support team.
+      <p className={`text-[16px] mb-[48px]
+        ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
+        {t("helpCustomerServiceDesc")}
       </p>
 
       <div className="flex flex-col gap-[32px]">
 
-        <div className="border-b border-gray-200 pb-[24px]">
-          <h2 className="text-[20px] font-medium mb-[8px]">Order Tracking</h2>
-          <p className="text-[14px] text-gray-600">
-            You can track your order status by logging into your account or using the tracking link sent to your email.
+        <div className={`border-b pb-[24px]
+          ${theme === "light" ? "border-gray-200" : "border-gray-700"}`}>
+          <h2 className="text-[20px] font-medium mb-[8px]">{t("orderTracking")}</h2>
+          <p className={`text-[14px]
+            ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
+            {t("orderTrackingDesc")}
           </p>
         </div>
 
-        <div className="border-b border-gray-200 pb-[24px]">
-          <h2 className="text-[20px] font-medium mb-[8px]">Returns & Exchanges</h2>
-          <p className="text-[14px] text-gray-600">
-            Returns can be made within 30 days of purchase. Make sure your items are in original condition.
+        <div className={`border-b pb-[24px]
+          ${theme === "light" ? "border-gray-200" : "border-gray-700"}`}>
+          <h2 className="text-[20px] font-medium mb-[8px]">{t("returnsExchanges")}</h2>
+          <p className={`text-[14px]
+            ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
+            {t("returnsExchanges")}
           </p>
         </div>
 
-        <div className="border-b border-gray-200 pb-[24px]">
-          <h2 className="text-[20px] font-medium mb-[8px]">Payment Methods</h2>
-          <p className="text-[14px] text-gray-600">
-            We accept all major credit cards, PayPal, and gift cards. All transactions are secure.
+        <div className={`border-b pb-[24px]
+          ${theme === "light" ? "border-gray-200" : "border-gray-700"}`}>
+          <h2 className="text-[20px] font-medium mb-[8px]">{t("paymentMethods")}</h2>
+          <p className={`text-[14px]
+            ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
+            {t("paymentMethodsDesc")}
           </p>
         </div>
 
-        <div className="border-b border-gray-200 pb-[24px]">
-          <h2 className="text-[20px] font-medium mb-[8px]">Shipping Information</h2>
-          <p className="text-[14px] text-gray-600">
-            Orders are usually processed within 1-2 business days. Delivery times vary by location.
+        <div className={`border-b pb-[24px]
+          ${theme === "light" ? "border-gray-200" : "border-gray-700"}`}>
+          <h2 className="text-[20px] font-medium mb-[8px]">{t("shippingInfo")}</h2>
+          <p className={`text-[14px]
+            ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
+            {t("shippingInfoDesc")}
           </p>
         </div>
 
       </div>
 
-
-      <div className="mt-[64px] border-t border-gray-200 pt-[32px]">
-        <h2 className="text-[24px] font-semibold mb-[16px]">Contact Us</h2>
-        <p className="text-gray-600 mb-[24px]">
-          Send us a message and our support team will get back to you.
+      <div className={`mt-[64px] pt-[32px]
+        ${theme === "light" ? "border-gray-200" : "border-gray-700"}`}>
+        <h2 className="text-[24px] font-semibold mb-[16px]">{t("contactUs")}</h2>
+        <p className={`mb-[24px]
+          ${theme === "light" ? "text-gray-600" : "text-gray-400"}`}>
+          {t("contactUsDesc")}
         </p>
 
         <form onSubmit={sendEmail} className="flex flex-col gap-[32px] max-w-[420px]">
-          
+
           <div className="relative">
             <input
               type="text"
               name="user_name"
               placeholder=" "
               required
-              className="peer w-full bg-transparent border-b border-black outline-none py-[6px] text-[14px] focus:border-b-2"
+              className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
+                border-b focus:border-b-2 transition-colors
+                ${theme === "light" 
+                  ? "border-black text-black" 
+                  : "border-white text-white"}`}
             />
-            <label className="absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
+            <label className={`absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
               peer-focus:-top-[14px] peer-focus:text-[10px]
               peer-[:not(:placeholder-shown)]:-top-[14px]
-              peer-[:not(:placeholder-shown)]:text-[10px]">
-              Your Name*
+              peer-[:not(:placeholder-shown)]:text-[10px]
+              ${theme === "light" ? "text-black" : "text-white"}`}>
+              {t("yourName")}
             </label>
           </div>
 
-       
           <div className="relative">
             <input
               type="email"
               name="user_email"
               placeholder=" "
               required
-              className="peer w-full bg-transparent border-b border-black outline-none py-[6px] text-[14px] focus:border-b-2"
+              className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
+                border-b focus:border-b-2 transition-colors
+                ${theme === "light" 
+                  ? "border-black text-black" 
+                  : "border-white text-white"}`}
             />
-            <label className="absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
+            <label className={`absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
               peer-focus:-top-[14px] peer-focus:text-[10px]
               peer-[:not(:placeholder-shown)]:-top-[14px]
-              peer-[:not(:placeholder-shown)]:text-[10px]">
-              Your Email*
+              peer-[:not(:placeholder-shown)]:text-[10px]
+              ${theme === "light" ? "text-black" : "text-white"}`}>
+              {t("yourEmail")}
             </label>
           </div>
 
-       
           <div className="relative">
             <textarea
               name="message"
               placeholder=" "
               required
-              className="peer w-full bg-transparent border-b border-black outline-none py-[6px] text-[12px] resize-none focus:border-b-2"
+              className={`peer w-full bg-transparent outline-none py-[6px] text-[12px] resize-none
+                border-b focus:border-b-2 transition-colors
+                ${theme === "light" 
+                  ? "border-black text-black" 
+                  : "border-white text-white"}`}
             />
-            <label className="absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
+            <label className={`absolute left-0 top-[6px] text-[12px] font-[500] transition-all duration-200
               peer-focus:-top-[14px] peer-focus:text-[10px]
               peer-[:not(:placeholder-shown)]:-top-[14px]
-              peer-[:not(:placeholder-shown)]:text-[10px]">
-              Your Message*
+              peer-[:not(:placeholder-shown)]:text-[10px]
+              ${theme === "light" ? "text-black" : "text-white"}`}>
+              {t("yourMessage")}
             </label>
           </div>
 
-     
           <button
             type="submit"
-            className="w-full bg-black text-white px-[48px] py-[12px] text-[12px] font-[600] tracking-widest transition hover:bg-[#1E1E1E] cursor-pointer"
-          >
-            Send Message
+            className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
+              tracking-widest transition cursor-pointer
+              ${theme === "light" 
+                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                : "bg-white text-black hover:bg-gray-200"}`}>
+            {t("send")}
           </button>
 
         </form>

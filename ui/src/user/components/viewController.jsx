@@ -1,10 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function ViewController({ colSize, setColSize, theme }) {
   const trackRef = useRef(null);
   const [dragging, setDragging] = useState(false);
   const [trackWidth, setTrackWidth] = useState(0);
-  const circleSize = 12; // dairə ölçüsü px ilə
+  const circleSize = 12;
+  const { t, i18n } = useTranslation();
+
 
   useEffect(() => {
     if (trackRef.current) setTrackWidth(trackRef.current.offsetWidth);
@@ -68,7 +71,7 @@ function ViewController({ colSize, setColSize, theme }) {
       onMouseLeave={handleMouseUp}
       onTouchMove={handleTouchMove}
     >
-      <span>View</span>
+      <span>{t("view")}</span>
 
       <div
         ref={trackRef}

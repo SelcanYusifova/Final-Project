@@ -3,6 +3,8 @@ import { BsBasket3 } from "react-icons/bs";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { FiTrash2, FiMinus, FiPlus } from "react-icons/fi";
 import { toast, Bounce } from "react-toastify";
+import { useTranslation } from "react-i18next";
+
 
 function Basket() {
   const userId = localStorage.getItem("id");
@@ -11,6 +13,7 @@ function Basket() {
 
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (!userId) {
@@ -81,16 +84,16 @@ function Basket() {
       <div className="w-[400px] m-auto mt-[260px] text-center start">
         <BsBasket3 className={`text-[48px] mb-6 mx-auto ${theme === "light" ? "text-black" : "text-white"}`} />
         <h2 className={`mb-6 text-[20px] ${theme === "light" ? "text-black" : "text-white"}`}>
-          Log in to your account to add products to the cart.
-        </h2>
+          {t("logInMessage")}
+          </h2>
         <Link to="/login">
           <button className={`cursor-pointer w-full py-3 transition
-            ${theme === "light" 
-              ? "bg-[#e5e5e5] text-black hover:bg-black hover:text-white" 
+            ${theme === "light"
+              ? "bg-[#e5e5e5] text-black hover:bg-black hover:text-white"
               : "bg-gray-800 text-white hover:bg-white hover:text-black"
             }
           `}>
-            Sign In
+            {t("signIn")}
           </button>
         </Link>
       </div>
@@ -102,16 +105,16 @@ function Basket() {
       <div className="text-center mt-[260px]">
         <BsBasket3 className={`text-[48px] mb-4 mx-auto ${theme === "light" ? "text-black" : "text-white"}`} />
         <h2 className={`text-[20px] mb-6 ${theme === "light" ? "text-black" : "text-white"}`}>
-          The cart is empty.
+          {t("cartEmpty")}
         </h2>
         <Link to="/">
           <button className={`cursor-pointer w-[400px] py-3 transition
-            ${theme === "light" 
-              ? "bg-[#e5e5e5] text-black hover:bg-black hover:text-white" 
+            ${theme === "light"
+              ? "bg-[#e5e5e5] text-black hover:bg-black hover:text-white"
               : "bg-gray-800 text-white hover:bg-white hover:text-black"
             }
           `}>
-            Start Shopping
+            {t("startShopping")}
           </button>
         </Link>
       </div>
@@ -124,15 +127,15 @@ function Basket() {
       {/* LEFT */}
       <div className="flex-1 space-y-4">
         <h1 className={`text-[24px] font-semibold ${theme === "light" ? "text-black" : "text-white"}`}>
-          Cart ({cartItems.length})
+          {t("cart")} ({cartItems.length})
         </h1>
 
         {cartItems.map(item => (
           <div
             key={item.id}
             className={`flex gap-4 p-4 border rounded-xl
-              ${theme === "light" 
-                ? "bg-white border-gray-200" 
+              ${theme === "light"
+                ? "bg-white border-gray-200"
                 : "bg-black border-gray-700"
               }
             `}
@@ -143,7 +146,7 @@ function Basket() {
             >
               <img
                 src={item.image}
-                alt={item.name}
+                alt={item.name[i18n.language]}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -151,11 +154,11 @@ function Basket() {
             <div className="flex-1 flex justify-between">
               <div>
                 <h3 className={`font-medium ${theme === "light" ? "text-black" : "text-white"}`}>
-                  {item.name}
+                  {item.name[i18n.language]}
                 </h3>
                 <p className={`text-[13px] ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
                   {item.color && `Color: ${item.color}`}{" "}
-                  {item.size && `• Size: ${item.size}`}
+                  {item.size && `• ${t("size")}: ${item.size}`}
                 </p>
 
                 <div className={`flex items-center gap-3 border rounded-full px-3 py-1 mt-3 w-fit
@@ -202,34 +205,34 @@ function Basket() {
 
       {/* RIGHT - Order Summary */}
       <div className={`w-[350px] sticky top-[120px] border rounded-xl p-6 h-fit
-        ${theme === "light" 
-          ? "bg-white border-gray-200" 
+        ${theme === "light"
+          ? "bg-white border-gray-200"
           : "bg-black border-gray-700"
         }
       `}>
         <h3 className={`text-[18px] font-semibold mb-4 ${theme === "light" ? "text-black" : "text-white"}`}>
-          Order Summary
+          {t("orderSummary")}
         </h3>
 
         <div className={`flex justify-between mb-2 ${theme === "light" ? "text-black" : "text-white"}`}>
-          <span>Subtotal</span>
+          <span>{t("subtotal")} </span>
           <span>{totalPrice.toFixed(2)} €</span>
         </div>
 
         <div className={`flex justify-between font-bold text-[18px] border-t pt-4
           ${theme === "light" ? "text-black border-gray-200" : "text-white border-gray-700"}
         `}>
-          <span>Total</span>
+          <span>{t("total")} </span>
           <span>{totalPrice.toFixed(2)} €</span>
         </div>
 
         <button className={`w-full py-3 mt-6 transition cursor-pointer
           ${theme === "light"
-              ? "bg-gray-200 hover:bg-black hover:text-white"
-              : "bg-gray-800 hover:bg-white hover:text-black"
-            }
+            ? "bg-gray-200 hover:bg-black hover:text-white"
+            : "bg-gray-800 hover:bg-white hover:text-black"
+          }
         `}>
-          Complete Order
+          {t("completeOrder")}
         </button>
       </div>
     </div>

@@ -6,6 +6,8 @@ import { BsBasket3 } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import SearchOverlay from "../components/searchOverlay";
 import { LuSun, LuMoon } from "react-icons/lu";
+import { useTranslation } from "react-i18next";
+
 
 
 function Navbar({ theme, toggleTheme }) {
@@ -13,6 +15,14 @@ function Navbar({ theme, toggleTheme }) {
   const [bool, setbool] = useState(false);
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
+  const { t, i18n } = useTranslation();
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const languageFlags = {
+    az: "https://flagcdn.com/w40/az.png",
+    en: "https://flagcdn.com/w40/gb.png",
+    ru: "https://flagcdn.com/w40/ru.png",
+  };
+
 
 
   useEffect(() => {
@@ -35,6 +45,22 @@ function Navbar({ theme, toggleTheme }) {
   const toggleCategory = (id) => {
     setActiveCategory((prev) => (prev === id ? null : id));
   };
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    setIsLangOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isLangOpen && !event.target.closest('.language-dropdown')) {
+        setIsLangOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isLangOpen]);
 
   return (
     <nav className={`w-full fixed top-0 left-0 z-50 ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
@@ -59,7 +85,7 @@ function Navbar({ theme, toggleTheme }) {
                         onClick={() => toggleCategory(e.id)}
                         className="cursor-pointer flex justify-between items-center"
                       >
-                        {e.title}
+                        {e.title[i18n.language]}
                         {e.subcategories.length > 0 && (
                           <span>{activeCategory === e.id ? "−" : "+"}</span>
                         )}
@@ -78,19 +104,71 @@ function Navbar({ theme, toggleTheme }) {
                               <Link
                                 to={`/${e.slug}/${sub.slug}`}
                                 className={`block cursor-pointer transition-colors
-      ${theme === "light"
+                                     ${theme === "light"
                                     ? "text-gray-600 hover:text-black"
                                     : "text-gray-300 hover:text-white"
                                   }`}
                               >
-                                {sub.title}
+                                {sub.title[i18n.language]}
                               </Link>
                             </li>
+
                           ))}
                         </ul>
                       )}
                     </li>
                   ))}
+                  <li className="pt-6 border-t border-gray-300">
+                    <div className="relative language-dropdown">
+                      <div
+                        className="flex items-center gap-2 cursor-pointer"
+                        onClick={() => setIsLangOpen(!isLangOpen)}
+                      >
+                        <img
+                          src={languageFlags[i18n.language]}
+                          alt={i18n.language}
+                          className="w-6 h-4 rounded-sm object-cover"
+                        />
+                        <span className="font-semibold">
+                          {i18n.language.toUpperCase()}
+                        </span>
+                      </div>
+
+                      <ul
+                        className={`
+        mt-2 w-28 rounded-lg shadow-lg p-1
+        ${theme === "light" ? "bg-white" : "bg-gray-900"}
+        ${isLangOpen ? "block" : "hidden"}
+      `}
+                      >
+                        <li
+                          className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100"
+                          onClick={() => changeLanguage("az")}
+                        >
+                          <img src="https://flagcdn.com/w40/az.png" className="w-5 h-3" />
+                          AZ
+                        </li>
+
+                        <li
+                          className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100"
+                          onClick={() => changeLanguage("en")}
+                        >
+                          <img src="https://flagcdn.com/w40/gb.png" className="w-5 h-3" />
+                          EN
+                        </li>
+
+                        <li
+                          className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100"
+                          onClick={() => changeLanguage("ru")}
+                        >
+                          <img src="https://flagcdn.com/w40/ru.png" className="w-5 h-3" />
+                          RU
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+
                 </ul>
               </div>
 
@@ -110,7 +188,7 @@ function Navbar({ theme, toggleTheme }) {
               onClick={() => setIsSearchOpen(true)}
               className={`relative text-[14px] font-medium cursor-pointer ${theme === "light" ? "text-black" : "text-white"}`}
             >
-              SEARCH
+              {t("search")}
               <span
                 className={`absolute left-0 -bottom-1 w-30 h-[1px] ${theme === "light" ? "bg-black" : "bg-white"}`}
               ></span>
@@ -119,6 +197,7 @@ function Navbar({ theme, toggleTheme }) {
 
 
           <div className="col-span-7 lg:col-span-5 flex justify-end items-center gap-[16px] ">
+
 
             <div className={`py-[22px] px-[12px] rounded-xl flex gap-[4px] h-[0px] items-center justify-center
   ${theme === "light" ? "bg-black" : "bg-white"}`}
@@ -132,6 +211,45 @@ function Navbar({ theme, toggleTheme }) {
               </button>
             </div>
 
+            <div className="relative group language-dropdown hidden lg:block">
+
+
+              <div className="flex items-center gap-2 cursor-pointer select-none" onClick={() => setIsLangOpen(!isLangOpen)}>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg"
+                  alt="AZ"
+                  className="w-6 h-4 rounded-sm"
+                />
+                <span className="text-sm font-semibold">{i18n.language.toUpperCase()}</span>
+              </div>
+
+
+              <ul className={`absolute right-0 mt-2 w-32 rounded-xl shadow-lg p-1 transition-all duration-200
+  ${theme === "light" ? "bg-white" : "bg-gray-900"}
+  ${isLangOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
+                <li className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition
+    ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
+                  onClick={() => changeLanguage("az")}>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="AZ" className="w-6 h-4 rounded-sm" />
+                  AZ
+                </li>
+                <li className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition
+    ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
+                  onClick={() => changeLanguage("en")}>
+                  <img src="https://upload.wikimedia.org/wikipedia/en/archive/a/ae/20190917170935%21Flag_of_the_United_Kingdom.svg" alt="EN" className="w-6 h-4 rounded-sm" />
+                  EN
+                </li>
+                <li className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition
+    ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
+                  onClick={() => changeLanguage("ru")}>
+                  <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg" alt="RU" className="w-6 h-4 rounded-sm" />
+                  RU
+                </li>
+              </ul>
+
+            </div>
+
+
 
             <FiSearch
               onClick={() => setIsSearchOpen(true)}
@@ -139,32 +257,30 @@ function Navbar({ theme, toggleTheme }) {
             />
 
             <div className="flex items-center gap-[6px] leading-none">
+
+
               <FaRegUser className={`text-[18px] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`} />
               {bool ? (
                 <NavLink to={"login"} onClick={logOut} className={`hidden md:inline text-[12px] font-[600] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
-                  LOG OUT
+                  {t("logout")}
                 </NavLink>
               ) : (
                 <NavLink to={"login"} className={`hidden md:inline text-[12px] font-[600] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
-                  LOG IN
+                  {t("login")}
                 </NavLink>
               )}
             </div>
 
-            <NavLink to={"/help"}>
-              <div className="flex items-center gap-[6px] leading-none">
-                <FiHelpCircle className={`text-[18px] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`} />
-                <Link to={"/help"} className={`text-[12px] font-[600] hidden md:inline ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
-                  HELP
-                </Link>
-              </div>
+            <NavLink to={"/help"} className="flex items-center gap-[6px] leading-none">
+              <FiHelpCircle className={`text-[18px] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`} />
+              <span className={`text-[12px] font-[600] hidden md:inline ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
+                {t("help")}
+              </span>
             </NavLink>
 
-            <NavLink to={"basket"}>
-              <div className="flex items-center gap-[6px] leading-none">
-                <BsBasket3 className={`text-[18px] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`} />
-                <span className={`text-[12px] font-[600] hidden md:inline ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>BASKET</span>
-              </div>
+            <NavLink to={"/basket"} className="flex items-center gap-[6px] leading-none">
+              <BsBasket3 className={`text-[18px] ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`} />
+              <span className={`text-[12px] font-[600] hidden md:inline ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>{t("basket")}</span>
             </NavLink>
 
           </div>

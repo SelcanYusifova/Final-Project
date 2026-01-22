@@ -3,12 +3,14 @@ import { GrFavorite } from "react-icons/gr";
 import { IoMdClose } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
+import { useTranslation } from "react-i18next";
 
 function Products({ pro, colSize, onClose, theme }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
@@ -30,7 +32,7 @@ function Products({ pro, colSize, onClose, theme }) {
     e.stopPropagation();
 
     if (!id) {
-      toast.error('Sign in to add products to cart!', {
+      toast.error(t("signInToAddCart"), {
         position: "top-center",
         autoClose: 3000,
         theme: "light",
@@ -82,7 +84,7 @@ function Products({ pro, colSize, onClose, theme }) {
       });
     }
 
-    toast.success("Product successfully added to cart", {
+    toast.success(t("productAddedToCart"), {
       position: "top-center",
       autoClose: 2000,
       transition: Bounce,
@@ -103,7 +105,7 @@ function Products({ pro, colSize, onClose, theme }) {
             <img
               src={productImage}
               className="w-full block"
-              alt={pro.name}
+              alt={pro.name[i18n.language]}
               onClick={onClose}
             />
           </Link>
@@ -117,7 +119,7 @@ function Products({ pro, colSize, onClose, theme }) {
                   handleAddToCart(e);
                 }}
               >
-                Add to cart
+                {t("addToCart")}
               </button>
             </div>
           )}
@@ -126,7 +128,7 @@ function Products({ pro, colSize, onClose, theme }) {
         {colSize > 1 && (
           <>
             <div className="flex justify-between mt-[8px]">
-              <p className="text-[14px]">{pro.name}</p>
+              <p className="text-[14px]">{pro.name[i18n.language]}</p>
               <p>{pro.sizes[0].price} $</p>
             </div>
 
@@ -152,10 +154,10 @@ function Products({ pro, colSize, onClose, theme }) {
 
       {showPanel && (
         <>
-         <div
-  className="fixed inset-0 z-40 bg-transparent"
-  onClick={() => setShowPanel(false)}
-/>
+          <div
+            className="fixed inset-0 z-40 bg-transparent"
+            onClick={() => setShowPanel(false)}
+          />
 
           <div className={`fixed right-0 top-0 h-full w-[450px] z-50 shadow-2xl overflow-y-auto panel
       ${theme === "light" ? "bg-white" : "bg-black"}
@@ -165,7 +167,7 @@ function Products({ pro, colSize, onClose, theme }) {
         ${theme === "light" ? "border-[#DDDDDD]" : "border-gray-700"}
       `}>
               <h2 className={`text-[18px] font-semibold ${theme === "light" ? "text-black" : "text-white"}`}>
-                Add to cart
+                {t("addToCart")}
               </h2>
               <button onClick={() => setShowPanel(false)}>
                 <IoMdClose className={`text-[24px] cursor-pointer hover:text-black duration-150 ${theme === "light" ? "text-[#9f9c9c]" : "text-gray-400"}`} />
@@ -175,12 +177,12 @@ function Products({ pro, colSize, onClose, theme }) {
             <div className="p-6">
               <img
                 src={productImage}
-                alt={pro.name}
+                alt={pro.name[i18n.language]}
                 className="w-full h-[300px] object-cover mb-4"
               />
 
               <h3 className={`text-[16px] font-semibold mb-2 ${theme === "light" ? "text-black" : "text-white"}`}>
-                {pro.name}
+                {pro.name[i18n.language]}
               </h3>
 
               {currentSize && (
@@ -199,7 +201,7 @@ function Products({ pro, colSize, onClose, theme }) {
               {hasVariants && (
                 <div className="mb-4">
                   <p className={`text-[14px] font-medium mb-2 ${theme === "light" ? "text-black" : "text-white"}`}>
-                    Color: {pro.variants[selectedColor].color.toUpperCase()}
+                    {t("color")}: {pro.variants[selectedColor].color.toUpperCase()}
                   </p>
                   <div className="flex gap-[8px]">
                     {pro.variants.map((v, i) => (
@@ -207,8 +209,8 @@ function Products({ pro, colSize, onClose, theme }) {
                         key={i}
                         onClick={() => setSelectedColor(i)}
                         className={`w-8 h-8 rounded-full cursor-pointer border-1 ${selectedColor === i
-                            ? `${theme === "light" ? "border-black" : "border-white"} scale-110`
-                            : `${theme === "light" ? "border-gray-300" : "border-gray-600"}`
+                          ? `${theme === "light" ? "border-black" : "border-white"} scale-110`
+                          : `${theme === "light" ? "border-gray-300" : "border-gray-600"}`
                           }`}
                         style={{ backgroundColor: v.hex }}
                       />
@@ -220,7 +222,7 @@ function Products({ pro, colSize, onClose, theme }) {
               {hasSizes && (
                 <div className="mb-6">
                   <h3 className={`font-semibold mb-3 text-[14px] ${theme === "light" ? "text-black" : "text-white"}`}>
-                    Size
+                    {t("size")}
                   </h3>
                   <ul className="space-y-2">
                     {pro.sizes.map((s, i) => (
@@ -228,8 +230,8 @@ function Products({ pro, colSize, onClose, theme }) {
                         key={i}
                         onClick={() => setSelectedSize(i)}
                         className={`p-3 border rounded cursor-pointer transition ${selectedSize === i
-                            ? `${theme === "light" ? "border-black bg-gray-50" : "border-white"}`
-                            : `${theme === "light" ? "border-gray-200 hover:border-gray-400" : "border-gray-700 hover:border-gray-500"}`
+                          ? `${theme === "light" ? "border-black bg-gray-50" : "border-white"}`
+                          : `${theme === "light" ? "border-gray-200 hover:border-gray-400" : "border-gray-700 hover:border-gray-500"}`
                           }`}
                       >
                         <div className="flex justify-between">
@@ -267,7 +269,7 @@ function Products({ pro, colSize, onClose, theme }) {
                   }
           `}
               >
-                Add to cart
+                {t("addToCart")}
               </button>
             </div>
           </div>

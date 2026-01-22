@@ -3,6 +3,7 @@ import { useParams, useOutletContext } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { Bounce, toast } from "react-toastify";
 import FullScreenLoader from "../components/fullScreenLoader";
+import { useTranslation } from "react-i18next";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -12,8 +13,8 @@ function ProductDetail() {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(0);
   const [showPanel, setShowPanel] = useState(false);
-
   const userId = localStorage.getItem("id");
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     fetch("http://localhost:3000/allProducts")
@@ -37,7 +38,7 @@ function ProductDetail() {
 
   const handleAddToCart = () => {
     if (!userId) {
-      toast.error('Sign in to add products to cart!', {
+      toast.error(t("signInToAddCart"), {
         position: "top-center",
         autoClose: 3000,
         theme: theme === "dark" ? "dark" : "light",
@@ -89,7 +90,7 @@ function ProductDetail() {
       });
     }
 
-    toast.success("Product successfully added to cart", {
+    toast.success(t("productAddedToCart"), {
       position: "top-center",
       autoClose: 2000,
       theme: theme === "dark" ? "dark" : "light",
@@ -147,19 +148,19 @@ function ProductDetail() {
           <div className="w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] img">
             <img
               src={imageSrc}
-              alt={product.name}
+              alt={product.name[i18n.language]}
               className="w-full h-full object-cover"
             />
           </div>
         </div>
 
         <div className="flex-1 flex flex-col gap-6">
-          <nav className={`text-[14px]
+          {/* <nav className={`text-[14px]
             ${theme === "light" ? "text-gray-500" : "text-gray-400"}`}>
             {product.categoryName?.toUpperCase()}
-          </nav>
+          </nav> */}
 
-          <h1 className="text-[20px] font-semibold uppercase">{product.name}</h1>
+          <h1 className="text-[20px] font-semibold uppercase">{product.name[i18n.language]}</h1>
 
           {currentSize && (
             <div className="flex gap-3 items-center">
@@ -200,14 +201,11 @@ function ProductDetail() {
             </>
           )}
 
-          <p className={`text-[14px] max-w-lg
-            ${theme === "light" ? "text-gray-700" : "text-gray-300"}`}>
-            {product.description || "No description available."}
-          </p>
+       
 
           {hasSizes && (
             <div>
-              <h3 className="font-semibold mb-3">Size</h3>
+              <h3 className="font-semibold mb-3">{t("size")}</h3>
               <ul className="space-y-3">
                 {product.sizes.map((s, i) => (
                   <li
@@ -252,7 +250,7 @@ function ProductDetail() {
                 ? "bg-[#e5e5e5] hover:bg-black hover:text-white"
                 : "bg-gray-700 hover:bg-white hover:text-black"}`}
           >
-            Add to cart
+            {t("addToCart")}
           </button>
         </div>
       </div>
@@ -269,7 +267,7 @@ function ProductDetail() {
 
             <div className={`flex justify-between items-center p-6 border-b
               ${theme === "light" ? "border-[#DDDDDD]" : "border-gray-700"}`}>
-              <h2 className="text-[18px] font-semibold">Add to cart</h2>
+              <h2 className="text-[18px] font-semibold">{t("addToCart")}</h2>
               <button onClick={() => setShowPanel(false)}>
                 <IoMdClose className={`text-[24px] cursor-pointer hover:text-gray-700 duration-150
                   ${theme === "light" ? "text-[#9f9c9c]" : "text-gray-400"}`} />
@@ -279,11 +277,11 @@ function ProductDetail() {
             <div className="p-6">
               <img
                 src={imageSrc}
-                alt={product.name}
+                alt={product.name[i18n.language]}
                 className="w-full h-[300px] object-cover mb-4"
               />
 
-              <h3 className="text-[16px] font-semibold mb-2">{product.name}</h3>
+              <h3 className="text-[16px] font-semibold mb-2">{product.name[i18n.language]}</h3>
 
               {currentSize && (
                 <div className="flex gap-3 items-center mb-4">
@@ -300,7 +298,7 @@ function ProductDetail() {
               {hasVariants && (
                 <div className="mb-4">
                   <p className="text-[14px] font-medium mb-2">
-                    Color: {product.variants[selectedColor].color.toUpperCase()}
+                    {t("color")} {product.variants[selectedColor].color.toUpperCase()}
                   </p>
                   <div className="flex gap-[8px]">
                     {product.variants.map((v, i) => (
@@ -325,7 +323,7 @@ function ProductDetail() {
 
               {hasSizes && (
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-3 text-[14px]">Size</h3>
+                  <h3 className="font-semibold mb-3 text-[14px]">{t("size")}</h3>
                   <ul className="space-y-2">
                     {product.sizes.map((s, i) => (
                       <li
@@ -372,7 +370,7 @@ function ProductDetail() {
                     ? "bg-[#e5e5e5] hover:bg-black hover:text-white"
                     : "bg-gray-700 hover:bg-white hover:text-black"}`}
               >
-                Add to cart
+                {t("addToCart")}
               </button>
             </div>
           </div>

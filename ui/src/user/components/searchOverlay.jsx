@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Products from "./products";
+import { useTranslation } from "react-i18next";
+
 
 function SearchOverlay({ onClose, theme }) {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
+    const { t, i18n } = useTranslation();
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/allProducts")
@@ -19,7 +23,7 @@ function SearchOverlay({ onClose, theme }) {
   }, []);
 
   const filtered = products.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
+    p.name[i18n.language].toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -38,14 +42,14 @@ function SearchOverlay({ onClose, theme }) {
       <h1 className={`text-[42px] mb-8 search
         ${theme === "light" ? "text-gray-700" : "text-gray-300"}
       `}>
-        WHAT ARE YOU SEARCHING FOR?
+       {t("searchTitle")}
       </h1>
 
       <input
         autoFocus
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Search products..."
+        placeholder={t("searchPlaceholder")}
         className={`w-full border-b text-[24px] py-4 outline-none mb-16 placeholder
           ${theme === "light" 
             ? "border-black bg-white text-black placeholder-gray-400" 

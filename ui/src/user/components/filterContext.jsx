@@ -1,7 +1,10 @@
 import { IoMdClose } from "react-icons/io";
 import PriceRangeSlider from "./priceRangeSlider";
+import { useTranslation } from "react-i18next";
+
 
 function FilterPanel({ priceRange, setPriceRange, onClose, theme }) {
+  const { t, i18n } = useTranslation();
   return (
     <>
       {/* Overlay */}
@@ -23,24 +26,23 @@ function FilterPanel({ priceRange, setPriceRange, onClose, theme }) {
             ${theme === "light" ? "border-gray-300" : "border-gray-700"}
           `}
         >
-          <h2 className="text-sm font-semibold">FILTERS</h2>
+          <h2 className="text-sm font-semibold">{t("filter")}</h2>
           <IoMdClose onClick={onClose} className="cursor-pointer text-xl" />
         </div>
 
         {/* Body */}
         <div className="p-5">
-          <p className="text-xs font-semibold mb-6">PRICE RANGE</p>
+          <p className="text-xs font-semibold mb-6">{t("priceRange")}</p>
 
           <PriceRangeSlider
             priceRange={priceRange}
             setPriceRange={setPriceRange}
             min={0}
             max={1000}
-            theme={theme}  // theme ötürülür
+            theme={theme}  
           />
         </div>
 
-        {/* Delete Button */}
         <button
           onClick={() => setPriceRange([0, 1000])}
           className={`mt-auto w-full py-3 text-sm transition cursor-pointer
@@ -50,7 +52,7 @@ function FilterPanel({ priceRange, setPriceRange, onClose, theme }) {
             }
           `}
         >
-          DELETE
+          {t("delete")}
         </button>
       </div>
     </>

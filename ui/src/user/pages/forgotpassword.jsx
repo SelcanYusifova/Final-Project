@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { toast, Bounce } from "react-toastify";
 import emailjs from "@emailjs/browser";
-
+import { useTranslation } from "react-i18next";
 function ForgotPassword() {
+    const { t, i18n } = useTranslation();
     const [email, setEmail] = useState("");
-    const [submitted, setSubmitted] = useState(false); 
+    const [submitted, setSubmitted] = useState(false);
     const [theme, setTheme] = useState(() => {
         return localStorage.getItem("theme") || "light";
     });
@@ -21,7 +22,7 @@ function ForgotPassword() {
         e.preventDefault();
         setSubmitted(true);
 
-        if (!email.trim()) return; 
+        if (!email.trim()) return;
 
         try {
             const res = await fetch("http://localhost:3000/users");
@@ -39,7 +40,7 @@ function ForgotPassword() {
             }
 
             const emailData = {
-                email: email,               
+                email: email,
                 user_name: user.name || "User",
                 link: `http://localhost:5173/resetpassword?email=${email}`
             };
@@ -88,7 +89,7 @@ function ForgotPassword() {
                 >
                     <h2 className={`text-[20px] font-[600] tracking-wide mb-[48px] text-center
                         ${theme === "light" ? "text-black" : "text-white"}`}>
-                        Forgot Password
+                        {t("forgot")}
                     </h2>
 
                     <div className="relative mb-[48px]">
@@ -98,8 +99,8 @@ function ForgotPassword() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -117,7 +118,7 @@ function ForgotPassword() {
                                 peer-[:not(:placeholder-shown)]:-top-[14px]
                                 peer-[:not(:placeholder-shown)]:text-[10px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            Email*
+                            {t("email")}
                         </label>
                     </div>
 
@@ -125,10 +126,10 @@ function ForgotPassword() {
                         type="submit"
                         className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
                             tracking-widest transition cursor-pointer
-                            ${theme === "light" 
-                                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                            ${theme === "light"
+                                ? "bg-black text-white hover:bg-[#1E1E1E]"
                                 : "bg-white text-black hover:bg-gray-200"}`}>
-                        Go
+                        {t("go")}
                     </button>
                 </form>
             </div>
