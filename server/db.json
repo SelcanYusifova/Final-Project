@@ -12815,23 +12815,6 @@
       "price": 49,
       "oldPrice": 79,
       "quantity": 1
-    },
-    {
-      "id": "5ee0",
-      "userId": "c321",
-      "productId": "2wsl",
-      "name": {
-        "az": "Kaşmir Qarışıqlı Dəstgah Örtüyü",
-        "ru": "Скатерть из Смеси Кашемира",
-        "en": "Cashmere Blend Tablecloth"
-      },
-      "image": "https://static.zarahome.net/assets/public/3888/dd20/ce434a7aa6ed/d4122ec4e99f/42200021700-p1/42200021700-p1.jpg?ts=1766046330189&f=auto&w=320",
-      "color": null,
-      "colorHex": null,
-      "size": "Throw",
-      "price": 49,
-      "oldPrice": 79,
-      "quantity": 2
     }
   ]
 }

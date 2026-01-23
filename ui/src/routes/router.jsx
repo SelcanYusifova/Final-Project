@@ -10,6 +10,10 @@ import Forgotpassword from "../user/pages/forgotpassword";
 import ResetPassword from "../user/pages/resetpassword";
 import Basket from "../user/components/basket";
 import Layout from "../user/layout/layout";
+import AdminLayout from "../admin/layout/layout";
+import Admindashboard from "../admin/adminsecondarynavbar";
+import AdminSubcategoryPage from "../admin/adminsubcategorypage";
+
 
 export const route = createBrowserRouter([
     {
@@ -23,12 +27,12 @@ export const route = createBrowserRouter([
             {
                 element: <About />,
                 path: "/about",
-            }, 
+            },
             {
                 element: <Help />,
                 path: "/help",
             },
-            
+
             {
                 element: <Basket />,
                 path: "/basket",
@@ -38,12 +42,35 @@ export const route = createBrowserRouter([
                 element: <SubcategoryPage />,
                 path: "/:categorySlug/:subcategorySlug",
             },
-              {
+            {
                 element: <ProductDetail />,
-                path: "/allproducts/:id",  
+                path: "/allproducts/:id",
             },
+
         ],
     },
+
+      {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: <Admindashboard />,
+      },
+      {
+        path: ":categorySlug/:subcategorySlug",
+        element: <AdminSubcategoryPage/>,
+      }
+    ],
+  },
+
+
+
+
+
+
+
     {
         path: "/login",
         element: <Login />,
@@ -60,4 +87,5 @@ export const route = createBrowserRouter([
         path: "/resetpassword",
         element: <ResetPassword />,
     }
-]);
+]
+);

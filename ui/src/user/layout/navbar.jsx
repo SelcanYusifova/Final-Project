@@ -18,9 +18,9 @@ function Navbar({ theme, toggleTheme }) {
   const { t, i18n } = useTranslation();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const languageFlags = {
-    az: "https://flagcdn.com/w40/az.png",
-    en: "https://flagcdn.com/w40/gb.png",
-    ru: "https://flagcdn.com/w40/ru.png",
+    az: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg",
+    en: "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg",
+    ru: "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg",
   };
 
 
@@ -118,7 +118,9 @@ function Navbar({ theme, toggleTheme }) {
                       )}
                     </li>
                   ))}
-                  <li className="pt-6 border-t border-gray-300">
+                  
+                  {/* Dil seçimi - yalnız mobil və tablet üçün (md-dən kiçik) */}
+                  <li className="pt-6 border-t border-gray-300 md:hidden">
                     <div className="relative language-dropdown">
                       <div
                         className="flex items-center gap-2 cursor-pointer"
@@ -142,26 +144,26 @@ function Navbar({ theme, toggleTheme }) {
       `}
                       >
                         <li
-                          className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100"
+                          className={`flex items-center gap-2 px-3 py-2 cursor-pointer rounded-lg transition ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
                           onClick={() => changeLanguage("az")}
                         >
-                          <img src="https://flagcdn.com/w40/az.png" className="w-5 h-3" />
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" className="w-5 h-3" />
                           AZ
                         </li>
 
                         <li
-                          className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100"
+                          className={`flex items-center gap-2 px-3 py-2 cursor-pointer rounded-lg transition ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
                           onClick={() => changeLanguage("en")}
                         >
-                          <img src="https://flagcdn.com/w40/gb.png" className="w-5 h-3" />
+                          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" className="w-5 h-3" />
                           EN
                         </li>
 
                         <li
-                          className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-gray-100"
+                          className={`flex items-center gap-2 px-3 py-2 cursor-pointer rounded-lg transition ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
                           onClick={() => changeLanguage("ru")}
                         >
-                          <img src="https://flagcdn.com/w40/ru.png" className="w-5 h-3" />
+                          <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg" className="w-5 h-3" />
                           RU
                         </li>
                       </ul>
@@ -211,18 +213,16 @@ function Navbar({ theme, toggleTheme }) {
               </button>
             </div>
 
-            <div className="relative group language-dropdown hidden lg:block">
-
-
+            {/* Dil seçimi - yalnız desktop üçün (md və daha böyük) */}
+            <div className="relative group language-dropdown hidden md:block">
               <div className="flex items-center gap-2 cursor-pointer select-none" onClick={() => setIsLangOpen(!isLangOpen)}>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg"
-                  alt="AZ"
-                  className="w-6 h-4 rounded-sm"
+                  src={languageFlags[i18n.language]}
+                  alt={i18n.language.toUpperCase()}
+                  className="w-6 h-4 rounded-sm object-cover"
                 />
                 <span className="text-sm font-semibold">{i18n.language.toUpperCase()}</span>
               </div>
-
 
               <ul className={`absolute right-0 mt-2 w-32 rounded-xl shadow-lg p-1 transition-all duration-200
   ${theme === "light" ? "bg-white" : "bg-gray-900"}
@@ -230,23 +230,22 @@ function Navbar({ theme, toggleTheme }) {
                 <li className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition
     ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
                   onClick={() => changeLanguage("az")}>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="AZ" className="w-6 h-4 rounded-sm" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="AZ" className="w-6 h-4 rounded-sm object-cover" />
                   AZ
                 </li>
                 <li className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition
     ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
                   onClick={() => changeLanguage("en")}>
-                  <img src="https://upload.wikimedia.org/wikipedia/en/archive/a/ae/20190917170935%21Flag_of_the_United_Kingdom.svg" alt="EN" className="w-6 h-4 rounded-sm" />
+                  <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="EN" className="w-6 h-4 rounded-sm object-cover" />
                   EN
                 </li>
                 <li className={`flex items-center gap-2 px-3 py-2 rounded-lg cursor-pointer transition
     ${theme === "light" ? "hover:bg-gray-100" : "hover:bg-gray-800"}`}
                   onClick={() => changeLanguage("ru")}>
-                  <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg" alt="RU" className="w-6 h-4 rounded-sm" />
+                  <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg" alt="RU" className="w-6 h-4 rounded-sm object-cover" />
                   RU
                 </li>
               </ul>
-
             </div>
 
 

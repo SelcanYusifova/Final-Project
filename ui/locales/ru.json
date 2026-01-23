@@ -86,5 +86,7 @@
     "registrationSuccess": "Регистрация успешно завершена!",
     "emailExists": "Этот email уже существует!",
     "signInToAddCart": "Войдите, чтобы добавить товары в корзину!",
-    "productAddedToCart": "Товар успешно добавлен в корзину"
+    "productAddedToCart": "Товар успешно добавлен в корзину",
+    "no_result_found": "Результат не найден",
+    "listening_speak": "Слушаю... Говорите"
 }

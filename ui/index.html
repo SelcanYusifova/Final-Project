@@ -1,66 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lumera</title>
-  </head>
-  <body>
-    <div id="root"></div>
-<script>
-/*
-Want to customize your button? visit our documentation page:
-https://login.equalweb.com/custom-button
-*/
-window.interdeal = {
-    get sitekey (){ return "fcf22d7ec8e3961722d660204a7af5d8"} ,
-    get domains(){
-        return {
-            "js": "https://cdn.equalweb.com/",
-            "acc": "https://access.equalweb.com/"
+    <style>
+        /* UserWay iconunu sağ alta köçürür - daha güclü */
+        [id*="userway"] {
+            bottom: 20px !important;
+            top: auto !important;
         }
-    },
-    "Position": "right",
-    "Menulang": "EN",
-    "draggable": true,
-    "btnStyle": {
-        "vPosition": [
-            "80%",
-            "80%"
-        ],
-        "margin": [
-            "0",
-            "0"
-        ],
-        "scale": [
-            "0.5",
-            "0.5"
-        ],
-        "color": {
-            "main": "#1c4bb6",
-            "second": "#ffffff"
-        },
-        "icon": {
-            "outline": true,
-            "outlineColor": "#ffffff",
-            "type":  2 ,
-            "shape": "circle"
-        }
-    },
-                            "showTooltip": true,
-      
-};
 
-(function(doc, head, body){
-    var coreCall             = doc.createElement('script');
-    coreCall.src             = interdeal.domains.js + 'core/5.2.4/accessibility.js';
-    coreCall.defer           = true;
-    coreCall.integrity       = 'sha512-EuBSvNEVtJiE0GAEIBk3f5CXEIRBX+My0TWG431iOl5KmATPwveYaUX8NftlPwBjDRsItN8g295hkfhsZoeJHQ==';
-    coreCall.crossOrigin     = 'anonymous';
-    coreCall.setAttribute('data-cfasync', true );
-    body? body.appendChild(coreCall) : head.appendChild(coreCall);
-})(document, document.head, document.body);
-</script>
+        #userwayAccessibilityIcon,
+        .userway_buttons_wrapper {
+            bottom: 20px !important;
+            top: auto !important;
+        }
+
+        /* Panel düymələrinin rəngini dəyişir */
+        .uai .uai_panel_buttons button,
+        .userway .userway_buttons_wrapper button {
+            background-color: #ff6b6b !important;
+            /* İstədiyin rəng */
+            border-color: #ff6b6b !important;
+        }
+
+        .uai .uai_panel_buttons button:hover {
+            background-color: #ee5a52 !important;
+        }
+
+        /* Ana icon rəngi */
+        #userwayAccessibilityIcon {
+            background-color: #ff6b6b !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://cdn.userway.org/widget.js" data-account="wY4V2mvpGN"></script>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
+
 </html>

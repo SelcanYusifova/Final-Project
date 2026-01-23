@@ -86,5 +86,7 @@
     "registrationSuccess": "Registration completed successfully!",
     "emailExists": "This email already exists!",
     "signInToAddCart": "Sign in to add products to cart!",
-    "productAddedToCart": "Product successfully added to cart"
+    "productAddedToCart": "Product successfully added to cart",
+    "no_result_found": "No results found",
+    "listening_speak": "I'm listening... Go ahead"
 }

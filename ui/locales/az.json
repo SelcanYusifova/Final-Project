@@ -86,5 +86,7 @@
     "registrationSuccess": "Qeydiyyat uğurla tamamlandı!",
     "emailExists": "Bu email artıq mövcuddur!",
     "signInToAddCart": "Məhsulları səbətə əlavə etmək üçün daxil olun!",
-    "productAddedToCart": "Məhsul uğurla səbətə əlavə olundu"
+    "productAddedToCart": "Məhsul uğurla səbətə əlavə olundu",
+    "no_result_found": "Nəticə tapılmadı",
+    "listening_speak": "Dinləyirəm... Danışın"
 }
