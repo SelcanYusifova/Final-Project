@@ -1,7 +1,3 @@
-
-// ============================================
-// 1. AdminLayout.jsx - src/admin/layout/AdminLayout.jsx
-// ============================================
 import React, { useState, useEffect } from "react";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 
@@ -31,10 +27,10 @@ function AdminLayout() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* AdminSidebar */}
+      
       <div className="w-64 bg-black text-white min-h-screen flex flex-col fixed left-0 top-0 z-50">
         <div 
-          className="p-6 text-2xl font-bold border-b border-gray-700 cursor-pointer"
+          className="p-6 text-2xl font-bold border-b border-gray-700 cursor-pointer logo"
           onClick={() => navigate('/admin')}
         >
           LUMERA
@@ -69,10 +65,10 @@ function AdminLayout() {
         </div>
       </div>
 
-      {/* Sağ tərəf */}
+     
       <div className="flex-1 flex flex-col ml-64">
-        {/* AdminNavbar */}
-        <header className="h-[70px] bg-white flex items-center justify-between px-8 shadow-sm border-b">
+     
+        <header className="h-[70px] bg-white flex items-center justify-between px-8 border border-[#dddddd]">
           <h1 className="text-xl font-semibold">Admin Panel</h1>
           
           <div className="flex-1 max-w-md mx-8">
@@ -88,7 +84,6 @@ function AdminLayout() {
           </button>
         </header>
 
-        {/* AdminSecondaryNavbar */}
         {showSecondaryNavbar && currentCategory && (
           <nav className="bg-gray-50 border-b border-gray-200 px-8">
             <div className="py-3 text-xs text-gray-500">
@@ -122,7 +117,7 @@ function AdminLayout() {
           </nav>
         )}
 
-        {/* Məzmun */}
+       
         <div className="flex-1 p-8">
           <Outlet />
         </div>

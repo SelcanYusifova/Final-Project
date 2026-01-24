@@ -12815,6 +12815,40 @@
       "price": 49,
       "oldPrice": 79,
       "quantity": 1
+    },
+    {
+      "id": "9369",
+      "userId": "c321",
+      "productId": "10wsc",
+      "name": {
+        "az": "Yun Qarışığı Battaniyə",
+        "ru": "Шерстяное Смесовое Одеяло",
+        "en": "Wool Blend Blanket"
+      },
+      "image": "https://static.zarahome.net/assets/public/e83b/c233/e56147c38f34/31c65e1eead7/43347004505-a7/43347004505-a7.jpg?ts=1764928267347&f=auto&w=320",
+      "color": null,
+      "colorHex": null,
+      "size": "Blanket",
+      "price": 95,
+      "oldPrice": 129,
+      "quantity": 7
+    },
+    {
+      "id": "57f2",
+      "userId": "c321",
+      "productId": "2a",
+      "name": {
+        "az": "Pambıq Yastıq Örtüyü",
+        "ru": "Хлопковая Наволочка",
+        "en": "Cotton Pillowcase"
+      },
+      "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480",
+      "color": "white",
+      "colorHex": "#F0F0F0",
+      "size": "Standard",
+      "price": 22,
+      "oldPrice": 35,
+      "quantity": 1
     }
   ]
 }
