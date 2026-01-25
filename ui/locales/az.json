@@ -88,5 +88,8 @@
     "signInToAddCart": "Məhsulları səbətə əlavə etmək üçün daxil olun!",
     "productAddedToCart": "Məhsul uğurla səbətə əlavə olundu",
     "no_result_found": "Nəticə tapılmadı",
-    "listening_speak": "Dinləyirəm... Danışın"
+    "listening_speak": "Dinləyirəm... Danışın",
+    "title": "Səhifə mövcud deyil",
+    "description": "Üzr istəyirik, bu səhifə artıq veb saytımızda mövcud deyil.",
+    "backHome": "Ana səhifəyə qayıt"
 }

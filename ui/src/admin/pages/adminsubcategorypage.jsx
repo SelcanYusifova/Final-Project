@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { adminSubcategoryComponentsMap } from "../map/adminsubcategoryMap";
+import { adminSubcategoryComponentsMap } from "../../map/adminsubcategoryMap";
 
 const AdminSubcategoryPage = () => {
   const { categorySlug, subcategorySlug } = useParams();

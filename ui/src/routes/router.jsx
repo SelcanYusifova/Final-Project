@@ -11,8 +11,10 @@ import ResetPassword from "../user/pages/resetpassword";
 import Basket from "../user/components/basket";
 import Layout from "../user/layout/layout";
 import AdminLayout from "../admin/layout/layout";
-import Admindashboard from "../admin/adminsecondarynavbar";
-import AdminSubcategoryPage from "../admin/adminsubcategorypage";
+import Admindashboard from "../admin/pages/admindashboard";
+import AdminSubcategoryPage from "../admin/pages/adminsubcategorypage";
+import Notfound from "../user/pages/notfound";
+import PrivateRoot from "../admin/providers/private.root";
 
 
 export const route = createBrowserRouter([
@@ -38,6 +40,7 @@ export const route = createBrowserRouter([
                 path: "/basket",
             },
 
+
             {
                 element: <SubcategoryPage />,
                 path: "/:categorySlug/:subcategorySlug",
@@ -50,20 +53,24 @@ export const route = createBrowserRouter([
         ],
     },
 
-      {
-    path: "/admin",
-    element: <AdminLayout />,
-    children: [
-      {
-        index: true,
-        element: <Admindashboard />,
-      },
-      {
-        path: ":categorySlug/:subcategorySlug",
-        element: <AdminSubcategoryPage/>,
-      }
-    ],
-  },
+    {
+        path: "/admin",
+        element: (
+            <PrivateRoot>
+                <AdminLayout />
+            </PrivateRoot>
+        ),
+        children: [
+            {
+                index: true,
+                element: <Admindashboard />,
+            },
+            {
+                path: ":categorySlug/:subcategorySlug",
+                element: <AdminSubcategoryPage />,
+            }
+        ],
+    },
 
 
 
@@ -86,6 +93,10 @@ export const route = createBrowserRouter([
     {
         path: "/resetpassword",
         element: <ResetPassword />,
-    }
+    },
+    {
+        element: <Notfound />,
+        path: "*",
+    },
 ]
 );

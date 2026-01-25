@@ -26,7 +26,7 @@ function AdminProducts({ pro }) {
       <img
         src={productImage}
         alt={pro.name.en}
-        className="w-full h-48 object-cover rounded mb-3"
+        className="w-full h-48 object-cover  mb-3"
       />
 
       <h3 className="text-[14px] font-medium mb-1">{pro.name.en}</h3>

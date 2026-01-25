@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AdminProducts from "../../adminproduct";
+import AdminProducts from "../adminproducts";
+import FullScreenLoader from "../../../user/components/fullScreenLoader";
 
 function Curtainsandrollerblindsadmin
 () {
@@ -29,12 +30,8 @@ function Curtainsandrollerblindsadmin
       });
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-lg">Loading...</div>
-      </div>
-    );
+   if (loading) {
+    return <FullScreenLoader mode="content" />;
   }
 
   return (

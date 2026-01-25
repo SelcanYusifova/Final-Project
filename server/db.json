@@ -12525,18 +12525,17 @@
   ],
   "users": [
     {
-      "id": "c321",
-      "firstname": "Selcan",
-      "lastname": "Yusifova",
-      "email": "syusifova181@gmail.com",
-      "pass": "123"
+      "id": "7565",
+      "firstname": "selcan",
+      "lastname": "selcan",
+      "email": "selcan@gmail.com",
+      "pass": "123",
+      "role": "user"
     },
     {
-      "id": "d5d0",
-      "firstname": "sebish",
-      "lastname": "eeskerova",
-      "email": "sebn@gmail.com",
-      "pass": "1238"
+      "email": "admin@gmail.com",
+      "pass": "admin123",
+      "role": "admin"
     }
   ],
   "categories": [
@@ -12848,6 +12847,23 @@
       "size": "Standard",
       "price": 22,
       "oldPrice": 35,
+      "quantity": 1
+    },
+    {
+      "id": "bde4",
+      "userId": "c321",
+      "productId": "9a",
+      "name": {
+        "az": "Naxışlı Yataq Dəsti",
+        "ru": "Вышитый Комплект Постельного Белья",
+        "en": "Embroidered Bedsheet Set"
+      },
+      "image": "https://static.zarahome.net/assets/public/b386/a28d/05ba4837a6b4/51e13d63472c/43150008052-a7/43150008052-a7.jpg?ts=1749562799537&f=auto&w=480",
+      "color": "beige",
+      "colorHex": "#E6DCCF",
+      "size": "King",
+      "price": 119,
+      "oldPrice": 159,
       "quantity": 1
     }
   ]

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import AdminProducts from "../../adminproduct";
+import AdminProducts from "../adminproducts";
+import FullScreenLoader from "../../../user/components/fullScreenLoader";
 
 function Beddingadmin() {
   const [data, setData] = useState([]);
@@ -29,11 +30,7 @@ function Beddingadmin() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-lg">Loading...</div>
-      </div>
-    );
+    return <FullScreenLoader mode="content" />;
   }
 
   return (

@@ -38,7 +38,7 @@ function Bedding({priceRange}) {
       });
   }, []);
 
-  if (loading) return <FullScreenLoader />;
+  if (loading) return <FullScreenLoader mode="fullscreen" />;
 
   return (
    <div className="row px-4 mt-[240px] content">

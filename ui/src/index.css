@@ -39,7 +39,6 @@ body {
   z-index: 2;
 }
 
-/* Dark mode üçün qara wipe */
 .logo-wipe-dark {
   background: #000;
 }

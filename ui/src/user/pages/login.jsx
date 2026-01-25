@@ -30,6 +30,7 @@ function Login() {
     const welcome = (e) => {
         e.preventDefault();
         setBool(true);
+
         if (!user.email.trim() && !user.pass.trim()) {
             toast.error(t("fillAllFields"), {
                 position: "top-center",
@@ -42,42 +43,60 @@ function Login() {
                 theme: theme === "dark" ? "dark" : "light",
                 transition: Bounce,
             });
-        } else {
-            fetch("http://localhost:3000/users")
-                .then(res => res.json())
-                .then(data => {
-                    let founded = data.find(e => e.email === user.email);
-                    if (founded && founded.pass == user.pass) {
-                        toast.success(t("welcome"), {
-                            position: "top-center",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: false,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: theme === "dark" ? "dark" : "light",
-                            transition: Bounce,
-                        });
-                        localStorage.setItem("id", founded.id);
-                        navigate("/");
-                        setBool(false);
-                    } else {
-                        toast.error(t("loginError"), {
-                            position: "top-center",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: false,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: theme === "dark" ? "dark" : "light",
-                            transition: Bounce,
-                        });
-                    }
-                });
+            return;
         }
+
+        fetch("http://localhost:3000/users")
+            .then(res => res.json())
+            .then(data => {
+                // Email üzrə istifadəçini tapırıq
+                let founded = data.find(e => e.email === user.email);
+
+                if (founded && founded.pass === user.pass) {
+                    toast.success(t("welcome"), {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: theme === "dark" ? "dark" : "light",
+                        transition: Bounce,
+                    });
+
+                    // İstifadəçi məlumatlarını localStorage-a yazırıq
+                    localStorage.setItem("id", founded.id);
+                    localStorage.setItem("role", founded.role); // <-- role da əlavə olunur
+
+                    // Role-a əsasən yönləndirmə
+                    if (founded.role === "admin") {
+                        navigate("/admin"); // adminləri admin səhifəsinə yönləndir
+                    } else {
+                        navigate("/"); // normal istifadəçiləri homepage-ə yönləndir
+                    }
+
+                    setBool(false);
+                } else {
+                    toast.error(t("loginError"), {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: theme === "dark" ? "dark" : "light",
+                        transition: Bounce,
+                    });
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                toast.error("Server error", { position: "top-center" });
+            });
     };
+
 
     return (
         <div className={`min-h-screen flex transition-colors duration-300
@@ -145,7 +164,7 @@ function Login() {
                         />
                         {bool && user.pass.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
-                               {t("enterPassword")}
+                                {t("enterPassword")}
                             </p>
                         }
 

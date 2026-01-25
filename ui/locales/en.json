@@ -88,5 +88,8 @@
     "signInToAddCart": "Sign in to add products to cart!",
     "productAddedToCart": "Product successfully added to cart",
     "no_result_found": "No results found",
-    "listening_speak": "I'm listening... Go ahead"
+    "listening_speak": "I'm listening... Go ahead",
+    "title": "Page unavailable",
+    "description": "Sorry, this page is no longer available on our website.",
+    "backHome": "Return to home page"
 }

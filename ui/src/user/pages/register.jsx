@@ -53,7 +53,10 @@ function Register() {
                         fetch("http://localhost:3000/users", {
                             method: "POST",
                             headers: { "content-type": "application/json" },
-                            body: JSON.stringify(user),
+                            body: JSON.stringify({
+                                ...user,
+                                role: "user"   
+                            }),
                         });
 
                         setUser({
@@ -61,6 +64,7 @@ function Register() {
                             lastname: "",
                             email: "",
                             pass: ""
+
                         });
                         toast.success(t("registrationSuccess"), {
                             position: "top-center",
@@ -121,13 +125,13 @@ function Register() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             onChange={(e) => setUser({ ...user, firstname: e.target.value })}
                             value={user.firstname}
                         />
-                        {bool && user.firstname.trim() === "" && 
+                        {bool && user.firstname.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
                                 {t("enterFirstName")}
                             </p>
@@ -152,13 +156,13 @@ function Register() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             onChange={(e) => setUser({ ...user, lastname: e.target.value })}
                             value={user.lastname}
                         />
-                        {bool && user.lastname.trim() === "" && 
+                        {bool && user.lastname.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
                                 {t("enterLastName")}
                             </p>
@@ -183,13 +187,13 @@ function Register() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             onChange={(e) => setUser({ ...user, email: e.target.value })}
                             value={user.email}
                         />
-                        {bool && user.email.trim() === "" && 
+                        {bool && user.email.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
                                 {t("enterEmail")}
                             </p>
@@ -214,13 +218,13 @@ function Register() {
                             placeholder=" "
                             className={`peer w-full bg-transparent outline-none py-[6px] pr-[32px] text-[14px]
                                 border-b focus:border-b-2 transition-colors
-                                ${theme === "light" 
-                                    ? "border-black text-black" 
+                                ${theme === "light"
+                                    ? "border-black text-black"
                                     : "border-white text-white"}`}
                             onChange={(e) => setUser({ ...user, pass: e.target.value })}
                             value={user.pass}
                         />
-                        {bool && user.pass.trim() === "" && 
+                        {bool && user.pass.trim() === "" &&
                             <p className="text-[12px] text-[red] font-[500] mt-[6px]">
                                 {t("enterPassword")}
                             </p>
@@ -242,8 +246,8 @@ function Register() {
                             onClick={() => setShowPassword(!showPassword)}
                             className={`absolute right-0 top-[6px]
                                 ${theme === "light" ? "text-black" : "text-white"}`}>
-                            {showPassword ? 
-                                <FiEyeOff className="text-[18px] cursor-pointer" /> : 
+                            {showPassword ?
+                                <FiEyeOff className="text-[18px] cursor-pointer" /> :
                                 <FiEye className="text-[18px] cursor-pointer" />}
                         </button>
                     </div>
@@ -251,10 +255,10 @@ function Register() {
                     <button
                         className={`w-full px-[48px] py-[12px] text-[12px] font-[600]
                             tracking-widest transition cursor-pointer
-                            ${theme === "light" 
-                                ? "bg-black text-white hover:bg-[#1E1E1E]" 
+                            ${theme === "light"
+                                ? "bg-black text-white hover:bg-[#1E1E1E]"
                                 : "bg-white text-black hover:bg-gray-200"}`}>
-                        {t("go")}
+                        {t("signUp")}
                     </button>
 
                     <div className="flex justify-between">

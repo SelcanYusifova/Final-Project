@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import AdminProducts from '../../adminproduct';
+import AdminProducts from '../adminproducts';
+import FullScreenLoader from '../../../user/components/fullScreenLoader';
 
 function Quiltsadmin() {
-const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,11 +30,7 @@ const [data, setData] = useState([]);
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-lg">Loading...</div>
-      </div>
-    );
+    return <FullScreenLoader mode="content" />;
   }
 
   return (
