@@ -27,7 +27,7 @@ function SecondaryNavbar({ colSize, setColSize, onFilterClick, theme }) {
 
   return (
     <nav
-      className={`w-full fixed top-26 left-0 z-998 secondarynav
+      className={`w-full fixed top-26 left-0 z-4 secondarynav
         ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}
       `}
     >

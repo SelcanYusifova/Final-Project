@@ -13,7 +13,7 @@ function FullScreenLoader({ mode = "fullscreen" }) {
 
   const wrapperClass =
     mode === "fullscreen"
-      ? "fixed inset-0 z-50"
+      ? "fixed inset-0 z-2"
       : "w-full h-full";
 
   return (

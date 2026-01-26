@@ -63,7 +63,7 @@ function Navbar({ theme, toggleTheme }) {
   }, [isLangOpen]);
 
   return (
-    <nav className={`w-full fixed top-0 left-0 z-5000 ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
+    <nav className={`w-full fixed top-0 left-0 z-5 ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
       <div className="container-fluid px-4 overflow-visible">
         <div className="grid grid-cols-12 items-center py-4 overflow-visible">
 

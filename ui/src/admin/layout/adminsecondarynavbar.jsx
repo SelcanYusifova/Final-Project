@@ -2,7 +2,7 @@ import React from 'react'
 
 function AdminSecondaryNavbar({ category, activeSubcategory, onNavigate }) {
     return (
-        <nav className="bg-white border-b border-gray-200 px-8 z-1000">
+        <nav className="sticky top-[70px] bg-white border-b border-gray-200 px-8 z-40">
             <div className="py-3 text-xs text-gray-500">
                 {category.title.en} &gt;{" "}
                 {
@@ -20,8 +20,8 @@ function AdminSecondaryNavbar({ category, activeSubcategory, onNavigate }) {
                                 onNavigate(`/admin/${category.slug}/${sub.slug}`)
                             }
                             className={`cursor-pointer pb-1 transition ${sub.slug === activeSubcategory
-                                    ? "text-black border-b-2 border-black font-semibold"
-                                    : "text-gray-500 hover:text-black"
+                                ? "text-black border-b-2 border-black font-semibold"
+                                : "text-gray-500 hover:text-black"
                                 }`}
                         >
                             {sub.title.en}

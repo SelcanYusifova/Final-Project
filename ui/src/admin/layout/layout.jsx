@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import AdminSidebar from "./adminsidebar";
 import AdminHeader from "./adminheader";
 import AdminSecondaryNavbar from "./adminsecondarynavbar";
+import AddProductPanel from "../components/addproductpopup";
 
 function AdminLayout() {
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
+  const [isAddPanelOpen, setIsAddPanelOpen] = useState(false);
+  const outletRef = useRef(null);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,6 +21,7 @@ function AdminLayout() {
   const currentCategory = categories.find(c => c.slug === categorySlug);
   const showSecondaryNavbar = categorySlug && subcategorySlug;
 
+  // ✅ Categories fetch
   useEffect(() => {
     fetch("http://localhost:3000/categories")
       .then(res => res.json())
@@ -25,12 +29,28 @@ function AdminLayout() {
       .catch(console.error);
   }, []);
 
-  const toggleCategory = slug => {
+  // ✅ Category toggle
+  const toggleCategory = useCallback((slug) => {
     setActiveCategory(prev => (prev === slug ? null : slug));
-  };
+  }, []);
+
+  // ✅ Product added handler - memoize et
+  const handleProductAdded = useCallback((newProduct, mappedSubcategory) => {
+    window.dispatchEvent(
+      new CustomEvent('productAdded', {
+        detail: { newProduct, mappedSubcategory }
+      })
+    );
+  }, []);
+
+  // ✅ Scroll to top on location change
+  useEffect(() => {
+    outletRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [categorySlug, subcategorySlug]);
 
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen bg-gray-50">
+      {/* ✅ Sidebar */}
       <AdminSidebar
         categories={categories}
         activeCategory={activeCategory}
@@ -38,9 +58,11 @@ function AdminLayout() {
         onNavigate={navigate}
       />
 
+      {/* ✅ Main Content */}
       <div className="flex-1 ml-64 flex flex-col">
-        <AdminHeader />
+        <AdminHeader onOpenModal={() => setIsAddPanelOpen(true)} />
 
+        {/* ✅ Secondary Navbar */}
         {showSecondaryNavbar && currentCategory && (
           <AdminSecondaryNavbar
             category={currentCategory}
@@ -49,11 +71,24 @@ function AdminLayout() {
           />
         )}
 
-        {/* CONTENT */}
-        <div className="flex-1 p-8">
-          <Outlet />
+        {/* ✅ Content Area */}
+        <div className="flex-1 p-8 overflow-y-auto" ref={outletRef}>
+          <Outlet context={{
+            categories,
+            currentCategory,
+            categorySlug,
+            subcategorySlug
+          }} />
         </div>
       </div>
+
+      {/* ✅ Add Product Panel */}
+      <AddProductPanel
+        isOpen={isAddPanelOpen}
+        onClose={() => setIsAddPanelOpen(false)}
+        onProductAdded={handleProductAdded}
+      />
+      
     </div>
   );
 }

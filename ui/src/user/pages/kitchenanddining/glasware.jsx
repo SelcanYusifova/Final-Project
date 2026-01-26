@@ -17,7 +17,7 @@ function Glasware({ priceRange }) {
       .then((res) => res.json())
       .then((allProducts) => {
         const kitchenCategory = allProducts.find(
-          (cat) => cat.categoryId === "kitchen"
+          (cat) => cat.categoryId === "kitchen-and-dining"
         );
 
         if (

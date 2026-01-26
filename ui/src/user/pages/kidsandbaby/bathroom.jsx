@@ -17,7 +17,7 @@ function Bathroom({ priceRange }) {
       .then((res) => res.json())
       .then((allProducts) => {
         const kidsandbabyCategory = allProducts.find(
-          (cat) => cat.categoryId === "kidsandbaby"
+          (cat) => cat.categoryId === "kids-and-baby"
         );
 
         if (

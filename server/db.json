@@ -10,163 +10,6 @@
       "products": {
         "bedroombedding": [
           {
-            "id": "1a",
-            "name": {
-              "az": "Saten Yastıq Örtüyü",
-              "ru": "Наволочка Сатин",
-              "en": "Sateen Pillowcase"
-            },
-            "sizes": [
-              {
-                "type": "Standard",
-                "dimensions": "20 x 26 in",
-                "oldPrice": 45,
-                "price": 29
-              },
-              {
-                "type": "Queen",
-                "dimensions": "20 x 30 in",
-                "oldPrice": 55,
-                "price": 35
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#F0F0F0",
-                "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
-              },
-              {
-                "color": "beige",
-                "hex": "#E6DCCF",
-                "image": "https://static.zarahome.net/assets/public/8fd9/2b85/b1dd4c48a4f2/3922df93aaa0/41100088733-a7/41100088733-a7.jpg?ts=1764581961256&f=auto&w=480"
-              },
-              {
-                "color": "stone",
-                "hex": "#CFC7BD",
-                "image": "https://static.zarahome.net/assets/public/8825/7c92/b0c2477a9974/d2742fdee447/41100088802-a7/41100088802-a7.jpg?ts=1767614583935&f=auto&w=480"
-              }
-            ]
-          },
-          {
-            "id": "2a",
-            "name": {
-              "az": "Pambıq Yastıq Örtüyü",
-              "ru": "Хлопковая Наволочка",
-              "en": "Cotton Pillowcase"
-            },
-            "sizes": [
-              {
-                "type": "Standard",
-                "dimensions": "20 x 26 in",
-                "oldPrice": 35,
-                "price": 22
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#F0F0F0",
-                "image": "https://static.zarahome.net/assets/public/8ce4/fa0e/c0104cf897fe/19783435b54a/46173091251-p1/46173091251-p1.jpg?ts=1767951399741&f=auto&w=480"
-              },
-              {
-                "color": "beige",
-                "hex": "#975D44",
-                "image": "https://static.zarahome.net/assets/public/7991/16c1/5a154d5c94a4/4ed77b8e4153/46173091737-p1/46173091737-p1.jpg?ts=1767600178358&f=auto&w=480"
-              }
-            ]
-          },
-          {
-            "id": "3a",
-            "name": {
-              "az": "Lüks Çarpayı Örtüyü",
-              "ru": "Роскошная Простыня",
-              "en": "Luxury Bedsheet"
-            },
-            "sizes": [
-              {
-                "type": "Twin",
-                "dimensions": "66 x 96 in",
-                "oldPrice": 89,
-                "price": 59
-              },
-              {
-                "type": "Full",
-                "dimensions": "81 x 96 in",
-                "oldPrice": 99,
-                "price": 69
-              },
-              {
-                "type": "Queen",
-                "dimensions": "90 x 102 in",
-                "oldPrice": 119,
-                "price": 79
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#F0F0F0",
-                "image": "https://static.zarahome.net/assets/public/ae86/9610/e8e240f0b436/86319b506407/41100089250-p1/41100089250-p1.jpg?ts=1754898327830&f=auto&w=480"
-              },
-              {
-                "color": "beige",
-                "hex": "#E6DCCF",
-                "image": "https://static.zarahome.net/assets/public/d727/4238/9df441ba9880/4fde3091c889/41100089733-p1/41100089733-p1.jpg?ts=1754898328283&f=auto&w=480"
-              },
-              {
-                "color": "stone",
-                "hex": "#CFC7BD",
-                "image": "https://static.zarahome.net/assets/public/4fa2/c82f/ae4b428e8435/482fd198985c/41100089802-p1/41100089802-p1.jpg?ts=1765468915928&f=auto&w=480"
-              }
-            ]
-          },
-          {
-            "id": "4a",
-            "name": {
-              "az": "Perkal Yorğan üzlüyü",
-              "ru": "Пододеяльник Перкаль",
-              "en": "Percale Duvet Cover"
-            },
-            "sizes": [
-              {
-                "type": "Twin",
-                "dimensions": "68 x 86 in",
-                "oldPrice": 129,
-                "price": 89
-              },
-              {
-                "type": "Full/Queen",
-                "dimensions": "86 x 86 in",
-                "oldPrice": 149,
-                "price": 109
-              },
-              {
-                "type": "King",
-                "dimensions": "104 x 86 in",
-                "oldPrice": 179,
-                "price": 129
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#F0F0F0",
-                "image": "https://static.zarahome.net/assets/public/9682/628f/e2ce4eb8bad8/9a36908a46fe/41100095250-p1/41100095250-p1.jpg?ts=1754897099536&f=auto&w=480"
-              },
-              {
-                "color": "beige",
-                "hex": "#E6DCCF",
-                "image": "https://static.zarahome.net/assets/public/bd99/1baa/2be649c3bc21/3b99f4a1bfdd/41100095733-p1/41100095733-p1.jpg?ts=1754897102531&f=auto&w=480"
-              },
-              {
-                "color": "stone",
-                "hex": "#CFC7BD",
-                "image": "https://static.zarahome.net/assets/public/d9af/bc55/aed54f66a18c/06d2feae018b/41100095802-p1/41100095802-p1.jpg?ts=1765468903330&f=auto&w=480"
-              }
-            ]
-          },
-          {
             "id": "5a",
             "name": {
               "az": "Kətan Yastıq Örtüyü",
@@ -439,51 +282,6 @@
                 "color": "beige",
                 "hex": "#E6DCCF",
                 "image": "https://static.zarahome.net/assets/public/8128/30eb/642d43d89979/6a06d97b8032/45137089811-p1/45137089811-p1.jpg?ts=1765812633010&f=auto&w=480"
-              },
-              {
-                "color": "stone",
-                "hex": "#CFC7BD",
-                "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
-              }
-            ]
-          },
-          {
-            "id": "12a",
-            "name": {
-              "az": "Mikrofiber Yataq Dəsti",
-              "ru": "Микрофибровый Комплект Постельного Белья",
-              "en": "Microfiber Sheet Set"
-            },
-            "sizes": [
-              {
-                "type": "Twin",
-                "dimensions": "66 x 96 in",
-                "oldPrice": 39,
-                "price": 25
-              },
-              {
-                "type": "Full",
-                "dimensions": "81 x 96 in",
-                "oldPrice": 49,
-                "price": 32
-              },
-              {
-                "type": "Queen",
-                "dimensions": "90 x 102 in",
-                "oldPrice": 59,
-                "price": 39
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#F0F0F0",
-                "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480"
-              },
-              {
-                "color": "beige",
-                "hex": "#E6DCCF",
-                "image": "https://static.zarahome.net/assets/public/b40a/9c99/6a0a436ab258/3360516daa52/46110091710-p1/46110091710-p1.jpg?ts=1757345937516&f=auto&w=480"
               },
               {
                 "color": "stone",
@@ -954,6 +752,78 @@
                 "color": "stone",
                 "hex": "#CFC7BD",
                 "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
+              }
+            ]
+          },
+          {
+            "id": "650582",
+            "name": {
+              "az": "sad",
+              "en": "sdf",
+              "ru": "sad"
+            },
+            "image": "asd",
+            "sizes": [
+              {
+                "type": "Twin",
+                "dimensions": "s",
+                "oldPrice": "22",
+                "price": "22"
+              },
+              {
+                "type": "Full/Queen",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              },
+              {
+                "type": "King",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              }
+            ],
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "asd"
+              }
+            ]
+          },
+          {
+            "id": "54daae",
+            "name": {
+              "az": "sdc",
+              "en": "üsdf",
+              "ru": "sd"
+            },
+            "image": "sd",
+            "sizes": [
+              {
+                "type": "Twin",
+                "dimensions": "33",
+                "oldPrice": "33",
+                "price": "3"
+              },
+              {
+                "type": "Full/Queen",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              },
+              {
+                "type": "King",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              }
+            ],
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "sd"
               }
             ]
           }
@@ -2501,6 +2371,42 @@
               "en": "Soft Living Duvet Cover"
             },
             "image": "https://static.zarahome.net/assets/public/dd27/fd4e/10c6425c823a/305caa100e59/47190088802-a2/47190088802-a2.jpg?ts=1754993375655&f=auto&w=614"
+          },
+          {
+            "id": "75c6e9",
+            "name": {
+              "az": "sdc",
+              "en": "sd",
+              "ru": "sd"
+            },
+            "image": "sd",
+            "sizes": [
+              {
+                "type": "Twin",
+                "dimensions": "3",
+                "oldPrice": "33",
+                "price": "3"
+              },
+              {
+                "type": "Full/Queen",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              },
+              {
+                "type": "King",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              }
+            ],
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "sd"
+              }
+            ]
           }
         ],
         "bedroomquilts": [
@@ -3421,7 +3327,7 @@
             ],
             "name": {
               "az": "Ənənəvi Garderob",
-              "ru": "Традиционный Гардероб",
+              "ru": "Традиционный Г��рдероб",
               "en": "Traditional Wardrobe"
             },
             "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
@@ -3444,7 +3350,7 @@
             ],
             "name": {
               "az": "Otel Stili Qarderob",
-              "ru": "Гостиничный Стиль Гардероб",
+              "ru": "Гостиничный Стиль Га����дероб",
               "en": "Hotel Style Closet"
             },
             "image": "https://static.zarahome.net/assets/public/5eb7/c48c/df404030bdc5/9dadb921cd62/40124005307-a7/40124005307-a7.jpg?ts=1744640641571&f=auto&w=320"
@@ -3610,7 +3516,9 @@
             },
             "image": "https://static.zarahome.net/assets/public/daa7/2e49/3e304a37a8d6/9424b5de25d2/47631007600-a7/47631007600-a7.jpg?ts=1758199539649&f=auto&w=320"
           }
-        ]
+        ],
+        "see-all": [],
+        "duvet-covers": []
       },
       "id": "f05d"
     },
@@ -6945,12 +6853,53 @@
             },
             "image": "https://static.zarahome.net//assets/public/5afe/35a2/48ec4866b3cc/c7bf851f4339/46347555802-p1/46347555802-p1.jpg?ts=1743550004770&f=auto&w=320"
           }
-        ]
+        ],
+        "blankets-and-throws": [
+          {
+            "id": "0c9147",
+            "name": {
+              "az": "sd",
+              "en": "sd",
+              "ru": "sd"
+            },
+            "image": "sd",
+            "sizes": [
+              {
+                "type": "Twin",
+                "dimensions": "ss",
+                "oldPrice": "22",
+                "price": "22"
+              },
+              {
+                "type": "Full/Queen",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              },
+              {
+                "type": "King",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              }
+            ],
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "sd"
+              }
+            ]
+          }
+        ],
+        "candle-holders": [],
+        "curtains-and-roller-blinds": [],
+        "decorative-accessories": []
       },
       "id": "b515"
     },
     {
-      "categoryId": "kitchen",
+      "categoryId": "kitchen-and-dining",
       "categoryName": {
         "az": "Mətbəx və Yemək",
         "en": "Kitchen and Dining",
@@ -9731,7 +9680,7 @@
       "id": "cd23"
     },
     {
-      "categoryId": "kidsandbaby",
+      "categoryId": "kids-and-baby",
       "categoryName": {
         "az": "Uşaqlar və Körpələr",
         "en": "Kids and Baby",
@@ -12517,6 +12466,42 @@
               }
             ],
             "image": "https://static.zarahome.net/assets/public/c59d/2851/eae644a68e28/44a31841b54e/43321211808-p1/43321211808-p1.jpg?ts=1764853645768&f=auto&w=320"
+          },
+          {
+            "id": "45317c",
+            "name": {
+              "az": "hh",
+              "en": "jih",
+              "ru": "jj"
+            },
+            "image": "jj",
+            "sizes": [
+              {
+                "type": "Twin",
+                "dimensions": "44x33",
+                "oldPrice": "88",
+                "price": "88"
+              },
+              {
+                "type": "Full/Queen",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              },
+              {
+                "type": "King",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              }
+            ],
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "jj"
+              }
+            ]
           }
         ]
       },
@@ -12535,7 +12520,8 @@
     {
       "email": "admin@gmail.com",
       "pass": "admin123",
-      "role": "admin"
+      "role": "admin",
+      "id": "3c15"
     }
   ],
   "categories": [

@@ -108,7 +108,7 @@ function Basket() {
           {t("cartEmpty")}
         </h2>
         <Link to="/">
-          <button className={`cursor-pointer w-[400px] py-3 transition
+          <button className={`cursor-pointer w-[400px] py-3 transition btn
             ${theme === "light"
               ? "bg-[#e5e5e5] text-black hover:bg-black hover:text-white"
               : "bg-gray-800 text-white hover:bg-white hover:text-black"

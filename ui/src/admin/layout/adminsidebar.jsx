@@ -3,7 +3,7 @@ function AdminSidebar({ categories, activeCategory, onToggle, onNavigate }) {
     return (
         <div className="w-64 bg-black text-white min-h-screen fixed left-0 top-0 z-50">
             <div
-                className="p-6 text-2xl font-bold border-b border-gray-700 cursor-pointer"
+                className="logo p-6 text-2xl font-bold border-b border-gray-700 cursor-pointer"
                 onClick={() => onNavigate("/admin")}
             >
                 LUMERA

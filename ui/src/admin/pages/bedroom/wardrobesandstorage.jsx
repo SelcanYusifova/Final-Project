@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import AdminProducts from '../adminproducts';
-import FullScreenLoader from '../../../user/components/fullScreenLoader';
+import React, { useEffect, useState } from "react";
+import AdminProducts from "../adminproducts";
 
 function Wardrobesandstorageadmin() {
-const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
-  useEffect(() => {
+  
+  const fetchData = () => {
     fetch("http://localhost:3000/allProducts")
       .then((res) => res.json())
       .then((allProducts) => {
@@ -15,35 +14,71 @@ const [data, setData] = useState([]);
         );
 
         if (bedroomCategory && bedroomCategory.products.bedroomwardrobesandstorage) {
-          setTimeout(() => {
-            setData(bedroomCategory.products.bedroomwardrobesandstorage);
-            setLoading(false);
-          }, 500);
-        } else {
-          setLoading(false);
+          setData(bedroomCategory.products.bedroomwardrobesandstorage);
         }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchData();
+
+    const handleProductAdded = (event) => {
+      const { newProduct, mappedSubcategory } = event.detail;
+
+      if (mappedSubcategory === "bedroomwardrobesandstorage") {
+        setData(prevData => {
+          const updated = [...prevData, newProduct];
+
+          setTimeout(() => {
+            const element = document.getElementById(`product-${newProduct.id}`);
+            if (element) {
+              element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+              });
+            }
+          }, 100);
+
+          return updated;
+        });
+      }
+    };
+
+    window.addEventListener('productAdded', handleProductAdded);
+
+    return () => {
+      window.removeEventListener('productAdded', handleProductAdded);
+    };
   }, []);
 
-   if (loading) {
-    return <FullScreenLoader mode="content" />;
-  }
+  // ✅ Delete funksiyası - loader YOX, dərhal state-dən sil
+  const handleDelete = (productId) => {
+    setData(prevData => prevData.filter(p => p.id !== productId));
+  };
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-6">Bedroom - Bedding</h2>
+      <h2 className="text-2xl font-bold mb-6">Bedroom - Wardrobes and storage</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.map((product) => (
-          <AdminProducts key={product.id} pro={product} />
+          <AdminProducts
+            key={product.id}
+            pro={product}
+            category="bedroom"
+            subcategory="bedroomwardrobesandstorage"
+            onDelete={handleDelete}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-export default Wardrobesandstorageadmin
- 
+export default Wardrobesandstorageadmin;
+
+
+
+
