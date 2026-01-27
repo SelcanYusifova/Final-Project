@@ -16,12 +16,13 @@
               "ru": "Льняная Наволочка",
               "en": "Linen Pillowcase"
             },
+            "image": "https://static.zarahome.net/assets/public/8d31/dcbf/369c46e689e2/0eb8c86451ee/40035089712-p1/40035089712-p1.jpg?ts=1754898331757&f=auto&w=480",
             "sizes": [
               {
                 "type": "Standard",
                 "dimensions": "20 x 26 in",
                 "oldPrice": 65,
-                "price": 45
+                "price": "25"
               },
               {
                 "type": "King",
@@ -55,12 +56,13 @@
               "ru": "Шелковая Наволочка",
               "en": "Silk Pillowcase"
             },
+            "image": "https://static.zarahome.net/assets/public/c647/17b5/93ce414dbe3d/cc2d84a39eca/40056091250-p1/40056091250-p1.jpg?ts=1756125990192&f=auto&w=480",
             "sizes": [
               {
                 "type": "Standard",
                 "dimensions": "20 x 26 in",
                 "oldPrice": 89,
-                "price": 65
+                "price": "50"
               }
             ],
             "variants": [
@@ -88,12 +90,13 @@
               "ru": "Классический Комплект Постельного Белья",
               "en": "Classic Bedsheet Set"
             },
+            "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480",
             "sizes": [
               {
                 "type": "Twin",
                 "dimensions": "66 x 96 in",
                 "oldPrice": 79,
-                "price": 49
+                "price": "39"
               },
               {
                 "type": "Full",
@@ -538,12 +541,13 @@
               "ru": "Перкалевый Комплект Постельного Белья",
               "en": "Percale Sheet Set"
             },
+            "image": "https://static.zarahome.net/assets/public/9731/c14f/5f6f415f9e85/7f955b5ac555/46110091250-p1/46110091250-p1.jpg?ts=1757345933720&f=auto&w=480",
             "sizes": [
               {
                 "type": "Twin",
                 "dimensions": "66 x 96 in",
                 "oldPrice": 69,
-                "price": 49
+                "price": "48"
               },
               {
                 "type": "Full",
@@ -752,78 +756,6 @@
                 "color": "stone",
                 "hex": "#CFC7BD",
                 "image": "https://static.zarahome.net/assets/public/3e84/fed6/405a4af69100/73a94accece4/46110091811-p1/46110091811-p1.jpg?ts=1765468877683&f=auto&w=480"
-              }
-            ]
-          },
-          {
-            "id": "650582",
-            "name": {
-              "az": "sad",
-              "en": "sdf",
-              "ru": "sad"
-            },
-            "image": "asd",
-            "sizes": [
-              {
-                "type": "Twin",
-                "dimensions": "s",
-                "oldPrice": "22",
-                "price": "22"
-              },
-              {
-                "type": "Full/Queen",
-                "dimensions": "",
-                "oldPrice": "",
-                "price": ""
-              },
-              {
-                "type": "King",
-                "dimensions": "",
-                "oldPrice": "",
-                "price": ""
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#FFFFFF",
-                "image": "asd"
-              }
-            ]
-          },
-          {
-            "id": "54daae",
-            "name": {
-              "az": "sdc",
-              "en": "üsdf",
-              "ru": "sd"
-            },
-            "image": "sd",
-            "sizes": [
-              {
-                "type": "Twin",
-                "dimensions": "33",
-                "oldPrice": "33",
-                "price": "3"
-              },
-              {
-                "type": "Full/Queen",
-                "dimensions": "",
-                "oldPrice": "",
-                "price": ""
-              },
-              {
-                "type": "King",
-                "dimensions": "",
-                "oldPrice": "",
-                "price": ""
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#FFFFFF",
-                "image": "sd"
               }
             ]
           }
@@ -3327,7 +3259,7 @@
             ],
             "name": {
               "az": "Ənənəvi Garderob",
-              "ru": "Традиционный Г��рдероб",
+              "ru": "Традиционны�� Г��рдероб",
               "en": "Traditional Wardrobe"
             },
             "image": "https://static.zarahome.net/assets/public/6b2b/534c/0c26404ca18d/be8d635469fc/41100088250-a4/41100088250-a4.jpg?ts=1757335221466&f=auto&w=480"
@@ -3518,7 +3450,8 @@
           }
         ],
         "see-all": [],
-        "duvet-covers": []
+        "duvet-covers": [],
+        "wardrobesandstorage": []
       },
       "id": "f05d"
     },
@@ -3671,12 +3604,18 @@
           },
           {
             "id": "7wsc",
+            "name": {
+              "az": "Trikotaj Battaniyə",
+              "ru": "Трикотажное Одеяло",
+              "en": "Knit Blanket"
+            },
+            "image": "https://static.zarahome.net/assets/public/2dde/6109/d785419fb61d/19de323724a4/42391004305-a7/42391004305-a7.jpg?ts=1757328681596&f=auto&w=320",
             "sizes": [
               {
                 "type": "Throw",
                 "dimensions": "50 x 60 in",
                 "oldPrice": 79,
-                "price": 55
+                "price": "45"
               },
               {
                 "type": "Blanket",
@@ -3685,12 +3624,13 @@
                 "price": 79
               }
             ],
-            "name": {
-              "az": "Trikotaj Battaniyə",
-              "ru": "Трикотажное Одеяло",
-              "en": "Knit Blanket"
-            },
-            "image": "https://static.zarahome.net/assets/public/2dde/6109/d785419fb61d/19de323724a4/42391004305-a7/42391004305-a7.jpg?ts=1757328681596&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/2dde/6109/d785419fb61d/19de323724a4/42391004305-a7/42391004305-a7.jpg?ts=1757328681596&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "8wsc",
@@ -5218,12 +5158,18 @@
           },
           {
             "id": "2wse",
+            "name": {
+              "az": "Kətan Dekorativ Yastıq",
+              "ru": "Льняная Декоративная Подушка",
+              "en": "Linen Cushion"
+            },
+            "image": "https://static.zarahome.net/assets/public/7a51/1fdd/a7a141889186/31a05babf1a3/44365009412-a7/44365009412-a7.jpg?ts=1768301487618&f=auto&w=320",
             "sizes": [
               {
                 "type": "Standard",
                 "dimensions": "18 x 18 in",
                 "oldPrice": 35,
-                "price": 25
+                "price": "23"
               },
               {
                 "type": "Large",
@@ -5232,12 +5178,13 @@
                 "price": 35
               }
             ],
-            "name": {
-              "az": "Kətan Dekorativ Yastıq",
-              "ru": "Льняная Декоративная Подушка",
-              "en": "Linen Cushion"
-            },
-            "image": "https://static.zarahome.net/assets/public/7a51/1fdd/a7a141889186/31a05babf1a3/44365009412-a7/44365009412-a7.jpg?ts=1768301487618&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/7a51/1fdd/a7a141889186/31a05babf1a3/44365009412-a7/44365009412-a7.jpg?ts=1768301487618&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "3wse",
@@ -9695,12 +9642,13 @@
               "ru": "Детское Шерстяное Покрывало",
               "en": "Kids Wool Throw"
             },
+            "image": "https://static.zarahome.net/assets/public/2f3a/d2be/dac74958a811/ac9491e8ed9f/49695580400-a7/49695580400-a7.jpg?ts=1765275184636&f=auto&w=320",
             "sizes": [
               {
                 "type": "Throw",
                 "dimensions": "50 x 60 in",
                 "oldPrice": 89,
-                "price": 59
+                "price": "49"
               },
               {
                 "type": "Blanket",
@@ -9709,7 +9657,13 @@
                 "price": 89
               }
             ],
-            "image": "https://static.zarahome.net/assets/public/2f3a/d2be/dac74958a811/ac9491e8ed9f/49695580400-a7/49695580400-a7.jpg?ts=1765275184636&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/2f3a/d2be/dac74958a811/ac9491e8ed9f/49695580400-a7/49695580400-a7.jpg?ts=1765275184636&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "2wss",
@@ -10295,12 +10249,13 @@
               "ru": "Детская Швейная Машинка",
               "en": "Kids Sewing Machine"
             },
+            "image": "https://static.zarahome.net/assets/public/ce85/a1f3/429b41b3977b/99aa630184d9/42130049700-a7/42130049700-a7.jpg?ts=1755512262069&f=auto&w=320",
             "sizes": [
               {
                 "type": "Medium",
                 "dimensions": "6 x 6 x 8 in",
                 "oldPrice": 43,
-                "price": 33
+                "price": "32"
               },
               {
                 "type": "Large",
@@ -10309,7 +10264,13 @@
                 "price": 43
               }
             ],
-            "image": "https://static.zarahome.net/assets/public/ce85/a1f3/429b41b3977b/99aa630184d9/42130049700-a7/42130049700-a7.jpg?ts=1755512262069&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/ce85/a1f3/429b41b3977b/99aa630184d9/42130049700-a7/42130049700-a7.jpg?ts=1755512262069&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "4wsn",
@@ -11010,12 +10971,13 @@
               "ru": "Детская Тиара",
               "en": "Kids Tiara"
             },
+            "image": "https://static.zarahome.net/assets/public/5ee6/07a5/2f644a7eaa65/2f8f4d104bc3/44601767712-a7/44601767712-a7.jpg?ts=1763452372550&f=auto&w=320",
             "sizes": [
               {
                 "type": "Small",
                 "dimensions": "24 x 36 in",
                 "oldPrice": 79,
-                "price": 59
+                "price": "49"
               },
               {
                 "type": "Medium",
@@ -11024,7 +10986,13 @@
                 "price": 79
               }
             ],
-            "image": "https://static.zarahome.net/assets/public/5ee6/07a5/2f644a7eaa65/2f8f4d104bc3/44601767712-a7/44601767712-a7.jpg?ts=1763452372550&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/5ee6/07a5/2f644a7eaa65/2f8f4d104bc3/44601767712-a7/44601767712-a7.jpg?ts=1763452372550&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "11wsm",
@@ -11263,12 +11231,13 @@
               "ru": "Детский Спрей для Волос",
               "en": "Kids Hair Spray"
             },
+            "image": "https://static.zarahome.net/assets/public/762d/2b0d/7ade40c78255/acad8a638cd8/44602767712-p1/44602767712-p1.jpg?ts=1766390711132&f=auto&w=320",
             "sizes": [
               {
                 "type": "Small",
                 "dimensions": "24 x 36 in",
                 "oldPrice": 119,
-                "price": 99
+                "price": "88"
               },
               {
                 "type": "Medium",
@@ -11277,7 +11246,13 @@
                 "price": 119
               }
             ],
-            "image": "https://static.zarahome.net/assets/public/762d/2b0d/7ade40c78255/acad8a638cd8/44602767712-p1/44602767712-p1.jpg?ts=1766390711132&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/762d/2b0d/7ade40c78255/acad8a638cd8/44602767712-p1/44602767712-p1.jpg?ts=1766390711132&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "22wsm",
@@ -11902,7 +11877,46 @@
             ],
             "image": "https://static.zarahome.net/assets/public/73b0/01e6/85024e7d9e5b/ca3624aabb59/48610900251-a1/48610900251-a1.jpg?ts=1734447814538&f=auto&w=320"
           }
-        ]
+        ],
+        "baskets-and-storage": [
+          {
+            "id": "976dea",
+            "name": {
+              "az": "as",
+              "en": "sd",
+              "ru": "sd"
+            },
+            "image": "sd",
+            "sizes": [
+              {
+                "type": "Twin",
+                "dimensions": "s",
+                "oldPrice": "",
+                "price": "5"
+              },
+              {
+                "type": "Full/Queen",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              },
+              {
+                "type": "King",
+                "dimensions": "",
+                "oldPrice": "",
+                "price": ""
+              }
+            ],
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "sd"
+              }
+            ]
+          }
+        ],
+        "tablecloths": []
       },
       "id": "cf90"
     },
@@ -11922,12 +11936,13 @@
               "ru": "Шерстяная Накидка для Домашних Животных",
               "en": "Wool Throw for Pets"
             },
+            "image": "https://static.zarahome.net/assets/public/ac7b/b894/545247639b26/fb1b8491d35c/41358009500-a7/41358009500-a7.jpg?ts=1762792229819&f=auto&w=320",
             "sizes": [
               {
                 "type": "Throw",
                 "dimensions": "50 x 60 in",
                 "oldPrice": 89,
-                "price": 59
+                "price": "58"
               },
               {
                 "type": "Blanket",
@@ -11936,7 +11951,13 @@
                 "price": 89
               }
             ],
-            "image": "https://static.zarahome.net/assets/public/ac7b/b894/545247639b26/fb1b8491d35c/41358009500-a7/41358009500-a7.jpg?ts=1762792229819&f=auto&w=320"
+            "variants": [
+              {
+                "color": "white",
+                "hex": "#FFFFFF",
+                "image": "https://static.zarahome.net/assets/public/ac7b/b894/545247639b26/fb1b8491d35c/41358009500-a7/41358009500-a7.jpg?ts=1762792229819&f=auto&w=320"
+              }
+            ]
           },
           {
             "id": "2wvss",
@@ -12466,42 +12487,6 @@
               }
             ],
             "image": "https://static.zarahome.net/assets/public/c59d/2851/eae644a68e28/44a31841b54e/43321211808-p1/43321211808-p1.jpg?ts=1764853645768&f=auto&w=320"
-          },
-          {
-            "id": "45317c",
-            "name": {
-              "az": "hh",
-              "en": "jih",
-              "ru": "jj"
-            },
-            "image": "jj",
-            "sizes": [
-              {
-                "type": "Twin",
-                "dimensions": "44x33",
-                "oldPrice": "88",
-                "price": "88"
-              },
-              {
-                "type": "Full/Queen",
-                "dimensions": "",
-                "oldPrice": "",
-                "price": ""
-              },
-              {
-                "type": "King",
-                "dimensions": "",
-                "oldPrice": "",
-                "price": ""
-              }
-            ],
-            "variants": [
-              {
-                "color": "white",
-                "hex": "#FFFFFF",
-                "image": "jj"
-              }
-            ]
           }
         ]
       },
@@ -12513,7 +12498,7 @@
       "id": "7565",
       "firstname": "selcan",
       "lastname": "selcan",
-      "email": "selcan@gmail.com",
+      "email": "syusifova181@gmail.com",
       "pass": "123",
       "role": "user"
     },
@@ -12851,6 +12836,23 @@
       "price": 119,
       "oldPrice": 159,
       "quantity": 1
+    },
+    {
+      "id": "f3de",
+      "userId": "3c15",
+      "productId": "9r",
+      "name": {
+        "az": "Təbii Daş Rəngli Yataq Örtüyü",
+        "ru": "Натуральное Каменное Покрывало",
+        "en": "Natural Stone Bedspread"
+      },
+      "image": "https://static.zarahome.net/assets/public/a567/12b5/49ce415ca54f/0053a7d42862/41132005500-p1/41132005500-p1.jpg?ts=1762252503287&f=auto&w=480",
+      "color": null,
+      "colorHex": null,
+      "size": "Queen",
+      "price": 129,
+      "oldPrice": 169,
+      "quantity": 7
     }
   ]
 }

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import AdminProducts from "../adminproducts";
+import AddProductPanel from "../../components/addproductpopup";
 
 function Candleholdersadmin() {
   const [data, setData] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [editingProduct, setEditingProduct] = useState(null);
 
   // ✅ İlk yüklənmə
   const fetchData = () => {
@@ -61,6 +64,23 @@ function Candleholdersadmin() {
   const handleDelete = (productId) => {
     setData(prevData => prevData.filter(p => p.id !== productId));
   };
+   const handleEdit = (product) => {
+    setEditingProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setEditingProduct(null);
+  };
+
+  const handleProductUpdated = (updatedProduct, mappedSubcategory) => {
+    if (mappedSubcategory === "candleholders") {
+      setData(prevData =>
+        prevData.map(p => p.id === updatedProduct.id ? updatedProduct : p)
+      );
+    }
+  };
 
   return (
     <div>
@@ -73,9 +93,19 @@ function Candleholdersadmin() {
             category="home-decor"
             subcategory="candleholders"
             onDelete={handleDelete}
+            onEdit={handleEdit}
           />
         ))}
       </div>
+       <AddProductPanel
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onProductUpdated={handleProductUpdated}
+        editProduct={editingProduct}
+        category="home-decor"
+        subcategory="candleholders"
+
+      />
     </div>
   );
 }

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import AdminProducts from "../adminproducts";
+import AddProductPanel from "../../components/addproductpopup";
 
 function Basketsandstorageadmin() {
   const [data, setData] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+      const [editingProduct, setEditingProduct] = useState(null);
 
   // ✅ İlk yüklənmə
   const fetchData = () => {
@@ -60,6 +63,24 @@ function Basketsandstorageadmin() {
   const handleDelete = (productId) => {
     setData(prevData => prevData.filter(p => p.id !== productId));
   };
+   const handleEdit = (product) => {
+    setEditingProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setEditingProduct(null);
+  };
+
+  const handleProductUpdated = (updatedProduct, mappedSubcategory) => {
+    if (mappedSubcategory === "basketsandstorage") {
+      setData(prevData =>
+        prevData.map(p => p.id === updatedProduct.id ? updatedProduct : p)
+      );
+    }
+  };
+
 
   return (
     <div>
@@ -72,9 +93,19 @@ function Basketsandstorageadmin() {
             category="kids-and-baby"
             subcategory="basketsandstorage"
             onDelete={handleDelete}
+            onEdit={handleEdit}
           />
         ))}
       </div>
+      <AddProductPanel
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onProductUpdated={handleProductUpdated}
+        editProduct={editingProduct}
+        category="kids-and-baby"
+        subcategory="basketsandstorage"
+
+      />
     </div>
   );
 }

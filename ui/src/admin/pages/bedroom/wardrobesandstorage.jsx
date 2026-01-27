@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import AdminProducts from "../adminproducts";
+import AddProductPanel from "../../components/addproductpopup";
+
 
 function Wardrobesandstorageadmin() {
   const [data, setData] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
 
-  
+
   const fetchData = () => {
     fetch("http://localhost:3000/allProducts")
       .then((res) => res.json())
@@ -58,6 +62,23 @@ function Wardrobesandstorageadmin() {
   const handleDelete = (productId) => {
     setData(prevData => prevData.filter(p => p.id !== productId));
   };
+   const handleEdit = (product) => {
+    setEditingProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setEditingProduct(null);
+  };
+
+  const handleProductUpdated = (updatedProduct, mappedSubcategory) => {
+    if (mappedSubcategory === "bedroombedding") {
+      setData(prevData =>
+        prevData.map(p => p.id === updatedProduct.id ? updatedProduct : p)
+      );
+    }
+  };
 
   return (
     <div>
@@ -70,9 +91,19 @@ function Wardrobesandstorageadmin() {
             category="bedroom"
             subcategory="bedroomwardrobesandstorage"
             onDelete={handleDelete}
+            onEdit={handleEdit}
           />
         ))}
       </div>
+      <AddProductPanel
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onProductUpdated={handleProductUpdated}
+        editProduct={editingProduct}
+        category="bedroom"
+        subcategory="wardrobesandstorage"
+
+      />
     </div>
   );
 }

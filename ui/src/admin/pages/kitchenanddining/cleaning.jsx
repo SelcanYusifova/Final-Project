@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import AdminProducts from "../adminproducts";
+import AddProductPanel from "../../components/addproductpopup";
 
-function Cleaningadmin () {
+
+function Cleaningadmin() {
   const [data, setData] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
 
   // ✅ İlk yüklənmə
   const fetchData = () => {
@@ -60,6 +64,24 @@ function Cleaningadmin () {
   const handleDelete = (productId) => {
     setData(prevData => prevData.filter(p => p.id !== productId));
   };
+  const handleEdit = (product) => {
+    setEditingProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setEditingProduct(null);
+  };
+
+  const handleProductUpdated = (updatedProduct, mappedSubcategory) => {
+    if (mappedSubcategory === "cleaning") {
+      setData(prevData =>
+        prevData.map(p => p.id === updatedProduct.id ? updatedProduct : p)
+      );
+    }
+  };
+
 
   return (
     <div>
@@ -72,14 +94,24 @@ function Cleaningadmin () {
             category="kitchen"
             subcategory="cleaning"
             onDelete={handleDelete}
+            onEdit={handleEdit}
           />
         ))}
       </div>
+       <AddProductPanel
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onProductUpdated={handleProductUpdated}
+        editProduct={editingProduct}
+        category="kids-and-baby"
+        subcategory="cleaning"
+
+      />
     </div>
   );
 }
 
-export default Cleaningadmin ;
+export default Cleaningadmin;
 
 
 
@@ -97,11 +129,11 @@ export default Cleaningadmin ;
 
 
 
- 
 
 
 
- 
+
+
 
 
 

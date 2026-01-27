@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { useProductOperations } from "../components/useproductoperations";
 
-function AdminProducts({ pro, category, subcategory, onDelete }) {
+function AdminProducts({ pro, category, subcategory, onDelete, onEdit }) {
   const [isDeleting, setIsDeleting] = useState(false);
+  const { deleteProduct } = useProductOperations();
 
   const productImage =
     Array.isArray(pro.variants) && pro.variants.length > 0
@@ -15,7 +17,9 @@ function AdminProducts({ pro, category, subcategory, onDelete }) {
       : pro.price;
 
   const handleEdit = () => {
-    console.log("Edit product:", pro.id);
+    if (onEdit) {
+      onEdit(pro);
+    }
   };
 
   const handleDelete = () => {
@@ -29,63 +33,13 @@ function AdminProducts({ pro, category, subcategory, onDelete }) {
       cancelButtonColor: "#6b7280",
       confirmButtonText: "Yes, delete it!",
       cancelButtonText: "Cancel"
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        deleteProduct();
+        setIsDeleting(true);
+        await deleteProduct(pro.id, category, subcategory, onDelete);
+        setIsDeleting(false);
       }
     });
-  };
-
-  const deleteProduct = async () => {
-    setIsDeleting(true);
-
-    try {
-      // ✅ 1. Dərhal UI-dan sil (optimistic update)
-      if (onDelete) {
-        onDelete(pro.id);
-      }
-
-      // 2. Server-ə göndər
-      const response = await fetch("http://localhost:3000/allProducts");
-      const allProducts = await response.json();
-
-      const categoryData = allProducts.find(
-        (cat) => cat.categoryId === category
-      );
-
-      if (!categoryData) {
-        Swal.fire("Error", "Category not found!", "error");
-        setIsDeleting(false);
-        return;
-      }
-
-      categoryData.products[subcategory] =
-        categoryData.products[subcategory].filter(
-          (product) => product.id !== pro.id
-        );
-
-      await fetch(
-        `http://localhost:3000/allProducts/${categoryData.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(categoryData)
-        }
-      );
-
-      Swal.fire({
-        icon: "success",
-        title: "Deleted!",
-        text: "Product has been deleted successfully.",
-        timer: 1200,
-        showConfirmButton: false
-      });
-
-    } catch (error) {
-      console.error(error);
-      Swal.fire("Error", "Failed to delete product!", "error");
-      setIsDeleting(false);
-    }
   };
 
   return (
@@ -121,7 +75,7 @@ function AdminProducts({ pro, category, subcategory, onDelete }) {
         <button
           onClick={handleDelete}
           disabled={isDeleting}
-          className="cursor-pointer flex-1 py-2.5 text-sm font-medium bg-red-50 text-red-600  hover:bg-red-600 hover:text-white transition-all duration-200 disabled:opacity-50"
+          className="cursor-pointer flex-1 py-2.5 text-sm font-medium bg-red-50 text-red-600 hover:bg-red-600 hover:text-white transition-all duration-200 disabled:opacity-50"
         >
           Delete
         </button>
